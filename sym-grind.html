@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이갈이와 이 악물기 — MEAW 턱관절 연구회</title>
+<meta name="description" content="이갈이(수면 중)와 이 악물기(주간)의 양상, 수면·호흡과의 연관, 평가 방법을 정리합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --hero1:#F1FAFB; --hero2:#D6EDF2; --tint:#E2F1F5;
+  --dark:#0F3240;--dark2:#0F3240;--panel:#0F3240;
+  --green:#2493B8;--green-soft:#79C3DA;--green-deep:#176D8C;
+  --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
+  --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
+  --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
+  --sans:"Wanted Sans Variable","Wanted Sans","Pretendard Variable",Pretendard,sans-serif;
+  --latin:'Outfit',sans-serif;--maxw:1180px;--r:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.8;letter-spacing:-.008em;word-break:keep-all;overflow-x:hidden}
+::selection{background:var(--green);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.032em}
+
+/* 상단 메뉴 (메인과 동일) */
+header{position:fixed;inset:0 0 auto 0;z-index:90;height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 clamp(18px,3.4vw,44px);
+  background:rgba(20,41,49,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-d);color:#fff;transition:height .3s,box-shadow .3s}
+header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
+.logo{display:flex;align-items:baseline;gap:9px;flex-shrink:0}
+.logo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.logo b i{font-style:normal;color:var(--green)}
+.logo span{font-size:13px;color:var(--muted-d)}
+nav{display:flex;align-items:center;gap:clamp(4px,1vw,10px);font-size:14.5px}
+nav a{display:flex;align-items:center;padding:10px 12px;border-radius:8px;color:#E6EEF0;transition:.2s}
+nav a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{background:var(--green);color:#0E2010;font-weight:700;font-size:14px;
+  border-radius:9px;padding:11px 18px;transition:.2s;flex-shrink:0}
+.nav-cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+#pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:99;
+  background:linear-gradient(90deg,var(--green),#56E39F);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 공통 */
+section{padding:clamp(72px,10vh,116px) clamp(18px,3.4vw,44px);position:relative}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--green-deep);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--green)}
+.sec-title{font-weight:700;font-size:clamp(24px,3.1vw,38px);line-height:1.38;margin-bottom:16px}
+.sec-sub{max-width:64ch;color:var(--muted);font-size:16.5px}
+.dark{background:var(--dark);color:#EDF3F2}
+.dark .sec-sub{color:var(--muted-d)}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:15px;font-weight:600;transition:.22s}
+.btn-green{background:var(--green);color:#0E2010;font-weight:700}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,193,66,.32)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--muted)}
+.dark .check-list li{color:var(--muted-d)}
+.check-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:3px;
+  border:1.5px solid var(--green);color:var(--green-deep);
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.dark .check-list .ck{color:var(--green)}
+
+/* 머리글 */
+.hero{background:linear-gradient(180deg,var(--dark) 0%,#122630 100%);color:#fff;
+  padding-top:168px;padding-bottom:76px}
+.hero .crumb{font-size:13.5px;color:var(--muted-d);margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.hero .crumb a:hover{color:var(--green)}
+.hero h1{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.3}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em);filter:blur(7px);
+  animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.hero p{margin-top:18px;max-width:58ch;color:#B9C9CE;opacity:0;animation:rise 1s ease .5s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* 구조 구역 */
+.split2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.figbox img,.figbox video{width:100%}
+.figcap{font-size:13px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);background:#fff}
+
+/* 원인 3카드 */
+.locks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.lock{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:var(--r);padding:30px 26px;transition:.3s}
+.lock:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.lock .no{font-family:var(--latin);font-weight:300;font-size:15px;letter-spacing:.14em;color:var(--green);margin-bottom:12px;display:block}
+.lock h3{font-size:18.5px;font-weight:700;margin-bottom:10px}
+.lock p{font-size:14.8px;line-height:1.75;color:var(--muted-d)}
+.now-box{margin-top:26px;background:rgba(122,193,66,.1);border:1px solid rgba(122,193,66,.35);
+  border-radius:var(--r);padding:26px clamp(20px,3vw,34px)}
+.now-box h3{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--green)}
+.now-box p{font-size:15px;color:#D9E4E2;margin-bottom:10px}
+.now-box b{color:#fff}
+
+/* 자가 확인 상자 */
+.try-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px clamp(20px,3vw,34px);margin-top:26px}
+.try-box h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--green-deep)}
+.try-box p{font-size:15px;color:var(--muted)}
+
+/* 그림 구역 */
+.habit-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+
+/* 등장 효과 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-x{opacity:0;transform:translateX(-46px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal-x.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(2){transition-delay:.09s}
+.stagger.in > *:nth-child(3){transition-delay:.18s}
+
+/* 푸터 */
+footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4vw,44px) 28px}
+.foot-bar{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#6E838B}
+.foot-bar a:hover{color:var(--green)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .split2{grid-template-columns:1fr}
+  .locks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
+}
+
+/* ── 깊은 바다 밝은 테마 재정의 ── */
+header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);color:var(--ink)}
+header.scrolled{box-shadow:0 10px 30px rgba(20,41,49,.10)}
+.logo b{color:var(--ink)}
+.logo span{color:var(--muted)}
+nav a{color:var(--ink)}
+nav a:hover{background:var(--bg2)}
+.nav-cta{background:var(--green-deep);color:#fff}
+.btn-green{background:var(--green-deep);color:#fff}
+#pbar{background:linear-gradient(90deg,var(--green),var(--green-soft))}
+.hero{background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 100%);color:var(--ink)}
+.hero .crumb{color:var(--muted)}
+.hero .crumb a:hover{color:var(--green-deep)}
+.hero p{color:var(--muted)}
+.hero h1 em{color:var(--green-deep)}
+.hero .eyebrow{color:var(--green-deep)}
+.dark{background:var(--tint);color:var(--ink)}
+.dark .sec-sub{color:var(--muted)}
+.dark .eyebrow{color:var(--green-deep)}
+.dark .check-list li{color:var(--muted)}
+.dark .check-list .ck{color:var(--green-deep)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.dark .btn-line{border-color:rgba(20,41,49,.3);color:var(--ink)}
+.dark .btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.lock{background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(20,41,49,.05)}
+.lock:hover{background:#fff;transform:translateY(-4px)}
+.lock p{color:var(--muted)}
+.lock .u{color:#9A6A00}
+.now-box p{color:var(--muted)}
+.now-box b{color:var(--ink)}
+
+/* ── 로고 글자꼴 강화(v2): MEAW 원형 유지, 한글을 크고 두껍게 ── */
+.logo{gap:10px}
+.logo span{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+
+/* ── 머리띠 중앙 제목형 + M 심벌 ── */
+header{height:auto;flex-direction:column;justify-content:center;gap:9px;
+  padding:14px clamp(18px,3.4vw,44px) 11px}
+header.scrolled{height:auto}
+.logo{gap:24px;align-items:center}
+.logo img.mark{height:58px;width:auto;display:block}
+.logo b{font-size:41px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-16px}
+.nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
+.hero{padding-top:230px}
+@media (max-width:860px){
+  .logo{gap:14px}
+  .logo img.mark{height:42px}
+  .logo b{font-size:29px}
+  .logo span{font-size:26px;margin-left:-11px}
+  .nav-cta{font-size:12.5px;padding:8px 11px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  nav a{padding:7px 9px}
+  .hero{padding-top:205px}
+}
+@media (max-width:620px){
+  .nav-cta{display:none}
+}
+
+/* ── 단추만 세이지그린(링크·포인트는 물색 유지) ── */
+.nav-cta{background:#2F6B5A;color:#fff}
+.btn-green{background:#2F6B5A;color:#fff}
+
+/* ── 픽토그램 그림 크기 ── */
+.figbox img.picto{width:auto;max-width:86%;max-height:130px;display:block;margin:0 auto;background:#fff;padding:16px 0}
+.figbox:has(img.picto){background:#fff}
+.picto-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.picto-row .figbox{display:flex;flex-direction:column}
+.picto-row img.picto{flex:1;min-height:0}
+</style>
+</head>
+<body>
+<div id="pbar" aria-hidden="true"></div>
+
+<header>
+  <a class="logo" href="index.html"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="index.html#symptoms">턱관절 증상</a>
+    <a href="index.html#approach">치료 안내</a>
+    <a href="index.html#about">연구회 소개</a>
+    <a href="index.html#network">회원 치과</a>
+    <a href="index.html#visit">첫 방문 안내</a>
+  </nav>
+  <a class="nav-cta" href="index.html#about">연구회 소개</a>
+</header>
+
+<main>
+
+  <!-- 머리글 -->
+  <section class="hero">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">홈</a> › <a href="index.html#symptoms">턱관절 증상</a> › <span>이갈이와 이 악물기</span></div>
+      <h1 aria-label="이갈이와 이 악물기"><span class="w" style="--i:0">이갈이와</span> <span class="w" style="--i:1">이</span> <span class="w" style="--i:2">악물기</span></h1>
+      <p>이갈이와 이 악물기는 저작근의 과활동 양상입니다. 수면과 주간의 구분, 전신 요인과의 연관, 평가 방법을 설명합니다.</p>
+    </div>
+  </section>
+
+  <!-- 1. 구분 -->
+  <section>
+    <div class="inner split2">
+      <div>
+        <span class="eyebrow reveal">CLASSIFICATION</span>
+        <h2 class="sec-title reveal-x">수면 중 이갈이와 주간의 이 악물기</h2>
+        <p class="sec-sub reveal"><b>이갈이</b>는 주로 수면 중에 치아를 갈거나 꽉 무는 근활동으로,
+        대개 자각이 없습니다. 주변의 소리 보고나 기상 시 증상, 치아의 변화로 확인되는 경우가 많습니다.</p>
+        <p class="sec-sub reveal" style="margin-top:14px"><b>이 악물기</b>는 깨어 있는 동안 집중하거나 긴장할 때
+        치아를 맞물고 힘을 주는 양상입니다. 역시 본인이 알아차리지 못하는 사이에 반복됩니다.</p>
+        <p class="sec-sub reveal" style="margin-top:14px">두 가지 모두 그 자체로 질환명이 아니라 <b>근활동의 양상</b>입니다.
+        빈도와 강도가 높을수록 저작근과 턱관절의 기능에 영향을 주며,
+        어떤 요인이 기여하는지에 따라 관리 방향이 달라집니다.</p>
+      </div>
+      <div>
+        <div class="picto-row reveal">
+          <div class="figbox">
+            <img src="img/pic-clench-day.png" class="picto" alt="집중하며 이를 악문 옆얼굴 선화 픽토그램">
+            <div class="figcap">주간의 이 악물기 — 집중·긴장 시 자각 없이 반복됩니다.</div>
+          </div>
+          <div class="figbox">
+            <img src="img/pic-grind-sleep.png" class="picto" alt="수면 중 치아를 가는 옆얼굴 선화 픽토그램">
+            <div class="figcap">수면 중 이갈이 — 대개 자각이 없습니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 증상의 양상 -->
+  <section class="alt">
+    <div class="inner">
+      <span class="eyebrow reveal">CLINICAL FEATURES</span>
+      <h2 class="sec-title reveal-x">증상의 양상</h2>
+      <div class="split2" style="margin-top:34px;align-items:start">
+        <div>
+          <p class="sec-sub reveal">이갈이·이 악물기의 영향은 치아에 한정되지 않고,
+          근육과 주변 구조에서 함께 나타납니다. 겹치는 항목이 많을수록
+          근활동의 관여 가능성이 커집니다.</p>
+          <ul class="check-list reveal">
+            <li><span class="ck">✓</span>기상 시 턱의 뻣뻣함과 피로감</li>
+            <li><span class="ck">✓</span>관자놀이 중심의 조이는 두통</li>
+            <li><span class="ck">✓</span>치아의 마모, 시림, 깨짐</li>
+            <li><span class="ck">✓</span>안면 근육의 피로감과 무거움</li>
+            <li><span class="ck">✓</span>목·어깨의 긴장</li>
+          </ul>
+          <div class="try-box reveal" style="border-color:#E5B84B;background:#FDF8EC">
+            <h3 style="color:#8A6D1F">평가가 필요한 신호</h3>
+            <p>턱의 뻣뻣함·피로가 지속될 때, 두통이 턱의 긴장과 연관될 때,
+            치아 마모가 눈에 띄게 진행될 때, 증상이 기상 직후에 가장 심할 때는
+            평가의 대상이 됩니다.</p>
+          </div>
+        </div>
+        <div>
+          <div class="figbox reveal">
+            <img src="img/sym-morning.jpg" alt="아침에 침대에 앉아 턱을 감싸고 있는 사람 일러스트">
+            <div class="figcap">기상 시의 턱 피로와 뻣뻣함은 수면 중 근활동의 흔한 단서입니다.</div>
+          </div>
+          <div class="figbox reveal" style="margin-top:18px">
+            <img src="img/pic-tooth-wear.png" class="picto" alt="교합면이 평평하게 마모된 어금니 선화 픽토그램">
+            <div class="figcap">교합면의 마모는 근활동을 보여주는 객관적 단서입니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 수면·호흡과의 연관 -->
+  <section class="dark">
+    <div class="inner">
+      <span class="eyebrow reveal">MECHANISM</span>
+      <h2 class="sec-title reveal-x">수면·호흡과의 연관</h2>
+      <p class="sec-sub reveal">이갈이와 이 악물기는 턱에 국한된 현상이 아니라,
+      수면과 호흡을 포함한 전신 기능의 영향을 받습니다.</p>
+      <div class="locks stagger">
+        <div class="lock"><span class="no">LINK 01</span><h3>수면 중 각성 반응</h3>
+          <p>수면 중 호흡의 변화나 각성 반응에 따라 저작근의 활동이
+          증가할 수 있습니다. 이갈이가 자각 없이 진행되는 배경입니다.</p></div>
+        <div class="lock"><span class="no">LINK 02</span><h3>수면무호흡과의 중첩</h3>
+          <p>폐쇄성 수면무호흡이 있는 사람에서 이갈이의 빈도가 높다고
+          보고됩니다. 다만 한쪽이 다른 쪽을 직접 일으키는 인과 관계는 아닙니다.</p></div>
+        <div class="lock"><span class="no">LINK 03</span><h3>수면의 질과 통증 민감도</h3>
+          <p>수면의 질이 떨어지면 통증 민감도가 높아져,
+          같은 근활동에서도 증상을 더 크게 체감할 수 있습니다.</p></div>
+      </div>
+      <div class="now-box reveal">
+        <h3>교합과 이갈이의 관계</h3>
+        <p>물리는 상태(교합) 단독은 이갈이·이 악물기의 직접 원인으로 보지 않습니다.
+        다만 근활동이 증가한 상태에서는 <b>부하가 분배되는 방식</b>에 영향을 주어
+        불편에 기여할 수 있습니다.</p>
+        <p style="margin-bottom:0">기여 요인은 복합적입니다. 스트레스와 긴장, 수면 요인, 일부 약물,
+        낮 동안의 사용 습관이 함께 작용하며, 증상은 스트레스·수면·피로에 따라 시기별로 변동합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 평가에서 하는 일 -->
+  <section>
+    <div class="inner split2">
+      <div class="habit-img reveal"><img src="img/habit.jpg" alt="책상에 앉아 집중하고 있는 사람 일러스트"></div>
+      <div>
+        <span class="eyebrow reveal">CLINICAL EXAM</span>
+        <h2 class="sec-title reveal-x">이갈이·이 악물기의 평가</h2>
+        <p class="sec-sub reveal">평가는 근활동이 언제, 어떤 조건에서 일어나는지를
+        구분하는 데서 시작합니다.</p>
+        <ul class="check-list reveal">
+          <li><span class="ck">✓</span>주간·야간 패턴의 구분과 빈도 확인</li>
+          <li><span class="ck">✓</span>저작근·턱관절의 기능과 압통 평가</li>
+          <li><span class="ck">✓</span>치아 마모면과 교합 상태 확인</li>
+          <li><span class="ck">✓</span>수면·호흡 관련 요인의 선별</li>
+        </ul>
+        <p class="sec-sub reveal">치료는 소견에 따라 장치(스플린트), 근육 관리,
+        습관·수면 요인의 조절을 조합합니다. 비슷한 증상이라도 기여 요인이 다르면
+        접근이 달라집니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 마감 -->
+  <section class="alt">
+    <div class="inner" style="text-align:center">
+      <span class="eyebrow reveal" style="display:block">ASSESSMENT</span>
+      <h2 class="sec-title reveal">이갈이·이 악물기는 기여 요인을 평가합니다</h2>
+      <p class="sec-sub reveal" style="margin:0 auto">같은 근활동이라도 스트레스, 수면, 호흡 등 배경이 다르므로, 평가는 기여 요인의 구분을 중심으로 진행됩니다.</p>
+      <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a class="btn btn-green" href="index.html#symptoms">다른 증상 보기</a>
+        <a class="btn btn-line" href="index.html#about">연구회 소개</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <span>MEAW 턱관절 연구회</span>
+    <a href="index.html">← 홈으로</a>
+    <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal,.reveal-x,.stagger').forEach(el => io.observe(el));
+const pbar = document.getElementById('pbar');
+const hdr = document.querySelector('header');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (!ticking){ requestAnimationFrame(() => {
+    const y = scrollY, h = innerHeight;
+    pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
+    hdr.classList.toggle('scrolled', y > 40);
+    ticking = false; }); ticking = true; }
+}, {passive:true});
+</script>
+</body>
+</html>
