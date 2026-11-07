@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 :root{
-  --dark:#142931;--dark2:#0F1E24;--panel:#1B3641;
-  --green:#7AC142;--green-soft:#A5D878;--green-deep:#3E7D22;
+  --hero1:#F1FAFB; --hero2:#D6EDF2; --tint:#E2F1F5;
+  --dark:#0F3240;--dark2:#0F3240;--panel:#0F3240;
+  --green:#2493B8;--green-soft:#79C3DA;--green-deep:#176D8C;
   --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
   --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
   --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
@@ -135,6 +136,37 @@ footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4v
   *,*::before,*::after{animation:none!important;transition:none!important}
   .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
 }
+
+/* ── 깊은 바다 밝은 테마 재정의 ── */
+header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);color:var(--ink)}
+header.scrolled{box-shadow:0 10px 30px rgba(20,41,49,.10)}
+.logo b{color:var(--ink)}
+.logo span{color:var(--muted)}
+nav a{color:var(--ink)}
+nav a:hover{background:var(--bg2)}
+.nav-cta{background:var(--green-deep);color:#fff}
+.btn-green{background:var(--green-deep);color:#fff}
+#pbar{background:linear-gradient(90deg,var(--green),var(--green-soft))}
+.hero{background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 100%);color:var(--ink)}
+.hero .crumb{color:var(--muted)}
+.hero .crumb a:hover{color:var(--green-deep)}
+.hero p{color:var(--muted)}
+.hero h1 em{color:var(--green-deep)}
+.hero .eyebrow{color:var(--green-deep)}
+.dark{background:var(--tint);color:var(--ink)}
+.dark .sec-sub{color:var(--muted)}
+.dark .eyebrow{color:var(--green-deep)}
+.dark .check-list li{color:var(--muted)}
+.dark .check-list .ck{color:var(--green-deep)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.dark .btn-line{border-color:rgba(20,41,49,.3);color:var(--ink)}
+.dark .btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.lock{background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(20,41,49,.05)}
+.lock:hover{background:#fff;transform:translateY(-4px)}
+.lock p{color:var(--muted)}
+.lock .u{color:#9A6A00}
+.now-box p{color:var(--muted)}
+.now-box b{color:var(--ink)}
 </style>
 </head>
 <body>
