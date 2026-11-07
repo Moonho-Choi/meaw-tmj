@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>귀 증상과 턱관절 — MEAW 턱관절 연구회</title>
+<meta name="description" content="귀 검사는 정상인데 계속되는 먹먹함, 이명, 귀 주변 통증과 턱관절의 관계를 안내합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --dark:#142931;--dark2:#0F1E24;--panel:#1B3641;
+  --green:#7AC142;--green-soft:#A5D878;--green-deep:#3E7D22;
+  --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
+  --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
+  --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
+  --sans:"Wanted Sans Variable","Wanted Sans","Pretendard Variable",Pretendard,sans-serif;
+  --latin:'Outfit',sans-serif;--maxw:1180px;--r:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.8;letter-spacing:-.008em;word-break:keep-all;overflow-x:hidden}
+::selection{background:var(--green);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.032em}
+
+/* 상단 메뉴 (메인과 동일) */
+header{position:fixed;inset:0 0 auto 0;z-index:90;height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 clamp(18px,3.4vw,44px);
+  background:rgba(20,41,49,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-d);color:#fff;transition:height .3s,box-shadow .3s}
+header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
+.logo{display:flex;align-items:baseline;gap:9px;flex-shrink:0}
+.logo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.logo b i{font-style:normal;color:var(--green)}
+.logo span{font-size:13px;color:var(--muted-d)}
+nav{display:flex;align-items:center;gap:clamp(4px,1vw,10px);font-size:14.5px}
+nav a{display:flex;align-items:center;padding:10px 12px;border-radius:8px;color:#E6EEF0;transition:.2s}
+nav a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{background:var(--green);color:#0E2010;font-weight:700;font-size:14px;
+  border-radius:9px;padding:11px 18px;transition:.2s;flex-shrink:0}
+.nav-cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+#pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:99;
+  background:linear-gradient(90deg,var(--green),#56E39F);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 공통 */
+section{padding:clamp(72px,10vh,116px) clamp(18px,3.4vw,44px);position:relative}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--green-deep);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--green)}
+.sec-title{font-weight:700;font-size:clamp(24px,3.1vw,38px);line-height:1.38;margin-bottom:16px}
+.sec-sub{max-width:64ch;color:var(--muted);font-size:16.5px}
+.dark{background:var(--dark);color:#EDF3F2}
+.dark .sec-sub{color:var(--muted-d)}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:15px;font-weight:600;transition:.22s}
+.btn-green{background:var(--green);color:#0E2010;font-weight:700}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,193,66,.32)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--muted)}
+.dark .check-list li{color:var(--muted-d)}
+.check-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:3px;
+  border:1.5px solid var(--green);color:var(--green-deep);
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.dark .check-list .ck{color:var(--green)}
+
+/* 머리글 */
+.hero{background:linear-gradient(180deg,var(--dark) 0%,#122630 100%);color:#fff;
+  padding-top:168px;padding-bottom:76px}
+.hero .crumb{font-size:13.5px;color:var(--muted-d);margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.hero .crumb a:hover{color:var(--green)}
+.hero h1{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.3}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em);filter:blur(7px);
+  animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.hero p{margin-top:18px;max-width:58ch;color:#B9C9CE;opacity:0;animation:rise 1s ease .5s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* 구역 */
+.split2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.figbox img,.figbox video{width:100%}
+.figcap{font-size:13px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);background:#fff}
+
+/* 경고 상자 */
+.warn-box{background:#FDF8EC;border:1px solid #E5B84B;border-radius:var(--r);
+  padding:26px clamp(20px,3vw,34px);margin-top:26px}
+.warn-box h3{font-size:18px;font-weight:700;margin-bottom:12px;color:#8A6D1F}
+.warn-box p{font-size:15px;color:var(--muted)}
+
+/* 경로 3카드 */
+.locks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.lock{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:var(--r);padding:30px 26px;transition:.3s}
+.lock:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.lock .no{font-family:var(--latin);font-weight:300;font-size:15px;letter-spacing:.14em;color:var(--green);margin-bottom:12px;display:block}
+.lock h3{font-size:18.5px;font-weight:700;margin-bottom:10px}
+.lock p{font-size:14.8px;line-height:1.75;color:var(--muted-d)}
+.now-box{margin-top:26px;background:rgba(122,193,66,.1);border:1px solid rgba(122,193,66,.35);
+  border-radius:var(--r);padding:26px clamp(20px,3vw,34px)}
+.now-box h3{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--green)}
+.now-box p{font-size:15px;color:#D9E4E2;margin-bottom:10px}
+.now-box b{color:#fff}
+
+/* 등장 효과 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-x{opacity:0;transform:translateX(-46px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal-x.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(2){transition-delay:.09s}
+.stagger.in > *:nth-child(3){transition-delay:.18s}
+
+/* 푸터 */
+footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4vw,44px) 28px}
+.foot-bar{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#6E838B}
+.foot-bar a:hover{color:var(--green)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .split2{grid-template-columns:1fr}
+  .locks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+<div id="pbar" aria-hidden="true"></div>
+
+<header>
+  <a class="logo" href="index.html"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="index.html#symptoms">턱관절 증상</a>
+    <a href="index.html#approach">치료 안내</a>
+    <a href="index.html#about">연구회 소개</a>
+    <a href="index.html#network">회원 치과</a>
+    <a href="index.html#visit">첫 방문 안내</a>
+  </nav>
+  <a class="nav-cta" href="index.html#network">가까운 회원 치과</a>
+</header>
+
+<main>
+
+  <!-- 머리글 -->
+  <section class="hero">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">홈</a> › <a href="index.html#symptoms">턱관절 증상</a> › <span>귀 증상</span></div>
+      <h1 aria-label="귀 검사는 정상인데, 계속 먹먹한가요?"><span class="w" style="--i:0">귀 검사는</span> <span class="w" style="--i:1">정상인데,</span><br><span class="w" style="--i:2">계속</span> <span class="w" style="--i:3">먹먹한가요?</span></h1>
+      <p>먹먹한 귀, 웅웅거리는 이명.
+         귀에서 원인을 찾지 못했다면, 다음으로 확인할 곳은 턱입니다.</p>
+    </div>
+  </section>
+
+  <!-- 1. 위치 -->
+  <section>
+    <div class="inner split2">
+      <div>
+        <span class="eyebrow reveal">귀와 턱의 거리</span>
+        <h2 class="sec-title reveal-x">턱관절과 귓구멍은<br>벽 하나 사이입니다</h2>
+        <p class="sec-sub reveal">턱관절은 귓구멍 바로 앞에 붙어 있습니다.
+        손가락을 귓구멍에 살짝 넣고 입을 벌리면, 턱뼈가 움직이는 것이
+        손끝에 그대로 느껴질 정도입니다.</p>
+        <p class="sec-sub reveal" style="margin-top:14px">이렇게 가깝다 보니,
+        관절과 주변 근육에 생긴 문제가 귀의 증상처럼 느껴지는 일이 생깁니다.
+        귀 자체는 멀쩡한데도 그렇습니다.</p>
+      </div>
+      <div class="figbox reveal">
+        <img src="img/anatomy.jpg" alt="얼굴 옆모습과 턱관절 확대 그림">
+        <div class="figcap">귀 바로 앞의 턱관절. 귓구멍과는 얇은 벽을 사이에 두고 붙어 있습니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 어떤 증상 -->
+  <section class="alt">
+    <div class="inner">
+      <span class="eyebrow reveal">증상의 모습</span>
+      <h2 class="sec-title reveal-x">턱과 관련된 귀 증상은<br>이런 모습입니다</h2>
+      <div class="split2" style="margin-top:34px;align-items:start">
+        <div>
+          <p class="sec-sub reveal">아래 증상이 턱 증상(소리, 통증, 아침의 뻣뻣함)과
+          함께 있다면, 턱을 확인해 볼 이유가 커집니다.</p>
+          <ul class="check-list reveal">
+            <li><span class="ck">✓</span>비행기를 탄 것처럼 귀가 먹먹하다</li>
+            <li><span class="ck">✓</span>웅웅, 삐— 하는 이명이 있다</li>
+            <li><span class="ck">✓</span>귀 주변이나 귀 속이 아픈데 귀는 정상이라고 한다</li>
+            <li><span class="ck">✓</span>씹거나 입을 벌릴 때 귀 쪽이 울린다</li>
+            <li><span class="ck">✓</span>턱이 피곤한 날 귀 증상도 심해진다</li>
+          </ul>
+        </div>
+        <div>
+          <div class="figbox reveal">
+            <img src="img/ear-ring.jpg" alt="귀 주변에 울림 표시가 있는 옆얼굴 그림">
+            <div class="figcap">귀 주변의 먹먹함과 울림. 턱이 피곤한 날 심해지는지 살펴보세요.</div>
+          </div>
+          <div class="warn-box reveal">
+            <h3>이런 경우는 이비인후과가 먼저입니다</h3>
+            <p>갑자기 한쪽 귀가 안 들리거나, 어지럼이 함께 오거나,
+            귀에서 분비물이 나오거나 열이 날 때는 귀 자체의 질환부터
+            확인해야 합니다. 이비인후과 진료를 먼저 받으세요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 왜 그런가 -->
+  <section class="dark">
+    <div class="inner">
+      <span class="eyebrow reveal">왜 그런가</span>
+      <h2 class="sec-title reveal-x">귀가 아닌데<br>귀처럼 느껴지는 이유</h2>
+      <p class="sec-sub reveal">턱에서 귀로 이어지는 경로는 세 가지입니다.</p>
+      <div class="locks stagger">
+        <div class="lock"><span class="no">PATH 01</span><h3>맞닿아 있는 자리</h3>
+          <p>관절에 염증이 생기거나 눌리는 힘이 커지면 바로 뒤의 귀 주변까지
+          함께 불편해집니다. 그래서 귀 통증처럼 느껴집니다.</p></div>
+        <div class="lock"><span class="no">PATH 02</span><h3>신경을 같이 쓰는 근육</h3>
+          <p>씹는 근육과 귀 안의 작은 근육은 같은 신경이 맡고 있습니다.
+          턱 근육이 오래 긴장하면 귀가 먹먹해지기도 합니다.</p></div>
+        <div class="lock"><span class="no">PATH 03</span><h3>번져서 느껴지는 통증</h3>
+          <p>턱 근육에 쌓인 긴장은 떨어진 곳에서 아프게 느껴지기도 합니다.
+          귀 속이 아픈 것 같은데 귀는 정상인 경우가 흔히 그렇습니다.</p></div>
+      </div>
+      <div class="now-box reveal">
+        <h3>"귀는 정상"이라는 말을 들었다면</h3>
+        <p><b>귀에서 원인을 찾지 못한 귀 증상</b>은
+        턱을 확인할 차례라는 단서일 수 있습니다.</p>
+        <p style="margin-bottom:0">턱 소리, 씹을 때의 통증, 아침의 뻣뻣함이 함께 있는지 돌아보세요.
+        하나라도 있다면 턱관절 검사가 다음 순서입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 진료 연결 -->
+  <section class="alt">
+    <div class="inner" style="text-align:center">
+      <span class="eyebrow reveal" style="display:block">비슷한 증상이 있다면</span>
+      <h2 class="sec-title reveal">귀에서 답이 없었다면,<br>턱에서 찾아보세요</h2>
+      <p class="sec-sub reveal" style="margin:0 auto">가까운 회원 치과에서 턱관절과 씹는 근육을
+      확인해 보세요. 턱과 무관해 보이면 그에 맞는 진료과를 안내합니다.</p>
+      <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a class="btn btn-green" href="index.html#network">가까운 회원 치과 찾기</a>
+        <a class="btn btn-line" href="index.html#visit">첫 방문에서 하는 일 보기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <span>MEAW 턱관절 연구회</span>
+    <a href="index.html">← 홈으로</a>
+    <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal,.reveal-x,.stagger').forEach(el => io.observe(el));
+const pbar = document.getElementById('pbar');
+const hdr = document.querySelector('header');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (!ticking){ requestAnimationFrame(() => {
+    const y = scrollY, h = innerHeight;
+    pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
+    hdr.classList.toggle('scrolled', y > 40);
+    ticking = false; }); ticking = true; }
+}, {passive:true});
+</script>
+</body>
+</html>

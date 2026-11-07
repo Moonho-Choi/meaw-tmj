@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>턱 소리와 잠김 — MEAW 턱관절 연구회</title>
+<meta name="description" content="턱에서 나는 딸깍 소리, 입이 잠기는 증상의 원리와 대처를 안내합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --dark:#142931;--dark2:#0F1E24;--panel:#1B3641;
+  --green:#7AC142;--green-soft:#A5D878;--green-deep:#3E7D22;
+  --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
+  --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
+  --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
+  --sans:"Wanted Sans Variable","Wanted Sans","Pretendard Variable",Pretendard,sans-serif;
+  --latin:'Outfit',sans-serif;--maxw:1180px;--r:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.8;letter-spacing:-.008em;word-break:keep-all;overflow-x:hidden}
+::selection{background:var(--green);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.032em}
+
+/* 상단 메뉴 (메인과 동일) */
+header{position:fixed;inset:0 0 auto 0;z-index:90;height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 clamp(18px,3.4vw,44px);
+  background:rgba(20,41,49,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-d);color:#fff;transition:height .3s,box-shadow .3s}
+header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
+.logo{display:flex;align-items:baseline;gap:9px;flex-shrink:0}
+.logo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.logo b i{font-style:normal;color:var(--green)}
+.logo span{font-size:13px;color:var(--muted-d)}
+nav{display:flex;align-items:center;gap:clamp(4px,1vw,10px);font-size:14.5px}
+nav a{display:flex;align-items:center;padding:10px 12px;border-radius:8px;color:#E6EEF0;transition:.2s}
+nav a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{background:var(--green);color:#0E2010;font-weight:700;font-size:14px;
+  border-radius:9px;padding:11px 18px;transition:.2s;flex-shrink:0}
+.nav-cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+#pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:99;
+  background:linear-gradient(90deg,var(--green),#56E39F);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 공통 */
+section{padding:clamp(72px,10vh,116px) clamp(18px,3.4vw,44px);position:relative}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--green-deep);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--green)}
+.sec-title{font-weight:700;font-size:clamp(24px,3.1vw,38px);line-height:1.38;margin-bottom:16px}
+.sec-sub{max-width:64ch;color:var(--muted);font-size:16.5px}
+.dark{background:var(--dark);color:#EDF3F2}
+.dark .sec-sub{color:var(--muted-d)}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:15px;font-weight:600;transition:.22s}
+.btn-green{background:var(--green);color:#0E2010;font-weight:700}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,193,66,.32)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--muted)}
+.dark .check-list li{color:var(--muted-d)}
+.check-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:3px;
+  border:1.5px solid var(--green);color:var(--green-deep);
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.dark .check-list .ck{color:var(--green)}
+
+/* 머리글 */
+.hero{background:linear-gradient(180deg,var(--dark) 0%,#122630 100%);color:#fff;
+  padding-top:168px;padding-bottom:76px}
+.hero .crumb{font-size:13.5px;color:var(--muted-d);margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.hero .crumb a:hover{color:var(--green)}
+.hero h1{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.3}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em);filter:blur(7px);
+  animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.hero p{margin-top:18px;max-width:58ch;color:#B9C9CE;opacity:0;animation:rise 1s ease .5s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* 구조 구역 */
+.split2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.figbox img,.figbox video{width:100%}
+.figcap{font-size:13px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);background:#fff}
+
+/* 소리 구역: 영상 2개 비교 */
+.vid-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0 10px}
+.vid-pair .figbox{position:relative}
+.vtag{position:absolute;bottom:12px;left:12px;z-index:2;font-size:12.5px;font-weight:700;
+  padding:5px 12px;border-radius:999px;background:rgba(20,41,49,.85);color:#fff}
+.vtag.good{background:var(--green);color:#0E2010}
+
+/* 잠김 3카드 */
+.locks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.lock{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:var(--r);padding:30px 26px;transition:.3s}
+.lock:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.lock .no{font-family:var(--latin);font-weight:300;font-size:15px;letter-spacing:.14em;color:var(--green);margin-bottom:12px;display:block}
+.lock h3{font-size:18.5px;font-weight:700;margin-bottom:10px}
+.lock p{font-size:14.8px;line-height:1.75;color:var(--muted-d)}
+.lock .u{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:#FFC94A}
+.now-box{margin-top:26px;background:rgba(122,193,66,.1);border:1px solid rgba(122,193,66,.35);
+  border-radius:var(--r);padding:26px clamp(20px,3vw,34px)}
+.now-box h3{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--green)}
+.now-box p{font-size:15px;color:#D9E4E2;margin-bottom:10px}
+.now-box b{color:#fff}
+
+/* 변화 구역 */
+.habit-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+
+/* 등장 효과 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-x{opacity:0;transform:translateX(-46px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal-x.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(2){transition-delay:.09s}
+.stagger.in > *:nth-child(3){transition-delay:.18s}
+
+/* 푸터 */
+footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4vw,44px) 28px}
+.foot-bar{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#6E838B}
+.foot-bar a:hover{color:var(--green)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .split2,.vid-pair{grid-template-columns:1fr}
+  .locks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+<div id="pbar" aria-hidden="true"></div>
+
+<header>
+  <a class="logo" href="index.html"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="index.html#symptoms">턱관절 증상</a>
+    <a href="index.html#approach">치료 안내</a>
+    <a href="index.html#about">연구회 소개</a>
+    <a href="index.html#network">회원 치과</a>
+    <a href="index.html#visit">첫 방문 안내</a>
+  </nav>
+  <a class="nav-cta" href="index.html#network">가까운 회원 치과</a>
+</header>
+
+<main>
+
+  <!-- 머리글 -->
+  <section class="hero">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">홈</a> › <a href="index.html#symptoms">턱관절 증상</a> › <span>턱 소리와 잠김</span></div>
+      <h1 aria-label="턱에서 소리가 나거나, 입이 잠겼나요?"><span class="w" style="--i:0">턱에서</span> <span class="w" style="--i:1">소리가</span> <span class="w" style="--i:2">나거나,</span><br><span class="w" style="--i:3">입이</span> <span class="w" style="--i:4">잠겼나요?</span></h1>
+      <p>딸깍 소리, 걸리는 느낌, 어느 날 갑자기 안 벌어지는 입.
+         왜 그런지, 언제 진료가 필요한지 차근차근 설명합니다.</p>
+    </div>
+  </section>
+
+  <!-- 1. 구조 -->
+  <section>
+    <div class="inner split2">
+      <div>
+        <span class="eyebrow reveal">턱관절의 구조</span>
+        <h2 class="sec-title reveal-x">귀 바로 앞,<br>작은 관절에서 생기는 일</h2>
+        <p class="sec-sub reveal">턱관절은 귀 바로 앞에 있습니다. 아래턱뼈와 머리뼈 사이에는
+        <b>디스크</b>라고 부르는 물렁한 완충판이 끼어 있어, 입을 벌리고 다물 때
+        뼈끼리 부딪히지 않게 해 줍니다.</p>
+        <p class="sec-sub reveal" style="margin-top:14px">턱에서 나는 소리와 잠김의 많은 부분이
+        이 디스크의 움직임과 관련되어 있습니다. 다만 모든 소리와 잠김이
+        디스크 때문은 아니어서, 검사로 구분하는 과정이 필요합니다.</p>
+      </div>
+      <div class="figbox reveal">
+        <img src="img/anatomy.jpg" alt="얼굴 옆모습과 턱관절 확대 그림">
+        <div class="figcap">귀 앞의 턱관절. 동그라미 안이 관절을 확대한 모습으로, 뼈 사이의 회색 판이 디스크입니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 소리 -->
+  <section class="alt">
+    <div class="inner">
+      <span class="eyebrow reveal">딸깍 소리의 원리</span>
+      <h2 class="sec-title reveal-x">소리가 나는 턱,<br>안 나는 턱</h2>
+      <p class="sec-sub reveal">디스크가 제자리에서 살짝 밀려나 있으면, 입을 벌릴 때
+      턱뼈가 디스크에 올라탔다가 내려오면서 <b>딸깍</b> 소리가 납니다.
+      아래 두 움직임을 비교해 보세요.</p>
+      <div class="vid-pair stagger">
+        <div class="figbox">
+          <span class="vtag good">정상</span>
+          <video src="img/open-normal.mp4" autoplay loop muted playsinline></video>
+          <div class="figcap">디스크가 턱뼈 위에 얹힌 채 부드럽게 함께 움직입니다.</div>
+        </div>
+        <div class="figbox">
+          <span class="vtag">딸깍 소리</span>
+          <video src="img/open-click.mp4" autoplay loop muted playsinline></video>
+          <div class="figcap">밀려난 디스크(붉게 표시)에 턱뼈가 올라탈 때 "딱" 하고 걸립니다.</div>
+        </div>
+      </div>
+      <div class="split2" style="margin-top:40px">
+        <div>
+          <h3 style="font-size:19px;font-weight:700;margin-bottom:8px" class="reveal">소리만 나면 지켜봐도 됩니다</h3>
+          <p class="sec-sub reveal">소리가 있어도 아프지 않고 잘 벌어진다면, 당장 치료가
+          필요하지 않은 경우도 많습니다. 다만 아래와 같을 때는 진료로 확인하는 것이 좋습니다.</p>
+          <ul class="check-list reveal">
+            <li><span class="ck">✓</span>소리와 함께 아프기 시작했을 때</li>
+            <li><span class="ck">✓</span>걸리거나 잠기는 느낌이 함께 올 때</li>
+            <li><span class="ck">✓</span>입이 전보다 덜 벌어질 때</li>
+            <li><span class="ck">✓</span>소리가 잦아지거나 양상이 달라질 때</li>
+            <li><span class="ck">✓</span>먹거나 말하기가 불편해질 때</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:19px;font-weight:700;margin-bottom:8px" class="reveal">"사각사각" 갈리는 소리라면</h3>
+          <p class="sec-sub reveal">모래 갈리듯 거친 소리는 딸깍 소리와 성격이 다릅니다.
+          관절 면의 변화와 관련될 수 있어서, 진료는 소리의 종류를 구분하는 데서 시작합니다.</p>
+          <p class="sec-sub reveal" style="margin-top:14px">어떤 소리든 소리만으로 진단하지는 않습니다.
+          통증, 뻣뻣함, 물리는 느낌의 변화, 벌리기 어려움을 함께 살펴서 판단합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 잠김 -->
+  <section class="dark">
+    <div class="inner">
+      <span class="eyebrow reveal">입이 잠겼을 때</span>
+      <h2 class="sec-title reveal-x">"잠겼다"에도<br>세 가지가 있습니다</h2>
+      <p class="sec-sub reveal">비슷하게 느껴져도 원인과 대처가 다릅니다. 어느 쪽인지는 검사로 구분합니다.</p>
+      <div class="locks stagger">
+        <div class="lock"><span class="no">LOCK 01</span><h3>닫힌 잠김</h3>
+          <p>밀려난 디스크가 제자리로 돌아오지 못해, 입이 어느 선 이상 벌어지지 않는 상태입니다.
+          억지로 벌리면 아플 수 있습니다.</p></div>
+        <div class="lock"><span class="no">LOCK 02</span><h3>근육성 제한</h3>
+          <p>디스크가 아니라 근육이 뭉치거나 아파서 입이 덜 벌어지는 경우입니다.
+          느낌은 잠김과 비슷해서 검사로 구분합니다.</p></div>
+        <div class="lock"><span class="no">LOCK 03</span><h3>열린 잠김</h3>
+          <p>입이 벌어진 채 다물어지지 않는 상태입니다. 잠깐 걸렸다 스스로 돌아오기도 하지만,
+          계속되면 바로 진료가 필요합니다.<span class="u" style="display:block">⚠ 다물어지지 않으면 미루지 마세요</span></p></div>
+      </div>
+      <div class="now-box reveal">
+        <h3>지금 턱이 잠겨 있다면</h3>
+        <p><b>입이 닫힌 채 안 벌어진다면</b> 억지로 벌리지 마세요. 따뜻한 찜질을 하고 턱을 쉬게 한 뒤,
+        풀리지 않으면 가까운 회원 치과에 연락해 주세요.</p>
+        <p style="margin-bottom:0"><b>입이 벌어진 채 다물어지지 않는다면</b> 기다리지 말고 바로 진료를 받으셔야 합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 변화 패턴 -->
+  <section>
+    <div class="inner split2">
+      <div class="habit-img reveal"><img src="img/habit.jpg" alt="턱을 괴고 있는 사람"></div>
+      <div>
+        <span class="eyebrow reveal">증상의 흐름</span>
+        <h2 class="sec-title reveal-x">증상은 시기에 따라<br>달라집니다</h2>
+        <p class="sec-sub reveal">턱 증상은 한결같지 않습니다. 평소에는 괜찮다가
+        어느 시기에 더 아프고, 더 안 벌어지기도 합니다. 보통 아래 요인과 함께 움직입니다.</p>
+        <ul class="check-list reveal">
+          <li><span class="ck">✓</span>이 악물기, 이갈이</li>
+          <li><span class="ck">✓</span>스트레스와 근육 긴장</li>
+          <li><span class="ck">✓</span>오래 말하거나 질긴 것을 오래 씹는 일</li>
+          <li><span class="ck">✓</span>수면의 질</li>
+          <li><span class="ck">✓</span>목의 통증과 긴장</li>
+        </ul>
+        <p class="sec-sub reveal">증상이 달라졌다고 원인이 바뀐 것은 아닙니다.
+        시간에 따른 흐름을 함께 보면, 무엇이 영향을 주는지 가늠하는 데 도움이 됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 진료 연결 -->
+  <section class="alt">
+    <div class="inner" style="text-align:center">
+      <span class="eyebrow reveal" style="display:block">비슷한 증상이 있다면</span>
+      <h2 class="sec-title reveal">혼자 가늠하기 어렵다면,<br>검사로 확인하는 것이 빠릅니다</h2>
+      <p class="sec-sub reveal" style="margin:0 auto">소리의 종류, 잠김의 종류에 따라 대처가 달라집니다.
+      가까운 회원 치과에서 같은 순서의 검사를 받아 보세요.</p>
+      <div class="reveal" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a class="btn btn-green" href="index.html#network">가까운 회원 치과 찾기</a>
+        <a class="btn btn-line" href="index.html#visit">첫 방문에서 하는 일 보기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <span>MEAW 턱관절 연구회</span>
+    <a href="index.html">← 홈으로</a>
+    <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal,.reveal-x,.stagger').forEach(el => io.observe(el));
+const pbar = document.getElementById('pbar');
+const hdr = document.querySelector('header');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (!ticking){ requestAnimationFrame(() => {
+    const y = scrollY, h = innerHeight;
+    pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
+    hdr.classList.toggle('scrolled', y > 40);
+    ticking = false; }); ticking = true; }
+}, {passive:true});
+</script>
+</body>
+</html>
