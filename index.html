@@ -493,16 +493,16 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 
 /* ── 대문 배경: 겹 그라데이션 + MEAW 워터마크 ── */
 .hero{background:
-  radial-gradient(880px 580px at 86% 16%, rgba(36,147,184,.15), transparent 62%),
-  radial-gradient(720px 520px at 6% 88%, rgba(47,107,90,.09), transparent 62%),
+  radial-gradient(880px 580px at 86% 16%, rgba(36,147,184,.22), transparent 62%),
+  radial-gradient(720px 520px at 6% 88%, rgba(47,107,90,.13), transparent 62%),
   linear-gradient(163deg,#F6FCFD 0%,#E2F1F6 52%,#CEE6EF 100%)}
-.hero-word{position:absolute;right:-2%;top:2%;z-index:0;line-height:1;
+.hero-word{position:absolute;right:-2%;top:40%;z-index:0;line-height:1;
   font-family:var(--latin);font-weight:800;font-size:clamp(130px,23vw,330px);letter-spacing:.03em;
-  color:transparent;-webkit-text-stroke:1.5px rgba(23,109,140,.11);
+  color:transparent;-webkit-text-stroke:1.5px rgba(23,109,140,.20);
   user-select:none;pointer-events:none;
   opacity:0;animation:glowin 2.2s ease .9s forwards,worddrift 22s ease-in-out 3s infinite alternate}
 @keyframes worddrift{to{transform:translateX(-26px)}}
-@media (max-width:860px){.hero-word{top:1%;right:-6%}}
+@media (max-width:860px){.hero-word{top:60%;right:-6%}}
 @media (prefers-reduced-motion: reduce){.hero-word{animation:none;opacity:1}}
 </style>
 </head>
