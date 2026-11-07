@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>MEAW 턱관절 연구회</title>
@@ -370,6 +371,35 @@ header.scrolled{box-shadow:0 10px 30px rgba(20,41,49,.10)}
 .ghost{-webkit-text-stroke-color:rgba(20,41,49,.07)}
 footer{background:var(--dark2)}
 .band{background:var(--dark2)}
+
+/* ── 로고 글자꼴 강화(v2): MEAW 원형 유지, 한글을 크고 두껍게 ── */
+.logo{gap:10px}
+.logo span{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+
+/* ── 머리띠 중앙 제목형 + M 심벌 ── */
+header{height:auto;flex-direction:column;justify-content:center;gap:9px;
+  padding:14px clamp(18px,3.4vw,44px) 11px}
+header.scrolled{height:auto}
+.logo{gap:22px;align-items:center}
+.logo img.mark{height:48px;width:auto;display:block}
+.logo b{font-size:33px}
+.logo span{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-left:-13px}
+.nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
+.hero{padding-top:215px}
+@media (max-width:860px){
+  .logo img.mark{height:34px}
+  .logo b{font-size:23px}
+  .logo span{font-size:21px}
+  .nav-cta{font-size:12.5px;padding:8px 11px}
+  .hero{padding-top:150px}
+}
+@media (max-width:620px){
+  .nav-cta{display:none}
+}
+
+/* ── 단추만 세이지그린(링크·포인트는 물색 유지) ── */
+.nav-cta{background:#2F6B5A;color:#fff}
+.btn-green{background:#2F6B5A;color:#fff}
 </style>
 </head>
 <body>
@@ -377,7 +407,7 @@ footer{background:var(--dark2)}
 <div id="pbar" aria-hidden="true"></div>
 
 <header>
-  <a class="logo" href="#top"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <a class="logo" href="#top"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
   <nav aria-label="주 메뉴">
     <div class="nav-item">
       <a href="#symptoms">턱관절 증상 <span class="car">▼</span></a>
