@@ -209,6 +209,16 @@ header.scrolled{height:auto}
 .picto-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
 .picto-row .figbox{display:flex;flex-direction:column}
 .picto-row img.picto{flex:1;min-height:0}
+
+/* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
+:root{--accent:#D97757;--accent-deep:#BC5B3C}
+.eyebrow{color:var(--accent-deep)}
+.dark .eyebrow{color:#E9A184}
+.check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
+.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.lock .no{color:var(--accent)}
+.dark .lock .no{color:#E9A184}
+.alt{background:#F8F4EB}
 </style>
 </head>
 <body>

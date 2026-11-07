@@ -202,6 +202,16 @@ header.scrolled{height:auto}
 /* ── 단추만 세이지그린(링크·포인트는 물색 유지) ── */
 .nav-cta{background:#2F6B5A;color:#fff}
 .btn-green{background:#2F6B5A;color:#fff}
+
+/* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
+:root{--accent:#D97757;--accent-deep:#BC5B3C}
+.eyebrow{color:var(--accent-deep)}
+.dark .eyebrow{color:#E9A184}
+.check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
+.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.lock .no{color:var(--accent)}
+.dark .lock .no{color:#E9A184}
+.alt{background:#F8F4EB}
 </style>
 </head>
 <body>
