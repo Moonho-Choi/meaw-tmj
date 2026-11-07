@@ -504,6 +504,22 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 @keyframes worddrift{to{transform:translateX(-26px)}}
 @media (max-width:860px){.hero-word{top:60%;right:-6%}}
 @media (prefers-reduced-motion: reduce){.hero-word{animation:none;opacity:1}}
+
+/* ── 색 변주 v1: 따뜻한 악센트 + 구역 틴트 ── */
+:root{--accent:#D97757;--accent-deep:#BC5B3C}
+.eyebrow{color:var(--accent-deep)}
+.dark .eyebrow{color:#E9A184}
+.hero .eyebrow{color:var(--accent-deep)}
+.hero .eyebrow::before{background:var(--accent)}
+.check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
+.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.step .no{color:var(--accent)}
+.pillar .gm::after{background:var(--accent)}
+.faq summary::after{color:var(--accent-deep)}
+.tint-cream{background:#FBF6ED}
+.tint-mint{background:#ECF6F0}
+.tint-gray{background:#F0F4F8}
+.tint-sand{background:#F8F1EA}
 </style>
 </head>
 <body>
@@ -653,7 +669,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
   </section>
 
   <!-- 5. 진료 과정 -->
-  <section id="visit">
+  <section id="visit" class="tint-cream">
     <div class="inner">
       <span class="eyebrow reveal">CLINICAL PROTOCOL</span>
       <h2 class="sec-title reveal-x">진료 절차</h2>
@@ -675,7 +691,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
   </div>
 
   <!-- 6. 회원 치과 -->
-  <section class="alt" id="network">
+  <section class="tint-mint" id="network">
     <span class="ghost lite" aria-hidden="true">NETWORK</span>
     <div class="inner">
       <span class="eyebrow reveal">회원 치과</span>
@@ -708,7 +724,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
   </section>
 
   <!-- 8. FAQ -->
-  <section>
+  <section class="tint-gray">
     <div class="inner">
       <span class="eyebrow reveal" style="text-align:center;display:block">FAQ</span>
       <h2 class="sec-title reveal-x" style="text-align:center">자주 묻는 질문</h2>
@@ -734,7 +750,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
   </section>
 
   <!-- 9. 안내 글 -->
-  <section class="alt">
+  <section class="tint-sand">
     <div class="inner">
       <span class="eyebrow reveal">PUBLICATIONS</span>
       <h2 class="sec-title reveal-x">증상·치료 안내</h2>
