@@ -380,18 +380,21 @@ footer{background:var(--dark2)}
 header{height:auto;flex-direction:column;justify-content:center;gap:9px;
   padding:14px clamp(18px,3.4vw,44px) 11px}
 header.scrolled{height:auto}
-.logo{gap:22px;align-items:center}
-.logo img.mark{height:48px;width:auto;display:block}
-.logo b{font-size:33px}
-.logo span{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-left:-13px}
+.logo{gap:24px;align-items:center}
+.logo img.mark{height:58px;width:auto;display:block}
+.logo b{font-size:41px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-16px}
 .nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
-.hero{padding-top:215px}
+.hero{padding-top:230px}
 @media (max-width:860px){
-  .logo img.mark{height:34px}
-  .logo b{font-size:23px}
-  .logo span{font-size:21px}
+  .logo{gap:14px}
+  .logo img.mark{height:42px}
+  .logo b{font-size:29px}
+  .logo span{font-size:26px;margin-left:-11px}
   .nav-cta{font-size:12.5px;padding:8px 11px}
-  .hero{padding-top:150px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  .nav-item > a{padding:7px 9px}
+  .hero{padding-top:205px}
 }
 @media (max-width:620px){
   .nav-cta{display:none}
@@ -449,7 +452,7 @@ header.scrolled{height:auto}
     <div class="inner">
       <div>
         <span class="eyebrow">MEAW 턱관절 연구회 · 치과의사 임상 연구 모임</span>
-        <h1 aria-label="턱관절 질환의 진단과 치료를 연구합니다"><span class="w" style="--i:0">턱관절</span> <span class="w" style="--i:1">질환의</span><br><span class="w" style="--i:2"><em>진단과 치료</em>를</span> <span class="w" style="--i:3">연구합니다</span></h1>
+        <h1 aria-label="턱, 얼굴, 머리의 통증에 분명한 답을 찾습니다"><span class="w" style="--i:0">턱,</span> <span class="w" style="--i:1">얼굴,</span> <span class="w" style="--i:2">머리의</span> <span class="w" style="--i:3">통증에</span><br><span class="w" style="--i:4"><em>분명한 답</em>을</span> <span class="w" style="--i:5">찾습니다</span></h1>
         
         <div class="cta-row">
           <a class="btn btn-green" href="#symptoms">증상 안내</a>
