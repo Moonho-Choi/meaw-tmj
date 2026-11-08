@@ -210,19 +210,110 @@ header.scrolled{height:auto}
 .lock .no{color:var(--accent)}
 .dark .lock .no{color:#E9A184}
 .alt{background:#F8F4EB}
+
+/* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
+html{scroll-padding-top:96px}
+.logo b i.mm{font-style:normal;color:var(--green-deep)}
+.logo-sub{display:block;text-align:center;font-family:var(--latin);font-size:12.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
+header nav{width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px;margin-top:3px}
+.nav-item{position:relative}
+.nav-item > a{display:flex;align-items:center;gap:5px;padding:10px 12px;border-radius:8px;color:var(--ink);transition:.2s}
+.nav-item > a:hover{background:var(--bg2)}
+.nav-item .car{font-size:10px;color:var(--muted);transition:transform .25s}
+.nav-item:hover .car{transform:rotate(180deg)}
+.drop{position:absolute;top:100%;left:0;min-width:270px;padding:10px;background:#fff;color:var(--ink);border-radius:14px;
+  box-shadow:0 18px 50px rgba(15,30,36,.22);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .22s,transform .22s,visibility .22s;z-index:5}
+.nav-item:hover .drop,.nav-item:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:9px 13px;border-radius:9px;font-size:14px;color:#2A3942;transition:.15s}
+.drop a:hover{background:var(--bg2);color:var(--green-deep)}
+
+/* 대비 보정: 산호 글자색 통일 */
+:root{--accent-text:#A14E2F}
+.eyebrow,.dark .eyebrow{color:var(--accent-text)}
+.check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
+.lock .no,.dark .lock .no{color:var(--accent-text)}
+
+/* 글자 크기 단계 정리 */
+.hero .crumb{font-size:13px}
+.hero .crumb a{display:inline-block;padding:6px 4px;margin:-6px -4px}
+.pair .cell p,.lock p{font-size:14.5px}
+.pair .cell h3,.lock h3{font-size:18px}
+.figcap{font-size:13px}
+
+/* 내리면 머리띠가 한 줄로 줄어듦 */
+header{transition:padding .25s,box-shadow .3s}
+.logo img.mark,.logo b,.logo span{transition:height .25s,font-size .25s}
+header.scrolled{flex-direction:row;justify-content:space-between;gap:12px;padding:7px clamp(18px,3.4vw,44px)}
+header.scrolled .logo{gap:10px}
+header.scrolled .logo img.mark{height:30px}
+header.scrolled .logo b{font-size:21px}
+header.scrolled .logo span{font-size:19px;margin-left:-6px}
+header.scrolled .logo-sub{display:none}
+header.scrolled nav{width:auto;border-top:none;padding-top:0;margin-top:0}
+header.scrolled .nav-cta{position:static;transform:none}
+@media (max-width:900px){
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  .nav-item > a{padding:10px 11px}
+}
+@media (max-width:860px){
+  header.scrolled{flex-direction:column;gap:0;padding:4px clamp(18px,3.4vw,44px)}
+  header.scrolled .logo{display:none}
+  header.scrolled nav{padding-top:2px}
+  html{scroll-padding-top:70px}
+}
+
+/* 등장 연출이 늦어도 3초 뒤에는 글이 보이게 */
+.anim-done .hero h1 .w,.anim-done .hero p{opacity:1;transform:none;filter:none;animation:none}
+
+/* ── 검수 반영 v2 (2026-11-09): 상급 의료 사이트 비교 — 본문 키움·제목 굵기 ── */
+body{font-size:17px}
+.sec-sub{font-size:17.5px}
+.hero h1{font-weight:600}
+.sec-title{font-weight:600}
+.pair .cell p,.lock p{font-size:15.5px}
+.pair .cell h3,.lock h3{font-size:18.5px}
+.check-list li{font-size:16px}
+.now-box p{font-size:16px}
+.drop a{font-size:14.5px}
+.foot p,.foot ul{font-size:14.5px}
 </style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
 
 <header>
-  <a class="logo" href="index.html"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <a class="logo" href="index.html"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
+  <span class="logo-sub">MEAW TMJ Research Society</span>
   <nav aria-label="주 메뉴">
-    <a href="index.html#symptoms">턱관절 증상</a>
-    <a href="index.html#approach">치료 안내</a>
-    <a href="index.html#about">연구회 소개</a>
-    <a href="index.html#network">회원 치과</a>
-    <a href="index.html#visit">첫 방문 안내</a>
+    <div class="nav-item"><a href="index.html#about">연구회 소개</a></div>
+    <div class="nav-item">
+      <a href="index.html#symptoms">턱관절 증상 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="sym-pain.html">턱 통증</a>
+        <a href="sym-lock.html">관절음과 개구장애</a>
+        <a href="index.html#symptoms">만성 통증</a>
+        <a href="sym-head.html">두통</a>
+        <a href="sym-grind.html">이갈이와 이 악물기</a>
+        <a href="index.html#symptoms">안면 통증</a>
+        <a href="sym-ear.html">귀 증상</a>
+        <a href="index.html#symptoms">코골이와 수면</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="index.html#approach">치료 안내 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="index.html#approach">정밀 진단과 검사</a>
+        <a href="index.html#approach">장치(스플린트) 치료</a>
+        <a href="index.html#approach">근육 치료</a>
+        <a href="index.html#approach">교합 치료와 교정 연계</a>
+        <a href="index.html#approach">물리치료적 접근</a>
+        <a href="index.html#approach">수면 관련 치료</a>
+        <a href="index.html#approach">생활 습관 교정</a>
+        <a href="index.html#approach">타 과 협진</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="index.html#network">회원 치과</a></div>
   </nav>
   <a class="nav-cta" href="index.html#about">연구회 소개</a>
 </header>
@@ -354,5 +445,6 @@ addEventListener('scroll', () => {
     ticking = false; }); ticking = true; }
 }, {passive:true});
 </script>
+<script>setTimeout(()=>document.documentElement.classList.add("anim-done"),3000)</script>
 </body>
 </html>
