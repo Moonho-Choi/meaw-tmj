@@ -383,14 +383,14 @@ header.scrolled{height:auto}
 .logo{gap:24px;align-items:center}
 .logo img.mark{height:58px;width:auto;display:block}
 .logo b{font-size:41px}
-.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-5px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-10px}
 .nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
 .hero{padding-top:230px}
 @media (max-width:860px){
   .logo{gap:14px}
   .logo img.mark{height:42px}
   .logo b{font-size:29px}
-  .logo span{font-size:26px;margin-left:-3px}
+  .logo span{font-size:26px;margin-left:-7px}
   .nav-cta{font-size:12.5px;padding:8px 11px}
   nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
   .nav-item > a{padding:7px 9px}
@@ -528,6 +528,16 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
   animation:glowin 2s ease .9s forwards, wordslide 46s linear 1.2s infinite}
 @keyframes wordslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion: reduce){.hero-word{animation:none;opacity:1}}
+
+/* ── 대문 얼굴: 정면을 측면 뒤에 옅게 겹침 ── */
+.face{animation:draw 3.1s cubic-bezier(.6,.05,.3,1) .5s forwards;z-index:2}
+.face-front{-webkit-mask-image:none;mask-image:none;z-index:1;opacity:0;
+  transform:translateX(-30%) scale(.92);transform-origin:bottom center;
+  animation:faceghost 1.8s ease 2.8s forwards}
+@keyframes faceghost{to{opacity:.2}}
+@media (prefers-reduced-motion: reduce){
+  .face-front{animation:none;opacity:.2}
+}
 </style>
 </head>
 <body>
@@ -592,7 +602,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
           <path class="arc a2" d="M20,160 C140,200 320,110 480,170 C540,192 570,180 600,190"/>
           <path class="arc a3" d="M0,540 C150,520 260,430 380,440 C480,448 540,500 600,490"/>
         </svg>
-        <div class="face-wrap"><img class="face" src="img/face-line.png" alt="">
+        <div class="face-wrap"><img class="face" src="img/face-line.png" alt=""><img class="face face-front" src="img/face-front.png" alt="">
         <div class="tmj-ping"><i></i><i></i><b></b></div></div>
       </div>
     </div>
