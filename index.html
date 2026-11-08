@@ -383,14 +383,14 @@ header.scrolled{height:auto}
 .logo{gap:24px;align-items:center}
 .logo img.mark{height:58px;width:auto;display:block}
 .logo b{font-size:41px}
-.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-16px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-5px}
 .nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
 .hero{padding-top:230px}
 @media (max-width:860px){
   .logo{gap:14px}
   .logo img.mark{height:42px}
   .logo b{font-size:29px}
-  .logo span{font-size:26px;margin-left:-11px}
+  .logo span{font-size:26px;margin-left:-3px}
   .nav-cta{font-size:12.5px;padding:8px 11px}
   nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
   .nav-item > a{padding:7px 9px}
@@ -521,6 +521,8 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .tint-gray{background:#F0F4F8}
 .tint-sand{background:#F8F1EA}
 
+.logo b i.mm{font-style:normal;color:var(--green-deep)}
+
 /* ── MEAW 띠: 무한 슬라이딩 ── */
 .hero-word{display:flex;gap:.55em;left:0;right:auto;width:max-content;
   animation:glowin 2s ease .9s forwards, wordslide 46s linear 1.2s infinite}
@@ -533,7 +535,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 <div id="pbar" aria-hidden="true"></div>
 
 <header>
-  <a class="logo" href="#top"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b>MEA<i>W</i></b><span>턱관절 연구회</span></a>
+  <a class="logo" href="#top"><img class="mark" src="img/m-mark.png" alt="MEAW 심벌"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
   <span class="logo-sub">MEAW TMJ Research Society</span>
   <nav aria-label="주 메뉴">
     <div class="nav-item"><a href="#about">연구회 소개</a></div>
