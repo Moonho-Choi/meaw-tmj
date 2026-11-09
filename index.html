@@ -175,8 +175,8 @@ header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
 .cta-center{display:flex;gap:12px;flex-wrap:wrap}
 
 /* ───── 연결 구역 (도해 · 스크롤 고정 연출) ───── */
-.connect-wrap{padding:0;height:260vh}
-.connect-sticky{position:sticky;top:0;min-height:100svh;display:flex;align-items:center;padding:100px clamp(18px,3.4vw,44px) 60px}
+.connect-wrap{padding:0}
+.connect-sticky{padding:76px clamp(18px,3.4vw,44px)}
 .connect-sticky .inner{width:100%}
 .connect .inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,70px);align-items:center}
 .anat{position:relative;height:min(68svh,600px);min-height:420px;display:flex;align-items:center;justify-content:center}
@@ -276,8 +276,12 @@ header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
 /* ───── 푸터 ───── */
 footer{background:var(--dark2);color:var(--muted-d);padding:60px clamp(18px,3.4vw,44px) 30px}
 .foot{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-bottom:36px;border-bottom:1px solid var(--line-d)}
-.foot b{font-family:var(--latin);font-weight:600;font-size:19px;color:#fff}
-.foot b i{font-style:normal;color:var(--green)}
+.flogo{display:flex;align-items:center;gap:10px}
+.flogo img{height:30px;width:auto;display:block}
+.foot b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.foot b i{font-style:normal;color:var(--green-soft)}
+.foot b i.mm{color:var(--green)}
+.flogo span{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-left:-4px}
 .foot p{font-size:14px;line-height:1.8;margin-top:12px;max-width:40ch}
 .foot h4{font-size:13.5px;font-weight:700;color:#D7E2E0;margin-bottom:14px;letter-spacing:.08em}
 .foot ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px}
@@ -863,7 +867,7 @@ body{font-size:17px}
 <footer>
   <div class="foot">
     <div>
-      <b>MEA<i>W</i></b><span style="font-size:13px"> 턱관절 연구회</span>
+      <div class="flogo"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></div>
       <p>턱관절과 교합을 연구하는 치과의사 임상 연구회입니다. 월례 증례 세미나를 통해 공통 진료 기준을 정립합니다.</p>
     </div>
     <div>
@@ -900,7 +904,6 @@ const wash = document.getElementById('wash');
 const pbar = document.getElementById('pbar');
 const hdr  = document.querySelector('header');
 const secs = [...document.querySelectorAll('main > section')];
-const cw   = document.querySelector('.connect-wrap');
 const pins = [...document.querySelectorAll('.pin')];
 const ghosts = [...document.querySelectorAll('.ghost')];
 const tone = el =>
@@ -908,6 +911,15 @@ const tone = el =>
   (el.classList.contains('alt') || el.classList.contains('connect-wrap')) ? '#EFF3F4' : '#F7F9FA';
 let lastSec = null, ticking = false;
 if (simple) pins.forEach(p => p.classList.add('on'));
+else if (pins.length){
+  const pio = new IntersectionObserver(es => {
+    if (es.some(e => e.isIntersecting)){
+      pins.forEach((p, i) => setTimeout(() => p.classList.add('on'), 350 + i * 550));
+      pio.disconnect();
+    }
+  }, {threshold:.35});
+  pio.observe(pins[0].parentElement);
+}
 
 function onScroll(){
   const y = scrollY, h = innerHeight, mid = y + h * .55;
@@ -916,10 +928,6 @@ function onScroll(){
   if (cur && cur !== lastSec){ lastSec = cur; wash.style.backgroundColor = tone(cur); }
   pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
   hdr.classList.toggle('scrolled', y > 40);
-  if (cw && !simple){
-    const p = Math.min(1, Math.max(0, (y - cw.offsetTop) / (cw.offsetHeight - h)));
-    pins.forEach((pin, i) => pin.classList.toggle('on', p > (i + 1) * .2));
-  }
   ghosts.forEach(g => {
     const r = g.parentElement.getBoundingClientRect();
     g.style.transform = 'translateX(' + ((h - r.top) * .14 - 120) + 'px)';
