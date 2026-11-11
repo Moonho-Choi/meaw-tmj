@@ -647,6 +647,34 @@ body{font-size:17px}
   .drop a{padding:11px 10px;font-size:14px}
 }
 </style>
+<style id="mobile-pillars">
+/* 휴대폰: 원칙 카드는 2칸x2줄, 아이콘+제목+짧은 설명 (2026-11-11) */
+.pillar .p-short{display:none}
+@media (max-width:640px){
+  .pillars{grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .pillar{display:grid;grid-template-columns:26px 1fr;column-gap:9px;row-gap:8px;align-items:center;align-content:start;padding:15px 13px 16px}
+  .pillar p{display:none}
+  .pillar .gm{width:26px;height:26px;margin:0}
+  .pillar .gm::after{width:8px;height:8px}
+  .pillar h3{font-size:15px;margin:0;line-height:1.3;letter-spacing:-.02em}
+  .pillar .p-short{display:block;grid-column:1 / -1;font-size:13.5px;line-height:1.5;color:var(--muted)}
+}
+</style>
+<style id="mobile-steps">
+/* 휴대폰: 진료 절차는 상자 없이 번호 원과 세로선으로 잇는 단계 모양 (2026-11-11) */
+@media (max-width:640px){
+  .steps{gap:0;margin-top:26px}
+  .step,.step:hover{display:grid;grid-template-columns:38px 1fr;column-gap:14px;position:relative;
+    padding:0 0 24px;background:none;border:0;border-radius:0;box-shadow:none;transform:none}
+  .step:last-child{padding-bottom:0}
+  .step::before{content:"";position:absolute;left:18.5px;top:38px;bottom:0;width:1px;background:var(--accent);opacity:.45}
+  .step:last-child::before{display:none}
+  .step .no{grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;width:38px;height:38px;
+    border:1.5px solid var(--accent);border-radius:50%;background:#fff;font-size:14px;font-weight:500;letter-spacing:.02em}
+  .step h3{display:block;margin:0;font-size:17px;line-height:38px}
+  .step p{margin-top:0;font-size:14.5px;line-height:1.6}
+}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -811,10 +839,10 @@ body{font-size:17px}
       <span class="eyebrow reveal">PRINCIPLES</span>
       <h2 class="sec-title reveal-x">진단 중심, 전신적 접근</h2>
       <div class="pillars stagger">
-        <div class="pillar"><div class="gm"></div><h3>진단 우선</h3><p>장치나 특정 치료보다 먼저, 왜 아픈지부터 확인합니다.</p></div>
-        <div class="pillar"><div class="gm"></div><h3>전신적 검사</h3><p>치아 맞물림과 턱관절뿐 아니라 자세, 수면, 생활 습관까지 함께 살핍니다.</p></div>
-        <div class="pillar"><div class="gm"></div><h3>증례 토론 기준</h3><p>매달 모여 실제 치료 사례를 검토하며 다듬은 기준으로 진료합니다.</p></div>
-        <div class="pillar"><div class="gm"></div><h3>보존적·단계적</h3><p>몸에 부담이 적은 치료부터 시작하고, 꼭 필요한 치료만 범위를 정해 진행합니다.</p></div>
+        <div class="pillar"><div class="gm"></div><h3>진단 우선</h3><span class="p-short">치료보다 원인 확인이 먼저</span><p>장치나 특정 치료보다 먼저, 왜 아픈지부터 확인합니다.</p></div>
+        <div class="pillar"><div class="gm"></div><h3>전신적 검사</h3><span class="p-short">자세·수면·생활 습관까지 함께 검사</span><p>치아 맞물림과 턱관절뿐 아니라 자세, 수면, 생활 습관까지 함께 살핍니다.</p></div>
+        <div class="pillar"><div class="gm"></div><h3>증례 토론 기준</h3><span class="p-short">매달 증례를 검토해 다듬은 기준</span><p>매달 모여 실제 치료 사례를 검토하며 다듬은 기준으로 진료합니다.</p></div>
+        <div class="pillar"><div class="gm"></div><h3>보존적·단계적</h3><span class="p-short">부담이 적은 치료부터 차례로</span><p>몸에 부담이 적은 치료부터 시작하고, 꼭 필요한 치료만 범위를 정해 진행합니다.</p></div>
       </div>
     </div>
   </section>
