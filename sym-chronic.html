@@ -286,6 +286,14 @@ body{font-size:17px}
 .now-box p{font-size:16px}
 .drop a{font-size:14.5px}
 .foot p,.foot ul{font-size:14.5px}
+
+/* ── 하단 로고: 메인과 같은 색 꾸밈 ── */
+.foot-bar{flex-direction:column;align-items:flex-start;gap:12px}
+.flogo{display:inline-flex;align-items:center;gap:10px}
+.flogo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.flogo b i{font-style:normal;color:var(--green-soft)}
+.flogo b i.mm{color:var(--green)}
+.flogo span{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-left:-4px}
 </style>
 </head>
 <body>
@@ -429,8 +437,7 @@ body{font-size:17px}
 
 <footer>
   <div class="foot-bar">
-    <span>MEAW 턱관절 연구회</span>
-    <a href="index.html">← 홈으로</a>
+    <a class="flogo" href="index.html" aria-label="MEAW 턱관절 연구회 홈"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
     <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
   </div>
 </footer>
