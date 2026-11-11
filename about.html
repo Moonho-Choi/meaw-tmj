@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>연구회 소개 — MEAW 턱관절 연구회</title>
+<meta name="description" content="MEAW 턱관절 연구회의 출발과 MEAW의 계보, 연구회가 보는 관점을 소개합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --hero1:#F1FAFB; --hero2:#D6EDF2; --tint:#E2F1F5;
+  --dark:#0F3240;--dark2:#0F3240;--panel:#0F3240;
+  --green:#2493B8;--green-soft:#79C3DA;--green-deep:#176D8C;
+  --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
+  --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
+  --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
+  --sans:"Wanted Sans Variable","Wanted Sans","Pretendard Variable",Pretendard,sans-serif;
+  --latin:'Outfit',sans-serif;--maxw:1180px;--r:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.8;letter-spacing:-.008em;word-break:keep-all;overflow-x:hidden}
+::selection{background:var(--green);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.032em}
+
+/* 상단 메뉴 (메인과 동일) */
+header{position:fixed;inset:0 0 auto 0;z-index:90;height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 clamp(18px,3.4vw,44px);
+  background:rgba(20,41,49,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-d);color:#fff;transition:height .3s,box-shadow .3s}
+header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
+.logo{display:flex;align-items:baseline;gap:9px;flex-shrink:0}
+.logo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.logo b i{font-style:normal;color:var(--green)}
+.logo span{font-size:13px;color:var(--muted-d)}
+nav{display:flex;align-items:center;gap:clamp(4px,1vw,10px);font-size:14.5px}
+nav a{display:flex;align-items:center;padding:10px 12px;border-radius:8px;color:#E6EEF0;transition:.2s}
+nav a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{background:var(--green);color:#0E2010;font-weight:700;font-size:14px;
+  border-radius:9px;padding:11px 18px;transition:.2s;flex-shrink:0}
+.nav-cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+#pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:99;
+  background:linear-gradient(90deg,var(--green),#56E39F);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 공통 */
+section{padding:clamp(72px,10vh,116px) clamp(18px,3.4vw,44px);position:relative}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--green-deep);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--green)}
+.sec-title{font-weight:700;font-size:clamp(24px,3.1vw,38px);line-height:1.38;margin-bottom:16px}
+.sec-sub{max-width:64ch;color:var(--muted);font-size:16.5px}
+.dark{background:var(--dark);color:#EDF3F2}
+.dark .sec-sub{color:var(--muted-d)}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:15px;font-weight:600;transition:.22s}
+.btn-green{background:var(--green);color:#0E2010;font-weight:700}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,193,66,.32)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--muted)}
+.dark .check-list li{color:var(--muted-d)}
+.check-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:3px;
+  border:1.5px solid var(--green);color:var(--green-deep);
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.dark .check-list .ck{color:var(--green)}
+
+/* 머리글 */
+.hero{background:linear-gradient(180deg,var(--dark) 0%,#122630 100%);color:#fff;
+  padding-top:168px;padding-bottom:76px}
+.hero .crumb{font-size:13.5px;color:var(--muted-d);margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.hero .crumb a:hover{color:var(--green)}
+.hero h1{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.3}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em);filter:blur(7px);
+  animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.hero p{margin-top:18px;max-width:58ch;color:#B9C9CE;opacity:0;animation:rise 1s ease .5s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* 구조 구역 */
+.split2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.figbox img,.figbox video{width:100%}
+.figcap{font-size:13px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);background:#fff}
+
+/* 원인 3카드 */
+.locks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.lock{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:var(--r);padding:30px 26px;transition:.3s}
+.lock:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.lock .no{font-family:var(--latin);font-weight:300;font-size:15px;letter-spacing:.14em;color:var(--green);margin-bottom:12px;display:block}
+.lock h3{font-size:18.5px;font-weight:700;margin-bottom:10px}
+.lock p{font-size:14.8px;line-height:1.75;color:var(--muted-d)}
+.now-box{margin-top:26px;background:rgba(122,193,66,.1);border:1px solid rgba(122,193,66,.35);
+  border-radius:var(--r);padding:26px clamp(20px,3vw,34px)}
+.now-box h3{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--green)}
+.now-box p{font-size:15px;color:#D9E4E2;margin-bottom:10px}
+.now-box b{color:#fff}
+
+.locks.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1020px){.locks.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.locks.four{grid-template-columns:1fr}}
+
+/* 자가 확인 상자 */
+.try-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px clamp(20px,3vw,34px);margin-top:26px}
+.try-box h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--green-deep)}
+.try-box p{font-size:15px;color:var(--muted)}
+
+/* 그림 구역 */
+.habit-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+
+/* 등장 효과 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-x{opacity:0;transform:translateX(-46px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal-x.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(2){transition-delay:.09s}
+.stagger.in > *:nth-child(3){transition-delay:.18s}
+
+/* 푸터 */
+footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4vw,44px) 28px}
+.foot-bar{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#6E838B}
+.foot-bar a:hover{color:var(--green)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .split2{grid-template-columns:1fr}
+  .locks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
+}
+
+/* ── 깊은 바다 밝은 테마 재정의 ── */
+header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);color:var(--ink)}
+header.scrolled{box-shadow:0 10px 30px rgba(20,41,49,.10)}
+.logo b{color:var(--ink)}
+.logo span{color:var(--muted)}
+nav a{color:var(--ink)}
+nav a:hover{background:var(--bg2)}
+.nav-cta{background:var(--green-deep);color:#fff}
+.btn-green{background:var(--green-deep);color:#fff}
+#pbar{background:linear-gradient(90deg,var(--green),var(--green-soft))}
+.hero{background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 100%);color:var(--ink)}
+.hero .crumb{color:var(--muted)}
+.hero .crumb a:hover{color:var(--green-deep)}
+.hero p{color:var(--muted)}
+.hero h1 em{color:var(--green-deep)}
+.hero .eyebrow{color:var(--green-deep)}
+.dark{background:var(--tint);color:var(--ink)}
+.dark .sec-sub{color:var(--muted)}
+.dark .eyebrow{color:var(--green-deep)}
+.dark .check-list li{color:var(--muted)}
+.dark .check-list .ck{color:var(--green-deep)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.dark .btn-line{border-color:rgba(20,41,49,.3);color:var(--ink)}
+.dark .btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.lock{background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(20,41,49,.05)}
+.lock:hover{background:#fff;transform:translateY(-4px)}
+.lock p{color:var(--muted)}
+.lock .u{color:#9A6A00}
+.now-box p{color:var(--muted)}
+.now-box b{color:var(--ink)}
+
+/* ── 로고 글자꼴 강화(v2): MEAW 원형 유지, 한글을 크고 두껍게 ── */
+.logo{gap:10px}
+.logo span{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+
+/* ── 머리띠 중앙 제목형 + M 심벌 ── */
+header{height:auto;flex-direction:column;justify-content:center;gap:9px;
+  padding:14px clamp(18px,3.4vw,44px) 11px}
+header.scrolled{height:auto}
+.logo{gap:24px;align-items:center}
+.logo img.mark{height:58px;width:auto;display:block}
+.logo b{font-size:41px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-16px}
+.nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
+.hero{padding-top:230px}
+@media (max-width:860px){
+  .logo{gap:14px}
+  .logo img.mark{height:42px}
+  .logo b{font-size:29px}
+  .logo span{font-size:26px;margin-left:-11px}
+  .nav-cta{font-size:12.5px;padding:8px 11px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  nav a{padding:7px 9px}
+  .hero{padding-top:205px}
+}
+@media (max-width:620px){
+  .nav-cta{display:none}
+}
+
+/* ── 단추만 세이지그린(링크·포인트는 물색 유지) ── */
+.nav-cta{background:#2F6B5A;color:#fff}
+.btn-green{background:#2F6B5A;color:#fff}
+
+/* ── 픽토그램 그림 크기 ── */
+.figbox img.picto{width:auto;max-width:86%;max-height:170px;display:block;margin:0 auto;background:#fff;padding:16px 0}
+.figbox:has(img.picto){background:#fff}
+.picto-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.picto-row .figbox{display:flex;flex-direction:column}
+.picto-row img.picto{flex:1;min-height:0;max-height:170px}
+
+/* ── 색 변주 v2: 세이지그린 (치료 편 공통) ── */
+:root{--accent:#4F9480;--accent-deep:#2F6B5A}
+.eyebrow{color:var(--accent-deep)}
+.dark .eyebrow{color:#8FC4B4}
+.check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
+.dark .check-list .ck{border-color:#8FC4B4;color:#8FC4B4}
+.lock .no{color:var(--accent)}
+.dark .lock .no{color:#8FC4B4}
+.alt{background:#EEF5F1}
+
+/* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
+html{scroll-padding-top:96px}
+.logo b i.mm{font-style:normal;color:var(--green-deep)}
+.logo-sub{display:block;text-align:center;font-family:var(--latin);font-size:12.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
+header nav{width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px;margin-top:3px}
+.nav-item{position:relative}
+.nav-item > a{display:flex;align-items:center;gap:5px;padding:10px 12px;border-radius:8px;color:var(--ink);transition:.2s}
+.nav-item > a:hover{background:var(--bg2)}
+.nav-item .car{font-size:10px;color:var(--muted);transition:transform .25s}
+.nav-item:hover .car{transform:rotate(180deg)}
+.drop{position:absolute;top:100%;left:0;min-width:270px;padding:10px;background:#fff;color:var(--ink);border-radius:14px;
+  box-shadow:0 18px 50px rgba(15,30,36,.22);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .22s,transform .22s,visibility .22s;z-index:5}
+.nav-item:hover .drop,.nav-item:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:9px 13px;border-radius:9px;font-size:14px;color:#2A3942;transition:.15s}
+.drop a:hover{background:var(--bg2);color:var(--green-deep)}
+
+/* 대비 보정: 산호 글자색 통일 */
+:root{--accent-text:#2E6B59}
+.eyebrow,.dark .eyebrow{color:var(--accent-text)}
+.check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
+.lock .no,.dark .lock .no{color:var(--accent-text)}
+
+/* 글자 크기 단계 정리 */
+.hero .crumb{font-size:13px}
+.hero .crumb a{display:inline-block;padding:6px 4px;margin:-6px -4px}
+.pair .cell p,.lock p{font-size:14.5px}
+.pair .cell h3,.lock h3{font-size:18px}
+.figcap{font-size:13px}
+
+/* 내리면 머리띠가 한 줄로 줄어듦 */
+header{transition:padding .25s,box-shadow .3s}
+.logo img.mark,.logo b,.logo span{transition:height .25s,font-size .25s}
+header.scrolled{flex-direction:row;justify-content:space-between;gap:12px;padding:7px clamp(18px,3.4vw,44px)}
+header.scrolled .logo{gap:10px}
+header.scrolled .logo img.mark{height:30px}
+header.scrolled .logo b{font-size:21px}
+header.scrolled .logo span{font-size:19px;margin-left:-6px}
+header.scrolled .logo-sub{display:none}
+header.scrolled nav{width:auto;border-top:none;padding-top:0;margin-top:0}
+header.scrolled .nav-cta{position:static;transform:none}
+@media (max-width:900px){
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  .nav-item > a{padding:10px 11px}
+}
+@media (max-width:860px){
+  header.scrolled{flex-direction:column;gap:0;padding:4px clamp(18px,3.4vw,44px)}
+  header.scrolled .logo{display:none}
+  header.scrolled nav{padding-top:2px}
+  html{scroll-padding-top:70px}
+}
+
+/* 등장 연출이 늦어도 3초 뒤에는 글이 보이게 */
+.anim-done .hero h1 .w,.anim-done .hero p{opacity:1;transform:none;filter:none;animation:none}
+
+/* ── 검수 반영 v2 (2026-11-09): 상급 의료 사이트 비교 — 본문 키움·제목 굵기 ── */
+body{font-size:17px}
+.sec-sub{font-size:17.5px}
+.hero h1{font-weight:600}
+.sec-title{font-weight:600}
+.pair .cell p,.lock p{font-size:15.5px}
+.pair .cell h3,.lock h3{font-size:18.5px}
+.check-list li{font-size:16px}
+.now-box p{font-size:16px}
+.drop a{font-size:14.5px}
+.foot p,.foot ul{font-size:14.5px}
+
+/* ── 치료 2호: 비교표·그림 자리 ── */
+.cmp{width:100%;border-collapse:collapse;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:16px}
+.cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:none}
+.cmp thead th{background:#DDEBE5;color:var(--accent-text);font-weight:700;font-size:15px}
+.cmp tbody th{width:24%;font-weight:600;color:var(--ink);background:#F6FAF8}
+.cmp td{color:var(--muted)}
+.cmp td.on{color:var(--ink)}
+.ph{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:14px;background:repeating-linear-gradient(45deg,#F3F7F6,#F3F7F6 12px,#EAF1EE 12px,#EAF1EE 24px)}
+.photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.photo-pair .figbox img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.note-link{color:var(--green-deep);font-weight:600;border-bottom:1px solid currentColor}
+.sig{list-style:none;margin-top:6px}
+.sig li{position:relative;padding-left:16px;font-size:16px;color:var(--muted);margin-top:7px}
+.sig li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.locks.plain .lock{background:#fff}
+section.refs{padding-top:26px;padding-bottom:30px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media (max-width:640px){
+  .locks.four{gap:10px;margin-top:26px}
+  .locks.four .lock{padding:15px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline}
+  .locks.four .lock .no{font-size:12.5px;margin-bottom:0;letter-spacing:.08em}
+  .locks.four .lock h3{font-size:17px;margin-bottom:4px}
+  .locks.four .lock p{grid-column:1 / -1;font-size:15px;line-height:1.65}
+  .btn-row .btn{padding:10px 18px;font-size:14.5px}
+  .cmp{font-size:14.5px}
+  .cmp th,.cmp td{padding:12px 10px}
+  .cmp tbody th{width:22%}
+}
+
+/* ── 치료 4호: 카드 5장 ── */
+.locks.five{grid-template-columns:repeat(5,1fr);gap:12px}
+.locks.five .lock{padding:24px 18px}
+@media (max-width:1100px){.locks.five{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .locks.five{grid-template-columns:1fr;gap:10px;margin-top:26px}
+  .locks.five .lock{padding:15px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline}
+  .locks.five .lock .no{font-size:12.5px;margin-bottom:0;letter-spacing:.08em}
+  .locks.five .lock h3{font-size:17px;margin-bottom:4px}
+  .locks.five .lock p{grid-column:1 / -1;font-size:15px;line-height:1.65}
+}
+.locks.two{grid-template-columns:repeat(2,1fr);margin-top:30px}
+@media (max-width:640px){.locks.two{grid-template-columns:1fr;gap:10px}.locks.two .lock{padding:15px 18px}.locks.two .lock .no{display:inline;margin-right:8px;font-size:12.5px}.locks.two .lock h3{display:inline;font-size:17px}.locks.two .lock p{margin-top:6px;font-size:15px;line-height:1.65}}
+.locks.three{grid-template-columns:repeat(3,1fr);margin-top:30px}
+@media (max-width:900px){.locks.three{grid-template-columns:1fr;gap:10px;margin-top:26px}
+  .locks.three .lock{padding:15px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline}
+  .locks.three .lock .no{font-size:12.5px;margin-bottom:0;letter-spacing:.08em}
+  .locks.three .lock h3{font-size:17px;margin-bottom:4px}
+  .locks.three .lock p{grid-column:1 / -1;font-size:15px;line-height:1.65}}
+.fact{margin-top:22px;padding:16px 20px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;font-size:16px;color:var(--ink);max-width:64ch}
+/* ── 계보: 하나로 이어진 선 ── */
+.lineage{list-style:none;position:relative;margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:0 30px}
+.lineage::before{content:"";position:absolute;left:8px;right:8px;top:8px;height:2px;background:linear-gradient(90deg,var(--green-soft),var(--green-deep))}
+.lin{position:relative;padding-top:36px}
+.lin::before{content:"";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--green);box-sizing:border-box}
+.lin.last::before{background:var(--green-deep);border-color:var(--green-deep)}
+.lin h3{font-size:19px;font-weight:700;margin-bottom:8px;color:var(--ink)}
+.lin p{font-size:15.5px;line-height:1.75;color:var(--muted)}
+@media (max-width:900px){
+  .lineage{grid-template-columns:1fr;gap:0;margin-top:30px}
+  .lineage::before{display:none}
+  .lin:not(.last)::after{content:"";position:absolute;left:8px;top:21px;bottom:-3px;width:2px;background:var(--green-soft)}
+  .lin{padding:0 0 28px 38px}
+  .lin.last{padding-bottom:0}
+  .lin::before{top:3px}
+  .lin h3{font-size:18px;margin-bottom:5px}
+}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.gallery .figbox img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr);gap:10px}}
+.book-title{font-size:clamp(20px,2.4vw,26px);font-weight:700;color:var(--green-deep);line-height:1.4;margin:4px 0 18px;letter-spacing:-.02em}
+.book-title span{display:block;font-size:16px;font-weight:600;color:var(--muted);margin-top:4px;letter-spacing:0}
+.figbox.book{max-width:300px;margin:0 auto}
+.figbox.book .ph{aspect-ratio:3/4}
+.quote{margin-top:26px;padding:26px clamp(20px,3vw,34px);background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;max-width:760px}
+.quote .en{font-family:var(--latin);font-size:clamp(18px,2.2vw,23px);font-weight:500;line-height:1.5;color:var(--ink)}
+.quote .who{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+.quote .ko{margin-top:14px;font-size:16.5px;color:var(--muted)}
+.num-list{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:16px}
+.num-list li{display:grid;grid-template-columns:auto 1fr;column-gap:12px}
+.num-list .n{font-family:var(--latin);font-weight:600;color:var(--accent-text);font-size:15px;padding-top:2px}
+.num-list b{display:block;font-weight:700;font-size:17px;color:var(--ink)}
+.num-list span.t{color:var(--muted);font-size:16px}
+
+/* ── 하단 로고: 메인과 같은 색 꾸밈 ── */
+.foot-bar{flex-direction:column;align-items:flex-start;gap:12px}
+.flogo{display:inline-flex;align-items:center;gap:10px}
+.flogo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.flogo b i{font-style:normal;color:var(--green-soft)}
+.flogo b i.mm{color:var(--green)}
+.flogo span{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-left:-4px}
+</style>
+</head>
+<body>
+<div id="pbar" aria-hidden="true"></div>
+
+<header>
+  <a class="logo" href="index.html"><img class="mark" src="img/mw-mark.png" alt="MEAW 심벌"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
+  <span class="logo-sub">MEAW TMJ Research Society</span>
+  <nav aria-label="주 메뉴">
+    <div class="nav-item"><a href="about.html">연구회 소개</a></div>
+    <div class="nav-item">
+      <a href="index.html#symptoms">턱관절 증상 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="sym-pain.html">턱 통증</a>
+        <a href="sym-lock.html">관절음과 개구장애</a>
+        <a href="sym-chronic.html">만성 통증</a>
+        <a href="sym-head.html">두통</a>
+        <a href="sym-grind.html">이갈이와 이 악물기</a>
+        <a href="sym-face.html">안면 통증</a>
+        <a href="sym-ear.html">귀 증상</a>
+        <a href="sym-sleep.html">코골이와 수면</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="index.html#approach">치료 안내 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="tx-overview.html">치료는 어떻게 진행되나</a>
+        <a href="tx-splint.html">교합안정장치(스플린트)</a>
+        <a href="tx-meaw.html">교합 교정치료(MEAW)</a>
+        <a href="tx-physio.html">물리치료와 운동요법</a>
+        <a href="tx-habit.html">습관 교정과 약물</a>
+        <a href="tx-injection.html">주사치료</a>
+        <a href="tx-mpuncture.html">M-Puncture</a>
+        <a href="tx-finish.html">치료 기간과 마무리</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="index.html#network">회원 치과</a></div>
+  </nav>
+  <a class="nav-cta" href="about.html">연구회 소개</a>
+</header>
+
+<main>
+
+  <!-- 머리글 -->
+  <section class="hero">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">홈</a> › <span>연구회 소개</span></div>
+      <h1 aria-label="연구회 소개"><span class="w" style="--i:0">연구회</span> <span class="w" style="--i:1">소개</span></h1>
+      <p>MEAW 턱관절 연구회는 MEAW 교정을 공부해 온 치과의사들의 임상 연구회입니다. 교합과 턱관절에 관한 MEAW의 관점에, 오래된 통증을 다루는 만성통증의 이해를 더해 턱관절 장애를 진료합니다.</p>
+    </div>
+  </section>
+
+  <!-- 1. 계보 -->
+  <section>
+    <div class="inner">
+      <span class="eyebrow reveal">LINEAGE</span>
+      <h2 class="sec-title reveal-x">MEAW의 계보</h2>
+      <p class="sec-sub reveal">MEAW는 Multiloop Edgewise Archwire의 머리글자입니다. 치아 사이마다 고리를 넣은 교정용 철사의 이름이며, 한국에서는 '묘'라고 부릅니다.</p>
+      <ol class="lineage reveal">
+        <li class="lin"><h3>김영호 교수</h3><p>MEAW의 창시자입니다. 미국 보스턴의 교정 대학원 과정에서 가르쳤고, 1960년대 후반부터 MEAW를 개발했습니다.</p></li>
+        <li class="lin"><h3>사토 사다오 교수</h3><p>일본 가나가와치과대학 교수입니다. 1985년 김영호 교수의 강의를 계기로 MEAW를 연구해 세계에 알렸습니다.</p></li>
+        <li class="lin"><h3>루돌프 슬라브첵 교수</h3><p>오스트리아 빈 대학의 보철학자입니다. 그의 교합 이론이 더해져 MEAW의 이론 체계가 갖추어졌습니다.</p></li>
+        <li class="lin last"><h3>한국MEAW교정연구회</h3><p>한국에서 이 흐름을 이어 왔습니다. MEAW 턱관절 연구회의 회원들은 이 연구회의 강의에서 배웠습니다.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 2. 관점 -->
+  <section class="dark">
+    <div class="inner">
+      <span class="eyebrow reveal">PHILOSOPHY</span>
+      <h2 class="sec-title reveal-x">연구회가 보는 관점</h2>
+      <div class="quote reveal">
+        <p class="en">“We are not treating just dentition but treating patients with malocclusion.”</p>
+        <span class="who">김영호 교수</span>
+        <p class="ko">치아의 배열만 치료하는 것이 아니라 부정교합을 가진 환자를 치료한다는 뜻입니다.</p>
+      </div>
+      <p class="sec-sub reveal" style="margin-top:26px">연구회는 교합이 아래턱의 위치를 정하고, 그 위치가 턱관절의 편안함을 좌우한다고 봅니다. 교합을 바로잡아도 풀리지 않는 통증에는 만성통증의 이해를 더해 접근합니다.</p>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <a class="flogo" href="index.html" aria-label="MEAW 턱관절 연구회 홈"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
+    <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal,.reveal-x,.stagger').forEach(el => io.observe(el));
+const pbar = document.getElementById('pbar');
+const hdr = document.querySelector('header');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (!ticking){ requestAnimationFrame(() => {
+    const y = scrollY, h = innerHeight;
+    pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
+    hdr.classList.toggle('scrolled', y > 40);
+    ticking = false; }); ticking = true; }
+}, {passive:true});
+</script>
+<script>setTimeout(()=>document.documentElement.classList.add("anim-done"),3000)</script>
+</body>
+</html>
