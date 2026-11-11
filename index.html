@@ -629,11 +629,6 @@ body{font-size:17px}
   .step h3{display:inline-block;font-size:17px;margin:0 0 0 10px;vertical-align:baseline}
   .step p{margin-top:7px;font-size:14px;line-height:1.6}
 }
-
-/* ── 하단 간소화(2026-11-11): 로고 + 연구회 소개·회원 치과만 ── */
-.foot.foot-min{display:flex;align-items:center;justify-content:space-between;gap:18px 30px;flex-wrap:wrap;padding-bottom:26px}
-.foot.foot-min .foot-links{flex-direction:row;gap:26px;font-size:15.5px;color:#E3ECEB}
-.foot.foot-min .foot-links a{font-weight:600}
 </style>
 </head>
 <body>
@@ -887,14 +882,30 @@ body{font-size:17px}
 </main>
 
 <footer>
-  <div class="foot foot-min">
-    <div class="flogo"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></div>
-    <ul class="foot-links">
-      <li><a href="#about">연구회 소개</a></li>
-      <li><a href="#network">회원 치과</a></li>
-    </ul>
+  <div class="foot">
+    <div>
+      <div class="flogo"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></div>
+      <p>턱관절과 교합을 연구하는 치과의사 임상 연구회입니다.</p>
+    </div>
+    <div>
+      <h4>바로가기</h4>
+      <ul>
+        <li><a href="#symptoms">턱관절 증상</a></li>
+        <li><a href="#approach">치료 안내</a></li>
+        <li><a href="#network">회원 치과</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>연구회</h4>
+      <ul>
+        <li><a href="#about">연구회 소개</a></li>
+        <li><span class="soon">정기 모임 (준비 중)</span></li>
+        <li><span class="soon">문의 (준비 중)</span></li>
+      </ul>
+    </div>
   </div>
   <div class="foot-bar">
+    <span>MEAW 턱관절 연구회</span>
     <span>본 페이지는 디자인 시안이며, 모든 문구와 구성은 확정 전입니다.</span>
   </div>
 </footer>
