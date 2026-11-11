@@ -722,7 +722,9 @@ section.about .inner{position:relative;z-index:1}
 .cl-region{list-style:none}
 .cl-region li{display:grid;grid-template-columns:minmax(150px,1.1fr) 2.4fr auto;gap:4px 20px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
 .cl-region li:first-child{border-top:none}
-.cl-region li b{font-size:17px;font-weight:700;color:var(--ink)}
+.cl-region li b{font-size:17px;font-weight:700;color:var(--ink);cursor:pointer;justify-self:start;transition:color .15s}
+.cl-region li b:hover{color:#176D8C}
+.cl-region li.sel b{color:#D9412F}
 .cl-region .ad{font-size:15.5px;color:var(--muted)}
 .cl-region .tel{font-family:var(--latin);font-size:15.5px;font-weight:600;color:var(--green-deep);white-space:nowrap}
 .leaflet-container{font-family:var(--sans)}
@@ -1123,7 +1125,7 @@ addEventListener('load',placePing);addEventListener('resize',placePing);
   var box = document.getElementById('clMap'); if (!box || !window.L) return;
   var list = document.getElementById('clList');
   var chips = [].slice.call(document.querySelectorAll('#clChips .chip'));
-  var groups = {}, all = [];
+  var groups = {}, all = [], marks = [];
   var map = L.map(box, {scrollWheelZoom:false, dragging:!L.Browser.mobile, maxZoom:14, minZoom:6, attributionControl:true});
   map.attributionControl.setPrefix('');
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'&copy; OpenStreetMap'}).addTo(map);
@@ -1133,17 +1135,30 @@ addEventListener('load',placePing);addEventListener('resize',placePing);
       var ll = [parseFloat(li.dataset.lat), parseFloat(li.dataset.lng)];
       var mk = L.circleMarker(ll, {radius:8, color:'#fff', weight:2, fillColor:'#176D8C', fillOpacity:1}).addTo(map);
       mk.bindPopup('<b>' + li.querySelector('b').textContent + '</b>' + li.querySelector('.tel').textContent);
+      var nm = li.querySelector('b'); nm.setAttribute('role','button'); nm.setAttribute('tabindex','0');
+      nm.title = '지도에서 위치 보기'; marks.push({li:li, mk:mk});
+      function pick(){ select(li, mk, ll); }
+      nm.addEventListener('click', pick);
+      nm.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(); } });
       groups[r].push(ll); all.push(ll);
     });
   });
   function fit(pts, max){ map.fitBounds(L.latLngBounds(pts), {padding:[40,40], maxZoom:max}); }
+  function clearSel(){ marks.forEach(function(m){ m.li.classList.remove('sel'); m.mk.setStyle({fillColor:'#176D8C'}); m.mk.setRadius(8); }); }
+  function select(li, mk, ll){
+    clearSel(); li.classList.add('sel');
+    mk.setStyle({fillColor:'#D9412F'}); mk.setRadius(11); mk.bringToFront();
+    map.flyTo(ll, 14, {duration:.9}); mk.openPopup();
+    var r = box.getBoundingClientRect();
+    if (r.top < 70 || r.bottom > innerHeight) box.scrollIntoView({behavior:'smooth', block:'center'});
+  }
   fit(all, 8);
   chips.forEach(function(btn){
     btn.addEventListener('click', function(){
       var r = btn.getAttribute('data-r'), wasOn = btn.classList.contains('on');
       chips.forEach(function(b){ b.classList.remove('on'); b.setAttribute('aria-pressed','false'); });
       [].forEach.call(list.querySelectorAll('.cl-region'), function(ul){ ul.hidden = true; });
-      map.closePopup();
+      map.closePopup(); clearSel();
       if (wasOn){ list.hidden = true; fit(all, 8); return; }
       btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
       list.hidden = false; list.querySelector('.cl-region[data-r="' + r + '"]').hidden = false;
