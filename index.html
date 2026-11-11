@@ -675,6 +675,16 @@ body{font-size:17px}
   .step p{margin-top:0;font-size:14.5px;line-height:1.6}
 }
 </style>
+<style id="mobile-footer">
+/* 휴대폰: 하단 링크 두 묶음을 좌우로 (2026-11-11) */
+@media (max-width:640px){
+  footer{padding-top:40px;padding-bottom:22px}
+  .foot{grid-template-columns:1fr 1fr;gap:24px 20px;padding-bottom:26px}
+  .foot > div:first-child{grid-column:1 / -1}
+  .foot h4{margin-bottom:10px}
+  .foot-bar{padding-top:18px}
+}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -906,18 +916,18 @@ body{font-size:17px}
       <ul>
         <li><a href="#symptoms">턱관절 증상</a></li>
         <li><a href="#approach">치료 안내</a></li>
-        <li><a href="#network">회원 치과</a></li>
       </ul>
     </div>
     <div>
       <h4>연구회</h4>
       <ul>
         <li><a href="about.html">연구회 소개</a></li>
+        <li><a href="#network">회원 치과</a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bar">
-    <span>MEAW 턱관절 연구회</span>
+    <span>© 2026 MEAW TMJ Research Society</span>
   </div>
 </footer>
 
