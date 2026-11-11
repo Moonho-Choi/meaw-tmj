@@ -685,6 +685,31 @@ body{font-size:17px}
   .foot-bar{padding-top:18px}
 }
 </style>
+<style id="about-mark">
+/* 연구회 소개 구역: 로고를 옅은 배경으로 */
+section.about{position:relative;overflow:hidden}
+section.about::after{content:"";position:absolute;right:4%;top:50%;height:118%;aspect-ratio:1;
+  transform:translateY(-50%);background:url(img/mw-mark.png) center/contain no-repeat;opacity:.08;pointer-events:none}
+section.about .inner{position:relative;z-index:1}
+@media (max-width:640px){
+  section.about::after{height:104%;width:auto;right:auto;left:50%;transform:translate(-50%,-50%);opacity:.07}
+}
+</style>
+<style id="ghost-motion">
+/* 배경 큰 글자(MEAW·NETWORK): 더 또렷하게 + 글자별 등장과 잔잔한 색 물결 */
+.ghost,.ghost.lite{-webkit-text-stroke:1px rgba(23,109,140,.18)}
+.ghost .gl{display:inline-block;opacity:0;transform:translateY(.3em);
+  transition:opacity .9s ease,transform 1.1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i)*90ms)}
+.ghost.in .gl{opacity:1;transform:none;animation:ghostwave 7s ease-in-out calc(1.6s + var(--i)*.3s) infinite}
+@keyframes ghostwave{
+  0%,64%,100%{color:transparent;transform:none}
+  80%{color:rgba(36,147,184,.11);transform:translateY(-.035em)}
+}
+@media (prefers-reduced-motion:reduce){
+  .ghost .gl{opacity:1;transform:none;transition:none}
+  .ghost.in .gl{animation:none}
+}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -1031,6 +1056,17 @@ addEventListener('load',placePing);addEventListener('resize',placePing);
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))closeAll()});
   addEventListener('scroll',function(){if(Math.abs(scrollY-openY)>80)closeAll()},{passive:true});
+})();
+</script>
+<script id="ghost-motion-js">
+(function(){
+  document.querySelectorAll('.ghost').forEach(function(g){
+    var t=g.textContent;g.textContent='';
+    t.split('').forEach(function(c,i){var s=document.createElement('span');s.className='gl';s.textContent=c;s.style.setProperty('--i',i);g.appendChild(s)});
+    if(!('IntersectionObserver' in window)){g.classList.add('in');return}
+    var io=new IntersectionObserver(function(es){if(es.some(function(e){return e.isIntersecting})){g.classList.add('in');io.disconnect()}},{rootMargin:'0px 0px -15% 0px'});
+    io.observe(g);
+  });
 })();
 </script>
 </body>
