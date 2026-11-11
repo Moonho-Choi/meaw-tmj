@@ -688,7 +688,7 @@ body{font-size:17px}
 <style id="about-mark">
 /* 연구회 소개 구역: 로고를 옅은 배경으로 */
 section.about{position:relative;overflow:hidden}
-section.about::after{content:"";position:absolute;right:4%;top:50%;height:118%;aspect-ratio:1;
+section.about::after{content:"";position:absolute;left:3%;top:50%;height:118%;aspect-ratio:1;
   transform:translateY(-50%);background:url(img/mw-mark.png) center/contain no-repeat;opacity:.08;pointer-events:none}
 section.about .inner{position:relative;z-index:1}
 @media (max-width:640px){
@@ -698,6 +698,8 @@ section.about .inner{position:relative;z-index:1}
 <style id="ghost-motion">
 /* 배경 큰 글자(MEAW·NETWORK): 빈 곳에서 선이 그려지며 한 자씩 나타남. 좌우 흐름 없음 */
 .ghost,.ghost.lite{-webkit-text-stroke:0;color:transparent;transform:none !important}
+.ghost,.ghost.lite{top:calc(clamp(76px,10.5vh,124px) - .16em);left:clamp(8px,2.4vw,34px);z-index:0}
+.ghost ~ .inner{position:relative;z-index:1}
 .ghost .gl{display:inline-block;height:1em;overflow:visible;vertical-align:top}
 .ghost .gl text{font-family:var(--latin);font-weight:700;font-size:1em;fill:none;
   stroke:rgba(23,109,140,.22);stroke-width:1px;stroke-linejoin:round;
