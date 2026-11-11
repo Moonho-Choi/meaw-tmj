@@ -1144,10 +1144,10 @@ addEventListener('load',placePing);addEventListener('resize',placePing);
     });
   });
   function fit(pts, max){ map.fitBounds(L.latLngBounds(pts), {padding:[40,40], maxZoom:max}); }
-  function clearSel(){ marks.forEach(function(m){ m.li.classList.remove('sel'); m.mk.setStyle({fillColor:'#176D8C'}); m.mk.setRadius(8); }); }
+  function clearSel(){ marks.forEach(function(m){ m.li.classList.remove('sel'); m.mk.setStyle({fillColor:'#176D8C', weight:2}); m.mk.setRadius(8); }); }
   function select(li, mk, ll){
     clearSel(); li.classList.add('sel');
-    mk.setStyle({fillColor:'#D9412F'}); mk.setRadius(11); mk.bringToFront();
+    mk.setStyle({fillColor:'#0F4F68', weight:3}); mk.setRadius(12); mk.bringToFront();
     map.flyTo(ll, 14, {duration:.9}); mk.openPopup();
     var r = box.getBoundingClientRect();
     if (r.top < 70 || r.bottom > innerHeight) box.scrollIntoView({behavior:'smooth', block:'center'});
