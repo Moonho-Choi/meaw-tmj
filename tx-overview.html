@@ -299,6 +299,23 @@ body{font-size:17px}
 .flogo b i.mm{color:var(--green)}
 .flogo span{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-left:-4px}
 </style>
+<style id="mobile-menu-fix">
+/* 휴대폰: 가로 넘침 방지 + 눌러서 여는 펼침 메뉴 (2026-11-12) */
+@supports (overflow:clip){html{overflow-x:clip}}
+.nav-item.open .drop{opacity:1;visibility:visible;transform:none}
+.nav-item.open .car{transform:rotate(180deg)}
+@media (max-width:860px),(hover:none){
+  .nav-item:hover .drop,.nav-item:focus-within .drop{opacity:0;visibility:hidden}
+  .nav-item:hover .car{transform:none}
+  .nav-item.open .drop{opacity:1;visibility:visible;transform:none}
+  .nav-item.open .car{transform:rotate(180deg)}
+}
+@media (max-width:860px){
+  header nav,.nav-item{position:static}
+  .drop{left:12px;right:12px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 6px}
+  .drop a{padding:11px 10px;font-size:14px}
+}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -475,5 +492,28 @@ addEventListener('scroll', () => {
 }, {passive:true});
 </script>
 <script>setTimeout(()=>document.documentElement.classList.add("anim-done"),3000)</script>
+<script id="mobile-menu-js">
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.nav-item')).filter(function(n){return n.querySelector('.drop')});
+  var openY=0;
+  function touchLike(){return matchMedia('(hover:none)').matches||innerWidth<=860}
+  function closeAll(except){items.forEach(function(n){if(n!==except)n.classList.remove('open')})}
+  items.forEach(function(n){
+    var a=n.querySelector(':scope > a');
+    a.setAttribute('aria-haspopup','true');a.setAttribute('aria-expanded','false');
+    a.addEventListener('click',function(e){
+      if(!touchLike())return;
+      e.preventDefault();
+      closeAll(n);
+      var on=n.classList.toggle('open');
+      openY=scrollY;
+      a.setAttribute('aria-expanded',on?'true':'false');
+      if(!on)a.blur();
+    });
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))closeAll()});
+  addEventListener('scroll',function(){if(Math.abs(scrollY-openY)>80)closeAll()},{passive:true});
+})();
+</script>
 </body>
 </html>
