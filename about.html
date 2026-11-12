@@ -405,6 +405,20 @@ section.refs{padding-top:26px;padding-bottom:30px}
 /* 하단: 저작권 줄 위에 옅은 선 (메인과 같게) */
 .foot-bar > span{align-self:stretch;margin-top:12px;padding-top:20px;border-top:1px solid var(--line-d)}
 </style>
+<style id="nav-size">
+/* 주 메뉴 글자 시인성: 더 크고 굵게 (2026-11-12) */
+.nav-item > a{font-size:16.5px;font-weight:600;color:#16262E;letter-spacing:-.01em}
+.nav-item .car{font-size:10.5px}
+@media (max-width:860px){
+  .nav-item > a{font-size:15px;padding:10px 7px}
+  .nav-item .car{font-size:9px}
+}
+@media (max-width:360px){.nav-item > a{font-size:14px;padding:10px 5px}}
+/* 연구회 소개·회원 치과는 한 단계 작게, 증상·치료가 앞에 보이도록 */
+header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A5A62}
+@media (max-width:860px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:13px}}
+@media (max-width:360px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:12.5px}}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
