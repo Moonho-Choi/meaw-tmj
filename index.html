@@ -751,6 +751,21 @@ header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{fon
 @media (max-width:860px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:13px}}
 @media (max-width:360px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
+<style id="hero-speed">
+/* 대문 얼굴 그림 연출 속도 약 1.7배 (2026-11-12) */
+@media (prefers-reduced-motion: no-preference){
+  .face{animation:draw 1.8s cubic-bezier(.6,.05,.3,1) .3s forwards}
+  .face-front{animation:faceghost 1.1s ease 1.6s forwards}
+  .hero-art .arc{animation-duration:1.8s;animation-delay:1.5s}
+  .hero-art .arc.a2{animation-delay:1.8s}
+  .hero-art .arc.a3{animation-delay:2.1s;animation-duration:2s}
+  .hero-art .arcs{animation-delay:3s}
+  .glow{animation:glowin 1s ease 1.9s forwards,breathe 6.5s ease-in-out 3s infinite alternate}
+  .tmj-ping{animation:glowin .6s ease 2.1s forwards}
+  .tmj-ping i{animation-delay:2.3s}
+  .tmj-ping i:nth-child(2){animation-delay:3.6s}
+}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
