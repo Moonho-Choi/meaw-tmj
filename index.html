@@ -803,6 +803,33 @@ h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
 .cmp tbody th{background:#F6FAFB}
 section.refs{padding-top:28px;padding-bottom:36px}
 </style>
+<style id="hero-body">
+.body-wrap{position:absolute;inset:0;display:flex;justify-content:center;overflow:hidden}
+.body-fig{position:relative;height:100%;aspect-ratio:416/600;flex:none;opacity:0;animation:glowin 1s ease .3s forwards}
+.body-fig img{width:100%;height:100%;display:block}
+.body-lines{position:absolute;inset:0;width:100%;height:100%}
+.bl{stroke:#176D8C;stroke-width:1.2;opacity:.55;stroke-dasharray:400;stroke-dashoffset:400;animation:blDraw .7s ease forwards;animation-delay:calc(1.5s + var(--d)*.4s)}
+.bd{position:absolute;width:10px;height:10px;margin:-5px;border-radius:50%;background:#176D8C;box-shadow:0 0 0 3px rgba(255,255,255,.92);opacity:0;animation:bdIn .45s ease forwards;animation-delay:calc(2s + var(--d)*.4s)}
+.bd::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1.5px solid #176D8C;opacity:0;animation:bdPulse 3s ease-out infinite;animation-delay:calc(2.6s + var(--d)*.4s)}
+.bd.origin{width:14px;height:14px;margin:-7px;background:#D64545;animation-delay:1s}
+.bd.origin::after{border-color:#D64545;inset:-6px;animation-delay:1.3s;animation-duration:2.4s}
+@keyframes blDraw{to{stroke-dashoffset:0}}
+@keyframes bdIn{to{opacity:1}}
+@keyframes bdPulse{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.4);opacity:0}}
+@media (max-width:860px){
+  .body-wrap{align-items:flex-start;-webkit-mask-image:linear-gradient(#000 80%,transparent);mask-image:linear-gradient(#000 80%,transparent)}
+  .body-fig{height:165%}
+}
+@media (prefers-reduced-motion: reduce){.body-fig,.bd{animation:none;opacity:1}.bl{animation:none;stroke-dashoffset:0}.bd::after{animation:none}}
+</style>
+<style id="hero-3d">
+.skull3d{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.4s ease;cursor:grab;touch-action:pan-y}
+.skull3d.on{opacity:1}
+.skull-poster{position:absolute;left:50%;top:50%;height:100%;width:auto;aspect-ratio:1;transform:translate(-50%,-50%);transition:opacity 1.2s ease}
+.skull-poster.off{opacity:0}
+.skull3d:active{cursor:grabbing}
+</style>
+<style id="hero-3d-m">@media (max-width:860px){.hero-art{height:48svh;min-height:330px}}</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -867,8 +894,7 @@ section.refs{padding-top:28px;padding-bottom:36px}
           <path class="arc a2" d="M20,160 C140,200 320,110 480,170 C540,192 570,180 600,190"/>
           <path class="arc a3" d="M0,540 C150,520 260,430 380,440 C480,448 540,500 600,490"/>
         </svg>
-        <div class="face-wrap"><img class="face" src="img/face-line.png" alt=""><img class="face face-front" src="img/face-front.png" alt="">
-        <div class="tmj-ping"><i></i><i></i><b></b></div></div>
+        <img class="skull-poster" id="skullposter" src="img/skull-poster.png" alt="" width="640" height="640"><canvas class="skull3d" id="skull3d"></canvas>
       </div>
     </div>
   </section>
@@ -1054,6 +1080,7 @@ section.refs{padding-top:28px;padding-bottom:36px}
   </div>
   <div class="foot-bar">
     <span>© 2026 MEAW TMJ Research Society</span>
+    <span class="credit3d" style="display:block;margin-top:6px;font-size:11px;opacity:.7">3D 모형: BodyParts3D, © 생명과학 통합 데이터베이스 센터, <a href="https://creativecommons.org/licenses/by-sa/2.1/jp/deed.ko" rel="license noopener" target="_blank" style="text-decoration:underline">CC BY-SA 2.1 Japan</a></span>
   </div>
 </footer>
 
@@ -1225,6 +1252,53 @@ addEventListener('load',placePing);addEventListener('resize',placePing);
     });
   });
   addEventListener('load', function(){ map.invalidateSize(); fit(all, 8); });
+})();
+</script>
+<script id="hero-3d-js">
+(function(){
+var cv=document.getElementById('skull3d');if(!cv)return;
+var gl=cv.getContext('webgl',{antialias:true,alpha:true,premultipliedAlpha:false});if(!gl)return;
+var G=[[0,52000,0],[52000,15000,1],[67000,7000,2],[74000,7000,3]];
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]still/.test(location.search);var vis=true;
+function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);return o}
+var vs='attribute vec3 p;attribute float g;uniform float ry,rx,jaw,sc,asp,dpr;varying float va;varying float vg;'
++'void main(){vec3 q=vec3(p.x,p.z,-p.y);'
++'if(g>.5&&g<3.5&&g!=2.){vec2 h=vec2(-.246,.0586);float c=cos(jaw),s=sin(jaw);vec2 d=q.yz-h;q.yz=h+vec2(d.x*c-d.y*s,d.x*s+d.y*c);q.z+=jaw*.12;}'
++'float cy=cos(ry),sy=sin(ry);q=vec3(q.x*cy+q.z*sy,q.y,-q.x*sy+q.z*cy);'
++'float cx=cos(rx),sx=sin(rx);q=vec3(q.x,q.y*cx-q.z*sx,q.y*sx+q.z*cx);'
++'float k=1./(1.-q.z*.22);gl_Position=vec4(q.x*sc*k/asp,(q.y+.02)*sc*k,0.,1.);'
++'float f=clamp(q.z*.5+.5,0.,1.);vg=g;'
++'if(g>3.5){gl_PointSize=dpr*16.;va=.35+.65*f;}else{gl_PointSize=dpr*(1.15+1.6*f);va=.14+.8*f*f;}}';
+var fs='precision mediump float;varying float va;varying float vg;'
++'void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;'
++'vec3 c=vec3(.09,.43,.55);if(vg>.5&&vg<1.5)c=vec3(.06,.31,.41);if(vg>1.5&&vg<3.5)c=vec3(.07,.33,.43);'
++'float a=va;if(vg>1.5&&vg<3.5)a*=.5;if(vg>3.5){c=vec3(.84,.27,.27);a=va*(smoothstep(.25,.0,r)*.55+step(r,.035)*.45);}'
++'gl_FragColor=vec4(c,a);}';
+var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);
+if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return;gl.useProgram(pr);
+var U={};['ry','rx','jaw','sc','asp','dpr'].forEach(function(n){U[n]=gl.getUniformLocation(pr,n)});
+var n=0,ry=-.75,vel=0,drag=false,lx=0,t0=0,dpr=1;
+function size(){dpr=Math.min(devicePixelRatio||1,2);var w=cv.clientWidth,h=cv.clientHeight;cv.width=w*dpr;cv.height=h*dpr;gl.viewport(0,0,cv.width,cv.height);
+gl.uniform1f(U.asp,w/h);gl.uniform1f(U.dpr,dpr);gl.uniform1f(U.sc,Math.min(.74,.98*w/h));if(n&&still)requestAnimationFrame(frame);}
+function frame(t){if(!t0)t0=t;var s=(t-t0)/1000;
+if(!drag){ry+=still?0:.0035+vel;vel*=.94}
+var jaw=still?.05:Math.max(0,Math.sin(s*.9-1.2))*.30;
+gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+gl.uniform1f(U.ry,ry);gl.uniform1f(U.rx,.10);gl.uniform1f(U.jaw,jaw);
+gl.drawArrays(gl.POINTS,0,n);if(vis&&(!still||drag||Math.abs(vel)>.0005))requestAnimationFrame(frame);}
+cv.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;vel=0;try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+cv.addEventListener('pointermove',function(e){if(!drag)return;var d=(e.clientX-lx)*.008;ry+=d;vel=d*.5;lx=e.clientX;if(still)requestAnimationFrame(frame)});
+['pointerup','pointercancel'].forEach(function(k){cv.addEventListener(k,function(){drag=false})});
+function start(){fetch('img/skull.bin').then(function(r){return r.arrayBuffer()}).then(function(b){
+var q=new Int16Array(b),m=q.length/3,N=m+2,P=new Float32Array(N*3),Gi=new Float32Array(N);
+for(var i=0;i<q.length;i++)P[i]=q[i]/32767;
+G.forEach(function(g){for(var i=g[0];i<g[0]+g[1];i++)Gi[i]=g[2]});
+[[-.47,-.0586,-.246],[.47,-.0586,-.246]].forEach(function(c,k){P.set(c,(m+k)*3);Gi[m+k]=4});
+function buf(d,name,sz){var o=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,o);gl.bufferData(gl.ARRAY_BUFFER,d,gl.STATIC_DRAW);var l=gl.getAttribLocation(pr,name);gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,sz,gl.FLOAT,false,0,0)}
+buf(P,'p',3);buf(Gi,'g',1);n=N;gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+size();addEventListener('resize',size);cv.classList.add('on');var ps=document.getElementById('skullposter');if(ps)ps.classList.add('off');requestAnimationFrame(frame);
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){var v=e[0].isIntersecting;if(v&&!vis){vis=true;requestAnimationFrame(frame)}else vis=v}).observe(cv);})}
+if(document.readyState==='complete')start();else addEventListener('load',start);
 })();
 </script>
 </body>
