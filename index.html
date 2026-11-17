@@ -802,6 +802,19 @@ h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
 .cmp thead th{background:#E2F1F5}
 .cmp tbody th{background:#F6FAFB}
 section.refs{padding-top:28px;padding-bottom:36px}
+/* 11-17: 화살표 삭제, 남은 상자를 선과 여백으로 */
+.sym{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;box-shadow:none}
+.sym:hover{transform:none;box-shadow:none;border-color:#C5D3D8}
+.sym:hover h3{color:var(--green-deep)}
+.sym .tx{padding-left:0;padding-right:0}
+.sym span,.conn-link{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pillar{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding-left:0;padding-right:0}
+.pillar:hover{background:none;transform:none}
+.figbox,.habit-img{background:none;border:0;border-radius:0}
+.figbox .figcap,.figcap{padding-left:0;padding-right:0;background:none}
+.cmp{border:0;border-radius:0;background:none;border-top:2px solid var(--ink)}
+.cmp th,.cmp td{border-left:0;border-right:0;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.sym{padding-left:0;padding-right:0}}
 </style>
 <style id="hero-body">
 .body-wrap{position:absolute;inset:0;display:flex;justify-content:center;overflow:hidden}
@@ -911,35 +924,35 @@ section.refs{padding-top:28px;padding-bottom:36px}
       <div class="sym-grid stagger">
         <a class="sym" href="sym-lock.html">
           <div class="ph"><img src="img/pic-lock.png" alt="관절음과 개구장애 픽토그램"></div>
-          <div class="tx"><h3>관절음과 개구장애</h3><p>턱 소리, 걸리는 느낌, 입이 덜 벌어짐.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>관절음과 개구장애</h3><p>턱 소리, 걸리는 느낌, 입이 덜 벌어짐.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-pain.html">
           <div class="ph"><img src="img/pic-pain.png" alt="턱 통증 픽토그램"></div>
-          <div class="tx"><h3>턱 통증</h3><p>씹거나 입을 벌릴 때 턱 주변의 통증.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>턱 통증</h3><p>씹거나 입을 벌릴 때 턱 주변의 통증.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-head.html">
           <div class="ph"><img src="img/pic-head.png" alt="두통과 경부 통증 픽토그램"></div>
-          <div class="tx"><h3>두통과 경부 통증</h3><p>관자놀이 두통, 목·어깨 결림.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>두통과 경부 통증</h3><p>관자놀이 두통, 목·어깨 결림.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-ear.html">
           <div class="ph"><img src="img/pic-ear.png" alt="귀 증상 픽토그램"></div>
-          <div class="tx"><h3>귀 증상</h3><p>귀 먹먹함, 이명, 귀 주변 통증.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>귀 증상</h3><p>귀 먹먹함, 이명, 귀 주변 통증.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-grind.html">
           <div class="ph"><img src="img/pic-grind.png" alt="이갈이와 이 악물기 픽토그램"></div>
-          <div class="tx"><h3>이갈이와 이 악물기</h3><p>아침의 턱 피로, 수면 중 이갈이.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>이갈이와 이 악물기</h3><p>아침의 턱 피로, 수면 중 이갈이.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-sleep.html">
           <div class="ph"><img src="img/pic-sleep.png" alt="코골이와 수면 픽토그램"></div>
-          <div class="tx"><h3>코골이와 수면</h3><p>큰 코골이, 개운하지 않은 아침.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>코골이와 수면</h3><p>큰 코골이, 개운하지 않은 아침.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-chronic.html">
           <div class="ph"><img src="img/pic-chronic.png" alt="만성 통증 픽토그램"></div>
-          <div class="tx"><h3>만성 통증</h3><p>오래가고 되돌아오는 턱·얼굴·목 통증.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>만성 통증</h3><p>오래가고 되돌아오는 턱·얼굴·목 통증.</p><span>자세히 보기</span></div>
         </a>
         <a class="sym" href="sym-face.html">
           <div class="ph"><img src="img/pic-face.png" alt="안면 통증 픽토그램"></div>
-          <div class="tx"><h3>안면 통증</h3><p>뺨·관자놀이의 통증과 당기는 긴장감.</p><span>자세히 보기 →</span></div>
+          <div class="tx"><h3>안면 통증</h3><p>뺨·관자놀이의 통증과 당기는 긴장감.</p><span>자세히 보기</span></div>
         </a>
       </div>
     </div>

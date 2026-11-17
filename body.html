@@ -401,6 +401,19 @@ h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
 .cmp thead th{background:#E2F1F5}
 .cmp tbody th{background:#F6FAFB}
 section.refs{padding-top:28px;padding-bottom:36px}
+/* 11-17: 화살표 삭제, 남은 상자를 선과 여백으로 */
+.sym{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;box-shadow:none}
+.sym:hover{transform:none;box-shadow:none;border-color:#C5D3D8}
+.sym:hover h3{color:var(--green-deep)}
+.sym .tx{padding-left:0;padding-right:0}
+.sym span,.conn-link{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pillar{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding-left:0;padding-right:0}
+.pillar:hover{background:none;transform:none}
+.figbox,.habit-img{background:none;border:0;border-radius:0}
+.figbox .figcap,.figcap{padding-left:0;padding-right:0;background:none}
+.cmp{border:0;border-radius:0;background:none;border-top:2px solid var(--ink)}
+.cmp th,.cmp td{border-left:0;border-right:0;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.sym{padding-left:0;padding-right:0}}
 </style>
 </head>
 <body>
@@ -487,25 +500,25 @@ section.refs{padding-top:28px;padding-bottom:36px}
             <div class="conn-top"><span class="num">1</span><h3>턱관절과 두통</h3></div>
             <p>턱관절 장애는 두통의 원인이 될 수 있습니다. 국제두통학회의 두통 분류에도 "턱관절 장애로 인한 두통"이 따로 있습니다. 관자놀이가 조이듯 아프고, 씹거나 입을 크게 벌릴 때 심해지는 두통이 대표적입니다.</p>
             <p class="src">근거: 국제두통학회 두통 분류 3판(2018)</p>
-            <a class="conn-link" href="sym-head.html">두통과 경부 통증 →</a>
+            <a class="conn-link" href="sym-head.html">두통과 경부 통증</a>
           </article>
           <article class="conn">
             <div class="conn-top"><span class="num">2</span><h3>턱관절과 목·어깨 통증</h3></div>
             <p>턱관절 장애가 있으면 목이 함께 불편한 경우가 많습니다. 연구에서는 목을 움직이는 범위가 줄어 있었고, 목의 불편이 클수록 턱의 불편도 컸습니다.</p>
             <p class="src">근거: 관찰 연구 종합 분석(Cuenca-Martínez 외, 2020)</p>
-            <a class="conn-link" href="sym-head.html">두통과 경부 통증 →</a>
+            <a class="conn-link" href="sym-head.html">두통과 경부 통증</a>
           </article>
           <article class="conn">
             <div class="conn-top"><span class="num">3</span><h3>턱관절과 만성 통증</h3></div>
             <p>턱관절 장애는 다른 부위의 만성 통증과 자주 겹칩니다. 미국의 대규모 턱관절 연구(OPPERA)에서 두통, 허리 통증, 섬유근육통, 과민대장 증후군이 함께 나타나는 경우가 많았습니다. 섬유근육통이 있는 사람은 대부분 다른 만성 통증을 하나 이상 함께 갖고 있었습니다.</p>
             <p class="src">근거: 미국 OPPERA 연구(Slade 외, 2020)</p>
-            <a class="conn-link" href="sym-chronic.html">만성 통증 →</a>
+            <a class="conn-link" href="sym-chronic.html">만성 통증</a>
           </article>
           <article class="conn">
             <div class="conn-top"><span class="num">4</span><h3>턱관절과 코골이·수면무호흡</h3></div>
             <p>코골이가 심하거나 자다가 숨이 멈추는 사람은 턱관절 장애가 생길 위험이 높습니다. 이런 증상이 있는 사람은 턱관절 장애가 새로 생길 위험이 약 1.7배였습니다.</p>
             <p class="src">근거: 미국 OPPERA 연구(Sanders 외, 2013)</p>
-            <a class="conn-link" href="sym-sleep.html">코골이와 수면 →</a>
+            <a class="conn-link" href="sym-sleep.html">코골이와 수면</a>
           </article>
           <article class="conn">
             <div class="conn-top"><span class="num">5</span><h3>턱관절과 스트레스</h3></div>
@@ -516,7 +529,7 @@ section.refs{padding-top:28px;padding-bottom:36px}
             <div class="conn-top"><span class="num">6</span><h3>턱관절과 이명</h3></div>
             <p>이명은 턱관절 장애와 함께 나타나는 경우가 많습니다. 턱관절 장애가 있는 사람은 이명을 겪을 가능성이 약 4배 높다는 분석이 있습니다. 이비인후과 검사에서 이상이 없는데 이명이 계속된다면 턱관절을 함께 확인해 볼 수 있습니다.</p>
             <p class="src">근거: 체계적 문헌고찰과 메타분석(Mottaghi 외, 2019)</p>
-            <a class="conn-link" href="sym-ear.html">귀 증상 →</a>
+            <a class="conn-link" href="sym-ear.html">귀 증상</a>
           </article>
           <article class="conn">
             <div class="conn-top"><span class="num">7</span><h3>턱관절과 안면비대칭</h3></div>

@@ -360,6 +360,19 @@ h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
 .cmp thead th{background:#E2F1F5}
 .cmp tbody th{background:#F6FAFB}
 section.refs{padding-top:28px;padding-bottom:36px}
+/* 11-17: 화살표 삭제, 남은 상자를 선과 여백으로 */
+.sym{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;box-shadow:none}
+.sym:hover{transform:none;box-shadow:none;border-color:#C5D3D8}
+.sym:hover h3{color:var(--green-deep)}
+.sym .tx{padding-left:0;padding-right:0}
+.sym span,.conn-link{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.pillar{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding-left:0;padding-right:0}
+.pillar:hover{background:none;transform:none}
+.figbox,.habit-img{background:none;border:0;border-radius:0}
+.figbox .figcap,.figcap{padding-left:0;padding-right:0;background:none}
+.cmp{border:0;border-radius:0;background:none;border-top:2px solid var(--ink)}
+.cmp th,.cmp td{border-left:0;border-right:0;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.sym{padding-left:0;padding-right:0}}
 </style>
 </head>
 <body>
