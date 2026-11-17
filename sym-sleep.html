@@ -211,14 +211,14 @@ header.scrolled{height:auto}
 .picto-row img.picto{flex:1;min-height:0;max-height:170px}
 
 /* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
-:root{--accent:#D97757;--accent-deep:#BC5B3C}
+:root{--accent:#176D8C;--accent-deep:#0F4F68}
 .eyebrow{color:var(--accent-deep)}
-.dark .eyebrow{color:#E9A184}
+.dark .eyebrow{color:#79C3DA}
 .check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
-.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.dark .check-list .ck{border-color:#79C3DA;color:#79C3DA}
 .lock .no{color:var(--accent)}
-.dark .lock .no{color:#E9A184}
-.alt{background:#F8F4EB}
+.dark .lock .no{color:#79C3DA}
+.alt{background:#FFFFFF}
 
 /* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
 html{scroll-padding-top:96px}
@@ -238,7 +238,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .drop a:hover{background:var(--bg2);color:var(--green-deep)}
 
 /* 대비 보정: 산호 글자색 통일 */
-:root{--accent-text:#A14E2F}
+:root{--accent-text:#0F4F68}
 .eyebrow,.dark .eyebrow{color:var(--accent-text)}
 .check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
 .lock .no,.dark .lock .no{color:var(--accent-text)}
@@ -330,6 +330,42 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
 @media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
 @media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style id="design-2026-11">
+:root{--accent:#176D8C;--accent-deep:#0F4F68;--accent-text:#0F4F68;--bg:#fff;--r:3px;--serif:"Noto Serif KR","Nanum Myeongjo",serif}
+body{background:#fff}
+.alt,.dark,.tint-cream,.tint-mint{background:#fff}
+section + section{border-top:1px solid var(--line)}
+section:not(.hero){padding-top:clamp(44px,6vh,76px);padding-bottom:clamp(44px,6vh,76px)}
+h1,h2{font-family:var(--serif);font-weight:700;letter-spacing:-.03em}
+h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
+.hero h1{font-weight:700;line-height:1.32}
+.sec-title{font-weight:700;line-height:1.42}
+.sec-title::before{content:"";display:block;width:9px;height:9px;background:var(--green-deep);transform:rotate(45deg);margin:0 0 20px 2px}
+.locks{gap:0 40px;margin-top:28px}
+.lock{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding:20px 0 8px}
+.lock:hover{background:none;transform:none}
+.lock .no,.dark .lock .no{color:var(--green-deep);font-weight:500;font-size:22px;letter-spacing:0}
+.pair{gap:0 40px}
+.pair .cell{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 8px}
+.try-box,.now-box{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding:2px 0 2px 22px;box-shadow:none}
+.try-box h3,.now-box h3{color:var(--ink)}
+.conns{gap:0 40px}
+.conn{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;padding:20px 0 24px}
+.conn-top{align-items:baseline;gap:12px}
+.conn .num{background:none;color:var(--green-deep);width:auto;height:auto;font-family:var(--latin);font-size:24px;font-weight:500;line-height:1;min-width:20px}
+.dot.origin{background:#0F3240;box-shadow:0 0 0 4px rgba(15,50,64,.16)}
+.dot.origin::after{border-color:#0F3240}
+.ref-title{font-size:19px;margin-bottom:16px}
+.quote{border-radius:0}
+.drop{border-radius:6px}
+.warn-box,.try-box[style*="E5B84B"]{background:none !important;border:0 !important;border-left:3px solid #0F3240 !important;border-radius:0 !important;padding:2px 0 2px 22px !important;box-shadow:none}
+.warn-box h3,.try-box[style*="E5B84B"] h3{color:var(--ink) !important}
+.quote,.fact{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding-top:4px;padding-bottom:4px}
+.cmp thead th{background:#E2F1F5}
+.cmp tbody th{background:#F6FAFB}
+section.refs{padding-top:28px;padding-bottom:36px}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -390,8 +426,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <section>
     <div class="inner split2">
       <div>
-        <span class="eyebrow reveal">CLASSIFICATION</span>
-        <h2 class="sec-title reveal-x">코골이와 수면무호흡은 다릅니다</h2>
+                <h2 class="sec-title reveal-x">코골이와 수면무호흡은 다릅니다</h2>
         <p class="sec-sub reveal"><b>코골이</b>는 자는 동안 기도(공기가 지나는 길)가 좁아져,
         공기가 지나가며 주변을 떨리게 하는 소리입니다.</p>
         <p class="sec-sub reveal" style="margin-top:14px"><b>수면무호흡</b>은 자는 동안 숨이
@@ -412,8 +447,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 2. 양상 -->
   <section class="alt">
     <div class="inner">
-      <span class="eyebrow reveal">CLINICAL FEATURES</span>
-      <h2 class="sec-title reveal-x">함께 보이는 양상</h2>
+            <h2 class="sec-title reveal-x">함께 보이는 양상</h2>
       <div class="split2" style="margin-top:34px;align-items:start">
         <div>
           <p class="sec-sub reveal">아래 항목이 여럿 해당되면서 턱 증상(관절음, 통증, 기상 시 뻣뻣함)이
@@ -447,8 +481,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <section class="dark">
     <div class="inner split2">
       <div>
-        <span class="eyebrow reveal">MECHANISM</span>
-        <h2 class="sec-title reveal-x">아래턱의 위치와 기도</h2>
+                <h2 class="sec-title reveal-x">아래턱의 위치와 기도</h2>
         <p class="sec-sub reveal">기도는 혀와 아래턱 바로 뒤를 지나는 통로입니다.
         아래턱이 뒤로 물린 형태에서는 혀도 함께 뒤로 밀려, 자는 동안 기도가 좁아지기 쉽습니다.</p>
         <p class="sec-sub reveal" style="margin-top:14px">기도의 넓이가 턱만으로 정해지는 것은 아닙니다.
@@ -476,8 +509,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
     <div class="inner split2">
       <div class="habit-img reveal"><img src="img/exam.jpg" alt="치과 진료실에서 검사하는 모습 일러스트"></div>
       <div>
-        <span class="eyebrow reveal">CLINICAL EXAM</span>
-        <h2 class="sec-title reveal-x">치과에서 확인하는 것</h2>
+                <h2 class="sec-title reveal-x">치과에서 확인하는 것</h2>
         <p class="sec-sub reveal">치과는 수면 문제를 단독으로 진단하지 않습니다.
         턱 검사에 수면과 관련된 확인을 포함하고, 필요한 부분은 다른 과와 나누어 봅니다.</p>
         <ul class="check-list reveal">

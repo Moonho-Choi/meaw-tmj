@@ -211,14 +211,14 @@ header.scrolled{height:auto}
 .picto-row img.picto{flex:1;min-height:0;max-height:170px}
 
 /* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
-:root{--accent:#D97757;--accent-deep:#BC5B3C}
+:root{--accent:#176D8C;--accent-deep:#0F4F68}
 .eyebrow{color:var(--accent-deep)}
-.dark .eyebrow{color:#E9A184}
+.dark .eyebrow{color:#79C3DA}
 .check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
-.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.dark .check-list .ck{border-color:#79C3DA;color:#79C3DA}
 .lock .no{color:var(--accent)}
-.dark .lock .no{color:#E9A184}
-.alt{background:#F8F4EB}
+.dark .lock .no{color:#79C3DA}
+.alt{background:#FFFFFF}
 
 /* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
 html{scroll-padding-top:96px}
@@ -238,7 +238,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .drop a:hover{background:var(--bg2);color:var(--green-deep)}
 
 /* 대비 보정: 산호 글자색 통일 */
-:root{--accent-text:#A14E2F}
+:root{--accent-text:#0F4F68}
 .eyebrow,.dark .eyebrow{color:var(--accent-text)}
 .check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
 .lock .no,.dark .lock .no{color:var(--accent-text)}
@@ -339,7 +339,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
 .dot{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;
   background:var(--green-deep);color:#fff;font-family:var(--latin);font-size:12.5px;font-weight:600;line-height:1;
   display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.92)}
-.dot.origin{width:16px;height:16px;background:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,.22)}
+.dot.origin{width:16px;height:16px;background:var(--accent);box-shadow:0 0 0 4px rgba(23,109,140,.22)}
 .dot.origin::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:hubPulse 2.6s ease-out infinite}
 @keyframes hubPulse{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.4);opacity:0}}
 .map-cap{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;color:var(--muted);margin-top:10px}
@@ -365,6 +365,42 @@ section.refs{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(48px,7vh,80px
   .conns{grid-template-columns:1fr}
   .locks.two{grid-template-columns:1fr}
 }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style id="design-2026-11">
+:root{--accent:#176D8C;--accent-deep:#0F4F68;--accent-text:#0F4F68;--bg:#fff;--r:3px;--serif:"Noto Serif KR","Nanum Myeongjo",serif}
+body{background:#fff}
+.alt,.dark,.tint-cream,.tint-mint{background:#fff}
+section + section{border-top:1px solid var(--line)}
+section:not(.hero){padding-top:clamp(44px,6vh,76px);padding-bottom:clamp(44px,6vh,76px)}
+h1,h2{font-family:var(--serif);font-weight:700;letter-spacing:-.03em}
+h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
+.hero h1{font-weight:700;line-height:1.32}
+.sec-title{font-weight:700;line-height:1.42}
+.sec-title::before{content:"";display:block;width:9px;height:9px;background:var(--green-deep);transform:rotate(45deg);margin:0 0 20px 2px}
+.locks{gap:0 40px;margin-top:28px}
+.lock{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding:20px 0 8px}
+.lock:hover{background:none;transform:none}
+.lock .no,.dark .lock .no{color:var(--green-deep);font-weight:500;font-size:22px;letter-spacing:0}
+.pair{gap:0 40px}
+.pair .cell{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 8px}
+.try-box,.now-box{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding:2px 0 2px 22px;box-shadow:none}
+.try-box h3,.now-box h3{color:var(--ink)}
+.conns{gap:0 40px}
+.conn{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;padding:20px 0 24px}
+.conn-top{align-items:baseline;gap:12px}
+.conn .num{background:none;color:var(--green-deep);width:auto;height:auto;font-family:var(--latin);font-size:24px;font-weight:500;line-height:1;min-width:20px}
+.dot.origin{background:#0F3240;box-shadow:0 0 0 4px rgba(15,50,64,.16)}
+.dot.origin::after{border-color:#0F3240}
+.ref-title{font-size:19px;margin-bottom:16px}
+.quote{border-radius:0}
+.drop{border-radius:6px}
+.warn-box,.try-box[style*="E5B84B"]{background:none !important;border:0 !important;border-left:3px solid #0F3240 !important;border-radius:0 !important;padding:2px 0 2px 22px !important;box-shadow:none}
+.warn-box h3,.try-box[style*="E5B84B"] h3{color:var(--ink) !important}
+.quote,.fact{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding-top:4px;padding-bottom:4px}
+.cmp thead th{background:#E2F1F5}
+.cmp tbody th{background:#F6FAFB}
+section.refs{padding-top:28px;padding-bottom:36px}
 </style>
 </head>
 <body>
@@ -426,8 +462,7 @@ section.refs{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(48px,7vh,80px
   <!-- 1. 연결 지도 -->
   <section>
     <div class="inner">
-      <span class="eyebrow reveal">WHOLE-BODY MAP</span>
-      <h2 class="sec-title reveal-x">턱관절 장애와 함께 나타나는 증상</h2>
+            <h2 class="sec-title reveal-x">턱관절 장애와 함께 나타나는 증상</h2>
       <p class="sec-sub reveal">미국 국립 학술원은 2020년 보고서에서 턱관절 장애를 다른 전신 질환과 함께 올 수 있는 질환으로 정의했습니다. 그림의 번호는 아래 설명의 번호와 같습니다.</p>
       <div class="map-wrap">
         <div class="map reveal">
@@ -517,12 +552,11 @@ section.refs{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(48px,7vh,80px
   <!-- 3. 이어지는 이유 -->
   <section class="dark">
     <div class="inner">
-      <span class="eyebrow reveal">MECHANISM</span>
-      <h2 class="sec-title reveal-x">턱관절 통증이 다른 부위로 퍼지는 이유</h2>
+            <h2 class="sec-title reveal-x">턱관절 통증이 다른 부위로 퍼지는 이유</h2>
       <p class="sec-sub reveal">연결의 원리로 가장 많이 연구된 설명은 두 가지입니다.</p>
       <div class="locks two stagger">
-        <div class="lock"><span class="no">PATH 01</span><h3>신경이 만나는 자리</h3><p>턱과 얼굴의 감각 신호는 뇌간의 한 구역으로 들어갑니다. 이 구역은 목 위쪽의 감각이 들어오는 자리와 이어져 있어 두 곳의 신호가 함께 처리됩니다. 목의 긴장이 턱 통증으로, 턱의 문제가 두통이나 목 통증으로 느껴지는 이유로 설명됩니다.</p></div>
-        <div class="lock"><span class="no">PATH 02</span><h3>예민해진 통증 신경</h3><p>통증이 오래 이어지면 통증을 전하는 신경이 예민한 상태로 굳기도 합니다. 그러면 약한 자극도 아프게 느끼고, 아픈 범위가 처음 자리보다 넓어집니다. 여러 부위의 만성 통증이 한 사람에게 겹치는 이유 가운데 하나로 꼽힙니다.</p></div>
+        <div class="lock"><span class="no">01</span><h3>신경이 만나는 자리</h3><p>턱과 얼굴의 감각 신호는 뇌간의 한 구역으로 들어갑니다. 이 구역은 목 위쪽의 감각이 들어오는 자리와 이어져 있어 두 곳의 신호가 함께 처리됩니다. 목의 긴장이 턱 통증으로, 턱의 문제가 두통이나 목 통증으로 느껴지는 이유로 설명됩니다.</p></div>
+        <div class="lock"><span class="no">02</span><h3>예민해진 통증 신경</h3><p>통증이 오래 이어지면 통증을 전하는 신경이 예민한 상태로 굳기도 합니다. 그러면 약한 자극도 아프게 느끼고, 아픈 범위가 처음 자리보다 넓어집니다. 여러 부위의 만성 통증이 한 사람에게 겹치는 이유 가운데 하나로 꼽힙니다.</p></div>
       </div>
     </div>
   </section>
@@ -530,8 +564,7 @@ section.refs{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(48px,7vh,80px
   <!-- 4. 참고문헌 -->
   <section class="refs">
     <div class="inner">
-      <span class="eyebrow reveal">REFERENCES</span>
-      <ol class="ref-list reveal">
+      <h2 class="ref-title reveal">참고문헌</h2>      <ol class="ref-list reveal">
         <li>National Academies of Sciences, Engineering, and Medicine. Temporomandibular Disorders: Priorities for Research and Care. The National Academies Press; 2020.</li>
         <li>Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018;38(1):1–211.</li>
         <li>Cuenca-Martínez F, Herranz-Gómez A, Madroñero-Miguel B, et al. Craniocervical and cervical spine features of patients with temporomandibular disorders: a systematic review and meta-analysis of observational studies. J Clin Med. 2020;9(9):2806.</li>

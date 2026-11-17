@@ -201,14 +201,14 @@ header.scrolled{height:auto}
 .btn-green{background:#2F6B5A;color:#fff}
 
 /* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
-:root{--accent:#D97757;--accent-deep:#BC5B3C}
+:root{--accent:#176D8C;--accent-deep:#0F4F68}
 .eyebrow{color:var(--accent-deep)}
-.dark .eyebrow{color:#E9A184}
+.dark .eyebrow{color:#79C3DA}
 .check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
-.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.dark .check-list .ck{border-color:#79C3DA;color:#79C3DA}
 .lock .no{color:var(--accent)}
-.dark .lock .no{color:#E9A184}
-.alt{background:#F8F4EB}
+.dark .lock .no{color:#79C3DA}
+.alt{background:#FFFFFF}
 
 /* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
 html{scroll-padding-top:96px}
@@ -228,7 +228,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .drop a:hover{background:var(--bg2);color:var(--green-deep)}
 
 /* 대비 보정: 산호 글자색 통일 */
-:root{--accent-text:#A14E2F}
+:root{--accent-text:#0F4F68}
 .eyebrow,.dark .eyebrow{color:var(--accent-text)}
 .check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
 .lock .no,.dark .lock .no{color:var(--accent-text)}
@@ -320,6 +320,42 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
 @media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
 @media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style id="design-2026-11">
+:root{--accent:#176D8C;--accent-deep:#0F4F68;--accent-text:#0F4F68;--bg:#fff;--r:3px;--serif:"Noto Serif KR","Nanum Myeongjo",serif}
+body{background:#fff}
+.alt,.dark,.tint-cream,.tint-mint{background:#fff}
+section + section{border-top:1px solid var(--line)}
+section:not(.hero){padding-top:clamp(44px,6vh,76px);padding-bottom:clamp(44px,6vh,76px)}
+h1,h2{font-family:var(--serif);font-weight:700;letter-spacing:-.03em}
+h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
+.hero h1{font-weight:700;line-height:1.32}
+.sec-title{font-weight:700;line-height:1.42}
+.sec-title::before{content:"";display:block;width:9px;height:9px;background:var(--green-deep);transform:rotate(45deg);margin:0 0 20px 2px}
+.locks{gap:0 40px;margin-top:28px}
+.lock{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding:20px 0 8px}
+.lock:hover{background:none;transform:none}
+.lock .no,.dark .lock .no{color:var(--green-deep);font-weight:500;font-size:22px;letter-spacing:0}
+.pair{gap:0 40px}
+.pair .cell{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 8px}
+.try-box,.now-box{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding:2px 0 2px 22px;box-shadow:none}
+.try-box h3,.now-box h3{color:var(--ink)}
+.conns{gap:0 40px}
+.conn{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;padding:20px 0 24px}
+.conn-top{align-items:baseline;gap:12px}
+.conn .num{background:none;color:var(--green-deep);width:auto;height:auto;font-family:var(--latin);font-size:24px;font-weight:500;line-height:1;min-width:20px}
+.dot.origin{background:#0F3240;box-shadow:0 0 0 4px rgba(15,50,64,.16)}
+.dot.origin::after{border-color:#0F3240}
+.ref-title{font-size:19px;margin-bottom:16px}
+.quote{border-radius:0}
+.drop{border-radius:6px}
+.warn-box,.try-box[style*="E5B84B"]{background:none !important;border:0 !important;border-left:3px solid #0F3240 !important;border-radius:0 !important;padding:2px 0 2px 22px !important;box-shadow:none}
+.warn-box h3,.try-box[style*="E5B84B"] h3{color:var(--ink) !important}
+.quote,.fact{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding-top:4px;padding-bottom:4px}
+.cmp thead th{background:#E2F1F5}
+.cmp tbody th{background:#F6FAFB}
+section.refs{padding-top:28px;padding-bottom:36px}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -380,8 +416,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <section>
     <div class="inner split2">
       <div>
-        <span class="eyebrow reveal">ANATOMY</span>
-        <h2 class="sec-title reveal-x">턱관절과 귀는 벽 하나 사이입니다</h2>
+                <h2 class="sec-title reveal-x">턱관절과 귀는 벽 하나 사이입니다</h2>
         <p class="sec-sub reveal">턱관절은 귀 바로 앞에 있어, 얇은 벽 하나를
         사이에 두고 맞닿아 있습니다.</p>
         <p class="sec-sub reveal" style="margin-top:14px">이렇게 가깝다 보니 관절과 씹는 근육의 문제가
@@ -397,8 +432,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 2. 어떤 증상 -->
   <section class="alt">
     <div class="inner">
-      <span class="eyebrow reveal">CLINICAL FEATURES</span>
-      <h2 class="sec-title reveal-x">턱 관련 귀 증상의 양상</h2>
+            <h2 class="sec-title reveal-x">턱 관련 귀 증상의 양상</h2>
       <div class="split2" style="margin-top:34px;align-items:start">
         <div>
           <p class="sec-sub reveal">아래 증상이 턱 증상(관절음, 통증, 기상 시 뻣뻣함)과
@@ -430,16 +464,15 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 3. 왜 그런가 -->
   <section class="dark">
     <div class="inner">
-      <span class="eyebrow reveal">MECHANISM</span>
-      <h2 class="sec-title reveal-x">귀 검사가 정상인 귀 증상의 기전</h2>
+            <h2 class="sec-title reveal-x">귀 검사가 정상인 귀 증상의 기전</h2>
       <p class="sec-sub reveal">턱에서 귀로 이어지는 경로는 세 가지입니다.</p>
       <div class="locks stagger">
-        <div class="lock"><span class="no">PATH 01</span><h3>맞닿아 있는 자리</h3>
+        <div class="lock"><span class="no">01</span><h3>맞닿아 있는 자리</h3>
           <p>관절에 염증이 생기거나 눌리는 힘이 커지면, 바로 뒤의 귀 주변이 불편하게 느껴집니다.</p></div>
-        <div class="lock"><span class="no">PATH 02</span><h3>신경을 같이 쓰는 근육</h3>
+        <div class="lock"><span class="no">02</span><h3>신경을 같이 쓰는 근육</h3>
           <p>씹는 근육과 귀 안의 작은 근육은 같은 신경이 맡고 있습니다.
           턱 근육이 오래 긴장하면 귀가 먹먹해지기도 합니다.</p></div>
-        <div class="lock"><span class="no">PATH 03</span><h3>번져서 느껴지는 통증</h3>
+        <div class="lock"><span class="no">03</span><h3>번져서 느껴지는 통증</h3>
           <p>씹는 근육의 긴장은 그 자리가 아닌 다른 곳의 통증으로 느껴지기도 합니다.
           귀가 아픈 것 같은데 이비인후과 검사는 정상인 경우가 흔한 예입니다.</p></div>
       </div>

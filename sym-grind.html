@@ -211,14 +211,14 @@ header.scrolled{height:auto}
 .picto-row img.picto{flex:1;min-height:0;max-height:170px}
 
 /* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
-:root{--accent:#D97757;--accent-deep:#BC5B3C}
+:root{--accent:#176D8C;--accent-deep:#0F4F68}
 .eyebrow{color:var(--accent-deep)}
-.dark .eyebrow{color:#E9A184}
+.dark .eyebrow{color:#79C3DA}
 .check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
-.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.dark .check-list .ck{border-color:#79C3DA;color:#79C3DA}
 .lock .no{color:var(--accent)}
-.dark .lock .no{color:#E9A184}
-.alt{background:#F8F4EB}
+.dark .lock .no{color:#79C3DA}
+.alt{background:#FFFFFF}
 
 /* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
 html{scroll-padding-top:96px}
@@ -238,7 +238,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .drop a:hover{background:var(--bg2);color:var(--green-deep)}
 
 /* 대비 보정: 산호 글자색 통일 */
-:root{--accent-text:#A14E2F}
+:root{--accent-text:#0F4F68}
 .eyebrow,.dark .eyebrow{color:var(--accent-text)}
 .check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
 .lock .no,.dark .lock .no{color:var(--accent-text)}
@@ -330,6 +330,42 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
 @media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
 @media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style id="design-2026-11">
+:root{--accent:#176D8C;--accent-deep:#0F4F68;--accent-text:#0F4F68;--bg:#fff;--r:3px;--serif:"Noto Serif KR","Nanum Myeongjo",serif}
+body{background:#fff}
+.alt,.dark,.tint-cream,.tint-mint{background:#fff}
+section + section{border-top:1px solid var(--line)}
+section:not(.hero){padding-top:clamp(44px,6vh,76px);padding-bottom:clamp(44px,6vh,76px)}
+h1,h2{font-family:var(--serif);font-weight:700;letter-spacing:-.03em}
+h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
+.hero h1{font-weight:700;line-height:1.32}
+.sec-title{font-weight:700;line-height:1.42}
+.sec-title::before{content:"";display:block;width:9px;height:9px;background:var(--green-deep);transform:rotate(45deg);margin:0 0 20px 2px}
+.locks{gap:0 40px;margin-top:28px}
+.lock{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding:20px 0 8px}
+.lock:hover{background:none;transform:none}
+.lock .no,.dark .lock .no{color:var(--green-deep);font-weight:500;font-size:22px;letter-spacing:0}
+.pair{gap:0 40px}
+.pair .cell{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 8px}
+.try-box,.now-box{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding:2px 0 2px 22px;box-shadow:none}
+.try-box h3,.now-box h3{color:var(--ink)}
+.conns{gap:0 40px}
+.conn{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;padding:20px 0 24px}
+.conn-top{align-items:baseline;gap:12px}
+.conn .num{background:none;color:var(--green-deep);width:auto;height:auto;font-family:var(--latin);font-size:24px;font-weight:500;line-height:1;min-width:20px}
+.dot.origin{background:#0F3240;box-shadow:0 0 0 4px rgba(15,50,64,.16)}
+.dot.origin::after{border-color:#0F3240}
+.ref-title{font-size:19px;margin-bottom:16px}
+.quote{border-radius:0}
+.drop{border-radius:6px}
+.warn-box,.try-box[style*="E5B84B"]{background:none !important;border:0 !important;border-left:3px solid #0F3240 !important;border-radius:0 !important;padding:2px 0 2px 22px !important;box-shadow:none}
+.warn-box h3,.try-box[style*="E5B84B"] h3{color:var(--ink) !important}
+.quote,.fact{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding-top:4px;padding-bottom:4px}
+.cmp thead th{background:#E2F1F5}
+.cmp tbody th{background:#F6FAFB}
+section.refs{padding-top:28px;padding-bottom:36px}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -390,8 +426,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <section>
     <div class="inner split2">
       <div>
-        <span class="eyebrow reveal">CLASSIFICATION</span>
-        <h2 class="sec-title reveal-x">수면 중 이갈이와 주간의 이 악물기</h2>
+                <h2 class="sec-title reveal-x">수면 중 이갈이와 주간의 이 악물기</h2>
         <p class="sec-sub reveal"><b>이갈이</b>는 주로 수면 중에 치아를 갈거나 꽉 무는 근활동으로,
         대개 자각이 없습니다. 주변의 소리 보고나 기상 시 증상, 치아의 변화로 확인되는 경우가 많습니다.</p>
         <p class="sec-sub reveal" style="margin-top:14px"><b>이 악물기</b>는 깨어 있는 동안 집중하거나 긴장할 때
@@ -418,8 +453,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 2. 증상의 양상 -->
   <section class="alt">
     <div class="inner">
-      <span class="eyebrow reveal">CLINICAL FEATURES</span>
-      <h2 class="sec-title reveal-x">증상의 양상</h2>
+            <h2 class="sec-title reveal-x">증상의 양상</h2>
       <div class="split2" style="margin-top:34px;align-items:start">
         <div>
           <p class="sec-sub reveal">이갈이·이 악물기의 영향은 치아에만 그치지 않고,
@@ -456,18 +490,17 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 3. 수면·호흡과의 연관 -->
   <section class="dark">
     <div class="inner">
-      <span class="eyebrow reveal">MECHANISM</span>
-      <h2 class="sec-title reveal-x">수면·호흡과의 연관</h2>
+            <h2 class="sec-title reveal-x">수면·호흡과의 연관</h2>
       <p class="sec-sub reveal">이갈이와 이 악물기는 턱에 국한된 현상이 아니라,
       수면과 호흡을 포함한 전신 기능의 영향을 받습니다.</p>
       <div class="locks stagger">
-        <div class="lock"><span class="no">LINK 01</span><h3>수면 중 각성 반응</h3>
+        <div class="lock"><span class="no">01</span><h3>수면 중 각성 반응</h3>
           <p>수면 중 호흡이 불안정하거나 자주 깨면 씹는 근육의 활동이
           늘 수 있습니다. 본인도 모르게 이갈이가 진행되는 이유 중 하나입니다.</p></div>
-        <div class="lock"><span class="no">LINK 02</span><h3>수면무호흡과의 중첩</h3>
+        <div class="lock"><span class="no">02</span><h3>수면무호흡과의 중첩</h3>
           <p>폐쇄성 수면무호흡이 있는 분에게서 이갈이가 더 흔하다는 보고가
           있습니다. 다만 한쪽이 다른 쪽을 직접 일으킨다는 뜻은 아닙니다.</p></div>
-        <div class="lock"><span class="no">LINK 03</span><h3>수면의 질과 통증 민감도</h3>
+        <div class="lock"><span class="no">03</span><h3>수면의 질과 통증 민감도</h3>
           <p>수면의 질이 떨어지면 통증 민감도가 높아져,
           같은 근활동에서도 증상을 더 크게 체감할 수 있습니다.</p></div>
       </div>
@@ -487,8 +520,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
     <div class="inner split2">
       <div class="habit-img reveal"><img src="img/habit.jpg" alt="책상에 앉아 집중하고 있는 사람 일러스트"></div>
       <div>
-        <span class="eyebrow reveal">CLINICAL EXAM</span>
-        <h2 class="sec-title reveal-x">이갈이·이 악물기의 검사</h2>
+                <h2 class="sec-title reveal-x">이갈이·이 악물기의 검사</h2>
         <p class="sec-sub reveal">검사는 이 근육 활동이 언제, 어떤 조건에서 일어나는지
         구분하는 데서 시작합니다.</p>
         <ul class="check-list reveal">

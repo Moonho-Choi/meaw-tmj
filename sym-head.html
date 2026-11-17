@@ -204,14 +204,14 @@ header.scrolled{height:auto}
 .btn-green{background:#2F6B5A;color:#fff}
 
 /* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
-:root{--accent:#D97757;--accent-deep:#BC5B3C}
+:root{--accent:#176D8C;--accent-deep:#0F4F68}
 .eyebrow{color:var(--accent-deep)}
-.dark .eyebrow{color:#E9A184}
+.dark .eyebrow{color:#79C3DA}
 .check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
-.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.dark .check-list .ck{border-color:#79C3DA;color:#79C3DA}
 .lock .no{color:var(--accent)}
-.dark .lock .no{color:#E9A184}
-.alt{background:#F8F4EB}
+.dark .lock .no{color:#79C3DA}
+.alt{background:#FFFFFF}
 
 /* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
 html{scroll-padding-top:96px}
@@ -231,7 +231,7 @@ header nav{width:100%;justify-content:center;border-top:1px solid var(--line);pa
 .drop a:hover{background:var(--bg2);color:var(--green-deep)}
 
 /* 대비 보정: 산호 글자색 통일 */
-:root{--accent-text:#A14E2F}
+:root{--accent-text:#0F4F68}
 .eyebrow,.dark .eyebrow{color:var(--accent-text)}
 .check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
 .lock .no,.dark .lock .no{color:var(--accent-text)}
@@ -323,6 +323,42 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
 @media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
 @media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style id="design-2026-11">
+:root{--accent:#176D8C;--accent-deep:#0F4F68;--accent-text:#0F4F68;--bg:#fff;--r:3px;--serif:"Noto Serif KR","Nanum Myeongjo",serif}
+body{background:#fff}
+.alt,.dark,.tint-cream,.tint-mint{background:#fff}
+section + section{border-top:1px solid var(--line)}
+section:not(.hero){padding-top:clamp(44px,6vh,76px);padding-bottom:clamp(44px,6vh,76px)}
+h1,h2{font-family:var(--serif);font-weight:700;letter-spacing:-.03em}
+h3{font-family:var(--sans);font-weight:700;letter-spacing:-.02em}
+.hero h1{font-weight:700;line-height:1.32}
+.sec-title{font-weight:700;line-height:1.42}
+.sec-title::before{content:"";display:block;width:9px;height:9px;background:var(--green-deep);transform:rotate(45deg);margin:0 0 20px 2px}
+.locks{gap:0 40px;margin-top:28px}
+.lock{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;box-shadow:none;padding:20px 0 8px}
+.lock:hover{background:none;transform:none}
+.lock .no,.dark .lock .no{color:var(--green-deep);font-weight:500;font-size:22px;letter-spacing:0}
+.pair{gap:0 40px}
+.pair .cell{background:none;border:0;border-top:2px solid var(--ink);border-radius:0;padding:20px 0 8px}
+.try-box,.now-box{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding:2px 0 2px 22px;box-shadow:none}
+.try-box h3,.now-box h3{color:var(--ink)}
+.conns{gap:0 40px}
+.conn{background:none;border:0;border-top:1px solid #C5D3D8;border-radius:0;padding:20px 0 24px}
+.conn-top{align-items:baseline;gap:12px}
+.conn .num{background:none;color:var(--green-deep);width:auto;height:auto;font-family:var(--latin);font-size:24px;font-weight:500;line-height:1;min-width:20px}
+.dot.origin{background:#0F3240;box-shadow:0 0 0 4px rgba(15,50,64,.16)}
+.dot.origin::after{border-color:#0F3240}
+.ref-title{font-size:19px;margin-bottom:16px}
+.quote{border-radius:0}
+.drop{border-radius:6px}
+.warn-box,.try-box[style*="E5B84B"]{background:none !important;border:0 !important;border-left:3px solid #0F3240 !important;border-radius:0 !important;padding:2px 0 2px 22px !important;box-shadow:none}
+.warn-box h3,.try-box[style*="E5B84B"] h3{color:var(--ink) !important}
+.quote,.fact{background:none;border:0;border-left:3px solid var(--green-deep);border-radius:0;padding-top:4px;padding-bottom:4px}
+.cmp thead th{background:#E2F1F5}
+.cmp tbody th{background:#F6FAFB}
+section.refs{padding-top:28px;padding-bottom:36px}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -383,8 +419,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <section>
     <div class="inner split2">
       <div>
-        <span class="eyebrow reveal">ANATOMY</span>
-        <h2 class="sec-title reveal-x">씹는 근육은 머리까지 이어집니다</h2>
+                <h2 class="sec-title reveal-x">씹는 근육은 머리까지 이어집니다</h2>
         <p class="sec-sub reveal"><b>저작근(씹는 근육)</b>은 턱에만 있지 않습니다.
         관자놀이까지, 머리 옆면에 넓게 붙어 있습니다.</p>
         <p class="sec-sub reveal" style="margin-top:14px">턱 아래로는 목·어깨 근육이 이어져,
@@ -400,8 +435,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 2. 어떤 두통인가 -->
   <section class="alt">
     <div class="inner">
-      <span class="eyebrow reveal">CLASSIFICATION</span>
-      <h2 class="sec-title reveal-x">턱 관련 두통의 양상</h2>
+            <h2 class="sec-title reveal-x">턱 관련 두통의 양상</h2>
       <div class="split2" style="margin-top:34px;align-items:start">
         <div>
           <p class="sec-sub reveal">턱과 관련된 두통은 대체로 아래 특징을 보입니다.
@@ -437,17 +471,16 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
   <!-- 3. 왜 그런가 -->
   <section class="dark">
     <div class="inner">
-      <span class="eyebrow reveal">MECHANISM</span>
-      <h2 class="sec-title reveal-x">두통의 원인이 턱에 있는 경우</h2>
+            <h2 class="sec-title reveal-x">두통의 원인이 턱에 있는 경우</h2>
       <p class="sec-sub reveal">턱에서 시작된 긴장이 두통으로 이어지는 흔한 경우는 세 가지입니다.</p>
       <div class="locks stagger">
-        <div class="lock"><span class="no">PATH 01</span><h3>이 악물기</h3>
+        <div class="lock"><span class="no">01</span><h3>이 악물기</h3>
           <p>수면 중, 집중할 때의 이 악물기는 측두근을 지속적으로 수축시킵니다.
           아침부터 머리가 무거운 두통의 흔한 원인입니다.</p></div>
-        <div class="lock"><span class="no">PATH 02</span><h3>목으로 이어지는 긴장</h3>
+        <div class="lock"><span class="no">02</span><h3>목으로 이어지는 긴장</h3>
           <p>턱 근육의 긴장은 턱에서 끝나지 않고 목과 어깨로 이어집니다.
           목 뒤가 굳으면 뒷머리가 당기듯 아픈 두통이 따라오기도 합니다.</p></div>
-        <div class="lock"><span class="no">PATH 03</span><h3>통증의 번짐</h3>
+        <div class="lock"><span class="no">03</span><h3>통증의 번짐</h3>
           <p>근육의 긴장은 그 자리가 아닌 다른 곳의 통증으로 느껴지기도 합니다.
           저작근을 눌렀을 때 머리에 통증이 재현되는 것이 그 예입니다.</p></div>
       </div>
@@ -465,8 +498,7 @@ header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A
     <div class="inner split2">
       <div class="habit-img reveal"><img src="img/exam.jpg" alt="치과의사가 환자의 턱 주변을 살피는 진료 장면 그림"></div>
       <div>
-        <span class="eyebrow reveal">CLINICAL EXAM</span>
-        <h2 class="sec-title reveal-x">두통 환자의 턱 검사</h2>
+                <h2 class="sec-title reveal-x">두통 환자의 턱 검사</h2>
         <p class="sec-sub reveal">두통이 턱과 관련되는지는 아래 순서로 확인합니다.</p>
         <ul class="check-list reveal">
           <li><span class="ck">✓</span>씹는 근육과 목 근육을 눌러 아픈 자리 찾기</li>
