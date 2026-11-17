@@ -861,36 +861,7 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .sym-grid{margin-bottom:0}
 .sym-more{margin-top:18px;font-size:15px;font-weight:600}
 .sym-more a{color:var(--green-deep);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}</style>
-<style id="symptom-map">
-.smap{position:relative;display:grid;grid-template-columns:1fr minmax(300px,420px) 1fr;gap:clamp(30px,5vw,70px);align-items:stretch;margin-top:26px}
-.smap-fig{position:relative;align-self:center;width:100%}
-.smap-fig img{width:100%;display:block}
-.smap-col{display:flex;flex-direction:column;justify-content:space-between;gap:22px}
-.smap-item h3{display:flex;align-items:center;gap:10px;font-size:17.5px;margin-bottom:8px;position:relative}
-.smap-item h3 a{color:var(--ink)}
-.smap-item h3 a:hover{color:var(--green-deep);text-decoration:underline;text-underline-offset:4px}
-.smap-item ul{list-style:none;padding:0;margin:0;font-size:15px;color:var(--muted);line-height:1.8}
-.smap-item li{padding-left:14px;position:relative}
-.smap-item li::before{content:"";position:absolute;left:2px;top:.82em;width:4px;height:4px;border-radius:50%;background:#8FB6C7}
-.smap-item .lead{flex:1;height:0;min-width:10px}
-.smap-col.left .smap-item h3{flex-direction:row}
-.smap-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.smap-lines path{fill:none;stroke:#12506B;stroke-width:1.3;opacity:.75}
-.smap-lines circle{fill:#12506B}
-.sdot,.smap-item .sn{display:none}
-@media (min-width:861px){.smap.body{grid-template-columns:1fr minmax(220px,300px) 1fr}}
-@media (max-width:860px){
-  .smap{grid-template-columns:1fr 1fr;gap:0 18px}
-  .smap-fig{grid-column:1/-1;grid-row:1;max-width:330px;margin:0 auto 10px}
-  .smap-col{gap:0;justify-content:flex-start}
-  .smap-item{border-top:1px solid #C5D3D8;padding:14px 0 16px}
-  .smap-item ul{font-size:14px}
-  .smap-lines{display:none}
-  .sdot{display:flex;position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:12.5px;font-weight:700;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.92)}
-  .smap-item .sn{display:inline-flex;flex:none;width:22px;height:22px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:12px;font-weight:700;align-items:center;justify-content:center}
-  .smap-item .lead{display:none}
-}
-</style>
+
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -1030,93 +1001,7 @@ section.refs{padding-top:28px;padding-bottom:36px}
         </a>
       </div>
       <p class="sym-more"><a href="body.html">전신 증상 한눈에 보기</a></p>
-      <h2 class="sec-title reveal-x" style="margin-top:clamp(40px,6vw,64px)">부위별 증상</h2>
-      <div class="smap" id="smap">
-        <div class="smap-col left stagger">
-          <div class="smap-item" data-x="42" data-y="26">
-            <h3><span class="sn">1</span><a href="sym-head.html">머리</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>두통</li><li>편두통</li><li>관자놀이, 이마, 두피의 통증</li></ul>
-          </div>
-          <div class="smap-item" data-x="25" data-y="32">
-            <h3><span class="sn">2</span><a href="sym-asym.html#eyes">눈과 얼굴의 좌우</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>좌우 눈 크기의 차이</li><li>눈썹 높이의 차이</li><li>한쪽으로 틀어진 코</li><li>눈 통증</li><li>충혈</li><li>흐린 시야</li><li>빛에 예민함</li></ul>
-          </div>
-          <div class="smap-item" data-x="20" data-y="50">
-            <h3><span class="sn">3</span><a href="sym-lock.html">입</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>입의 불편감</li><li>입이 덜 벌어짐</li><li>벌릴 때 한쪽으로 틀어지는 턱</li><li>턱 걸림</li><li>씹기 어려움</li></ul>
-          </div>
-          <div class="smap-item" data-x="30" data-y="47">
-            <h3><span class="sn">4</span><a href="sym-grind.html">치아</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>이 악물기와 이갈이</li><li>시린 이</li><li>치아의 뻐근함</li></ul>
-          </div>
-        </div>
-        <div class="smap-fig reveal" id="smapFig">
-          <img src="img/face-map.jpg" alt="옆얼굴과 목 그림. 머리, 눈, 입, 치아, 귀, 턱, 목, 목구멍의 자리에서 선이 뻗어 부위별 증상 목록과 이어진다.">
-            <span class="sdot" style="left:42%;top:26%" aria-hidden="true">1</span>
-            <span class="sdot" style="left:25%;top:32%" aria-hidden="true">2</span>
-            <span class="sdot" style="left:20%;top:50%" aria-hidden="true">3</span>
-            <span class="sdot" style="left:30%;top:47%" aria-hidden="true">4</span>
-            <span class="sdot" style="left:61%;top:36%" aria-hidden="true">5</span>
-            <span class="sdot" style="left:51%;top:41%" aria-hidden="true">6</span>
-            <span class="sdot" style="left:55%;top:63%" aria-hidden="true">7</span>
-            <span class="sdot" style="left:44%;top:70%" aria-hidden="true">8</span>
-        </div>
-        <div class="smap-col right stagger">
-          <div class="smap-item" data-x="61" data-y="36">
-            <h3><span class="sn">5</span><a href="sym-ear.html">귀</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>이명</li><li>잘 안 들리는 느낌</li><li>귀 통증과 먹먹함</li><li>귀 가려움</li><li>어지럼</li><li>귀 높이의 차이</li></ul>
-          </div>
-          <div class="smap-item" data-x="51" data-y="41">
-            <h3><span class="sn">6</span><a href="sym-pain.html">턱</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>딸깍거리는 소리</li><li>갈리는 느낌</li><li>볼의 통증</li><li>턱의 뻣뻣함</li><li>움직일 때의 통증</li></ul>
-          </div>
-          <div class="smap-item" data-x="55" data-y="63">
-            <h3><span class="sn">7</span><a href="sym-neck.html">목</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>목의 뻣뻣함과 통증</li><li>근육통</li><li>줄어든 목 움직임</li><li>어깨 결림</li><li>팔과 손의 저림</li></ul>
-          </div>
-          <div class="smap-item" data-x="44" data-y="70">
-            <h3><span class="sn">8</span>목구멍<span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>삼키기 어려움</li><li>목 아픔</li><li>쉰 목소리</li><li>잦은 기침</li><li>목에 걸린 느낌</li></ul>
-          </div>
-        </div>
-        <svg class="smap-lines" id="smapLines" aria-hidden="true"></svg>
-      </div>
-      <div class="smap body" style="margin-top:clamp(44px,6vw,72px)">
-        <div class="smap-col left stagger">
-          <div class="smap-item" data-x="52" data-y="22">
-            <h3><span class="sn">1</span><a href="sym-sleep.html">수면과 호흡</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>코골이</li><li>자다가 숨이 멈춤</li><li>개운하지 않은 아침</li></ul>
-          </div>
-          <div class="smap-item" data-x="45" data-y="58">
-            <h3><span class="sn">2</span><a href="body.html">소화</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>소화 불편</li><li>과민대장 증후군</li></ul>
-          </div>
-          <div class="smap-item" data-x="42" data-y="66">
-            <h3><span class="sn">3</span><a href="body.html">허리와 척추</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>허리 통증</li><li>자세의 틀어짐</li></ul>
-          </div>
-        </div>
-        <div class="smap-fig reveal">
-          <img src="img/body-line-navy.png" alt="정면을 보고 선 온몸 선화. 목 앞, 배, 허리, 가슴, 팔의 자리에서 선이 뻗어 수면과 호흡, 소화, 허리와 척추, 마음, 온몸의 만성 통증 목록과 이어진다.">
-            <span class="sdot" style="left:52%;top:22%" aria-hidden="true">1</span>
-            <span class="sdot" style="left:45%;top:58%" aria-hidden="true">2</span>
-            <span class="sdot" style="left:42%;top:66%" aria-hidden="true">3</span>
-            <span class="sdot" style="left:57%;top:40%" aria-hidden="true">4</span>
-            <span class="sdot" style="left:80%;top:50%" aria-hidden="true">5</span>
-        </div>
-        <div class="smap-col right stagger">
-          <div class="smap-item" data-x="57" data-y="40">
-            <h3><span class="sn">4</span><a href="sym-stress.html">마음</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>스트레스</li><li>불안과 우울감</li><li>얕은 잠</li></ul>
-          </div>
-          <div class="smap-item" data-x="80" data-y="50">
-            <h3><span class="sn">5</span><a href="sym-chronic.html">온몸의 만성 통증</a><span class="lead" aria-hidden="true"></span></h3>
-            <ul><li>여러 곳이 함께 아픔</li><li>섬유근육통</li><li>약한 자극에도 느끼는 통증</li></ul>
-          </div>
-        </div>
-        <svg class="smap-lines" aria-hidden="true"></svg>
-      </div>
-      </div>
+</div>
     </div>
   </section>
 
@@ -1476,27 +1361,6 @@ if('IntersectionObserver' in window)new IntersectionObserver(function(e){var v=e
 if(document.readyState==='complete')start();else addEventListener('load',start);
 })();
 </script>
-<script id="symptom-map-js">
-(function(){
-  var maps=[].slice.call(document.querySelectorAll('.smap'));if(!maps.length)return;
-  function drawOne(box){
-    var fig=box.querySelector('.smap-fig'),svg=box.querySelector('.smap-lines');if(!fig||!svg)return;
-    if(innerWidth<=860){svg.innerHTML='';return}
-    var b=box.getBoundingClientRect(),f=fig.getBoundingClientRect(),h='';
-    [].forEach.call(box.querySelectorAll('.smap-item'),function(it){
-      var left=it.parentNode.classList.contains('left'),t=it.querySelector('h3').getBoundingClientRect();
-      var ax=f.left-b.left+f.width*(+it.dataset.x)/100,ay=f.top-b.top+f.height*(+it.dataset.y)/100;
-      var ty=t.top-b.top+t.height/2,a=it.querySelector('h3 a'),n=a?a.getBoundingClientRect():null,sx,ex;
-      if(left){sx=(n?n.right:t.left+60)-b.left+12;ex=f.left-b.left-8}
-      else{sx=t.left-b.left-12;ex=f.right-b.left+8}
-      h+='<path d="M'+sx+' '+ty+' L'+ex+' '+ty+' L'+ax+' '+ay+'"/><circle cx="'+ax+'" cy="'+ay+'" r="4.5"/><circle cx="'+sx+'" cy="'+ty+'" r="3"/>';
-    });
-    svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);svg.innerHTML=h;
-  }
-  function draw(){maps.forEach(drawOne)}
-  addEventListener('load',function(){draw();setTimeout(draw,800);setTimeout(draw,2500)});addEventListener('resize',draw);
-  maps.forEach(function(m){var im=m.querySelector('.smap-fig img');if(im)im.addEventListener('load',draw)});
-})();
-</script>
+
 </body>
 </html>

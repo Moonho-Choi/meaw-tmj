@@ -428,6 +428,43 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .cmp thead th{background:#E9EEF2}
 .cmp tbody th{background:#F6F8FA}
 </style>
+<style id="symptom-map">
+.smap{position:relative;display:grid;grid-template-columns:1fr minmax(300px,420px) 1fr;gap:clamp(30px,5vw,70px);align-items:stretch;margin-top:26px}
+.smap-fig{position:relative;align-self:center;width:100%}
+.smap-fig img{width:100%;display:block}
+.smap-col{display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.smap-item h3{display:flex;align-items:center;gap:10px;font-size:17.5px;margin-bottom:8px;position:relative}
+.smap-item h3 a{color:var(--ink)}
+.smap-item h3 a:hover{color:var(--green-deep);text-decoration:underline;text-underline-offset:4px}
+.smap-item ul{list-style:none;padding:0;margin:0;font-size:15px;color:var(--muted);line-height:1.8}
+.smap-item li{padding-left:14px;position:relative}
+.smap-item li::before{content:"";position:absolute;left:2px;top:.82em;width:4px;height:4px;border-radius:50%;background:#8FB6C7}
+.smap-item .lead{flex:1;height:0;min-width:10px}
+.smap-col.left .smap-item h3{flex-direction:row}
+.smap-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.smap-lines path{fill:none;stroke:#12506B;stroke-width:1.3;opacity:.75}
+.smap-lines circle{fill:#12506B}
+.sdot,.smap-item .sn{display:none}
+@media (min-width:861px){.smap.body{grid-template-columns:1fr minmax(220px,300px) 1fr}}
+@media (max-width:860px){
+  .smap{grid-template-columns:1fr 1fr;gap:0 18px}
+  .smap-fig{grid-column:1/-1;grid-row:1;max-width:330px;margin:0 auto 10px}
+  .smap-col{gap:0;justify-content:flex-start}
+  .smap-item{border-top:1px solid #C5D3D8;padding:14px 0 16px}
+  .smap-item ul{font-size:14px}
+  .smap-lines{display:none}
+  .sdot{display:flex;position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:12.5px;font-weight:700;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.92)}
+  .smap-item .sn{display:inline-flex;flex:none;width:22px;height:22px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:12px;font-weight:700;align-items:center;justify-content:center}
+  .smap-item .lead{display:none}
+}
+</style>
+<style id="map-solo">
+.map-wrap.solo{grid-template-columns:1fr;margin-top:clamp(36px,5vw,56px)}
+.map-wrap.solo .conns{grid-template-columns:repeat(3,1fr)}
+.map-wrap.solo .conn-top .num{display:none}
+@media (max-width:1000px){.map-wrap.solo .conns{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.map-wrap.solo .conns{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -499,24 +536,43 @@ section.refs{padding-top:28px;padding-bottom:36px}
   <section>
     <div class="inner">
             <h2 class="sec-title reveal-x">턱관절 장애와 함께 나타나는 증상</h2>
-      <p class="sec-sub reveal">미국 국립 학술원은 2020년 보고서에서 턱관절 장애를 다른 전신 질환과 함께 올 수 있는 질환으로 정의했습니다. 그림의 번호는 아래 설명의 번호와 같습니다.</p>
-      <div class="map-wrap">
-        <div class="map reveal">
-          <div class="map-fig">
-            <img src="img/body-line.png" alt="상반신 윤곽 위에 턱관절과 두통, 목, 귀, 수면, 만성 통증 등 연결된 자리를 번호로 표시한 그림">
-            <span class="dot origin" style="left:39%;top:15.5%" aria-hidden="true"></span>
-            <span class="dot" style="left:45%;top:6.5%" aria-hidden="true">1</span>
-            <span class="dot" style="left:67%;top:29%" aria-hidden="true">2</span>
-            <span class="dot" style="left:42%;top:73%" aria-hidden="true">3</span>
-            <span class="dot" style="left:50%;top:26%" aria-hidden="true">4</span>
-            <span class="dot" style="left:42%;top:41%" aria-hidden="true">5</span>
-            <span class="dot" style="left:62.5%;top:13.5%" aria-hidden="true">6</span>
-            <span class="dot" style="left:58%;top:58%" aria-hidden="true">7</span>
-            <span class="dot" style="left:50%;top:50%" aria-hidden="true">8</span>
+      <p class="sec-sub reveal">미국 국립 학술원은 2020년 보고서에서 턱관절 장애를 다른 전신 질환과 함께 올 수 있는 질환으로 정의했습니다.</p>
+      <div class="smap body">
+        <div class="smap-col left stagger">
+          <div class="smap-item" data-x="52" data-y="22">
+            <h3><span class="sn">1</span><a href="sym-sleep.html">수면과 호흡</a><span class="lead" aria-hidden="true"></span></h3>
+            <ul><li>코골이</li><li>자다가 숨이 멈춤</li><li>개운하지 않은 아침</li></ul>
           </div>
-          <p class="map-cap"><span class="dot origin small" aria-hidden="true"></span>턱관절</p>
+          <div class="smap-item" data-x="45" data-y="58">
+            <h3><span class="sn">2</span><a href="body.html">소화</a><span class="lead" aria-hidden="true"></span></h3>
+            <ul><li>소화 불편</li><li>과민대장 증후군</li></ul>
+          </div>
+          <div class="smap-item" data-x="42" data-y="66">
+            <h3><span class="sn">3</span><a href="body.html">허리와 척추</a><span class="lead" aria-hidden="true"></span></h3>
+            <ul><li>허리 통증</li><li>자세의 틀어짐</li></ul>
+          </div>
         </div>
-
+        <div class="smap-fig reveal">
+          <img src="img/body-line-navy.png" alt="정면을 보고 선 온몸 선화. 목 앞, 배, 허리, 가슴, 팔의 자리에서 선이 뻗어 수면과 호흡, 소화, 허리와 척추, 마음, 온몸의 만성 통증 목록과 이어진다.">
+            <span class="sdot" style="left:52%;top:22%" aria-hidden="true">1</span>
+            <span class="sdot" style="left:45%;top:58%" aria-hidden="true">2</span>
+            <span class="sdot" style="left:42%;top:66%" aria-hidden="true">3</span>
+            <span class="sdot" style="left:57%;top:40%" aria-hidden="true">4</span>
+            <span class="sdot" style="left:80%;top:50%" aria-hidden="true">5</span>
+        </div>
+        <div class="smap-col right stagger">
+          <div class="smap-item" data-x="57" data-y="40">
+            <h3><span class="sn">4</span><a href="sym-stress.html">마음</a><span class="lead" aria-hidden="true"></span></h3>
+            <ul><li>스트레스</li><li>불안과 우울감</li><li>얕은 잠</li></ul>
+          </div>
+          <div class="smap-item" data-x="80" data-y="50">
+            <h3><span class="sn">5</span><a href="sym-chronic.html">온몸의 만성 통증</a><span class="lead" aria-hidden="true"></span></h3>
+            <ul><li>여러 곳이 함께 아픔</li><li>섬유근육통</li><li>약한 자극에도 느끼는 통증</li></ul>
+          </div>
+        </div>
+        <svg class="smap-lines" aria-hidden="true"></svg>
+      </div>
+      <div class="map-wrap solo">
         <div class="conns stagger">
           <article class="conn">
             <div class="conn-top"><span class="num">1</span><h3>턱관절과 두통</h3></div>
@@ -657,6 +713,28 @@ addEventListener('scroll', () => {
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))closeAll()});
   addEventListener('scroll',function(){if(Math.abs(scrollY-openY)>80)closeAll()},{passive:true});
+})();
+</script>
+<script id="symptom-map-js">
+(function(){
+  var maps=[].slice.call(document.querySelectorAll('.smap'));if(!maps.length)return;
+  function drawOne(box){
+    var fig=box.querySelector('.smap-fig'),svg=box.querySelector('.smap-lines');if(!fig||!svg)return;
+    if(innerWidth<=860){svg.innerHTML='';return}
+    var b=box.getBoundingClientRect(),f=fig.getBoundingClientRect(),h='';
+    [].forEach.call(box.querySelectorAll('.smap-item'),function(it){
+      var left=it.parentNode.classList.contains('left'),t=it.querySelector('h3').getBoundingClientRect();
+      var ax=f.left-b.left+f.width*(+it.dataset.x)/100,ay=f.top-b.top+f.height*(+it.dataset.y)/100;
+      var ty=t.top-b.top+t.height/2,a=it.querySelector('h3 a'),n=a?a.getBoundingClientRect():null,sx,ex;
+      if(left){sx=(n?n.right:t.left+60)-b.left+12;ex=f.left-b.left-8}
+      else{sx=t.left-b.left-12;ex=f.right-b.left+8}
+      h+='<path d="M'+sx+' '+ty+' L'+ex+' '+ty+' L'+ax+' '+ay+'"/><circle cx="'+ax+'" cy="'+ay+'" r="4.5"/><circle cx="'+sx+'" cy="'+ty+'" r="3"/>';
+    });
+    svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);svg.innerHTML=h;
+  }
+  function draw(){maps.forEach(drawOne)}
+  addEventListener('load',function(){draw();setTimeout(draw,800);setTimeout(draw,2500)});addEventListener('resize',draw);
+  maps.forEach(function(m){var im=m.querySelector('.smap-fig img');if(im)im.addEventListener('load',draw)});
 })();
 </script>
 </body>
