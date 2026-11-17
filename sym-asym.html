@@ -393,6 +393,16 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .ref-list{font-size:13px;color:var(--muted);padding-left:20px;display:flex;flex-direction:column;gap:6px;line-height:1.6;overflow-wrap:anywhere}
 section.refs{border-top:1px solid var(--line)}
 </style>
+<style id="asym-view">
+.asym-view{max-width:460px;width:100%;margin:0 auto}
+.asym-stage{position:relative;aspect-ratio:1;overflow:hidden;background:#fff}
+.asym-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.asym-stage img.shifted{transition:opacity .25s linear}
+.asym-stage .mid{position:absolute;left:50%;top:9%;bottom:6%;border-left:2px dashed #12506B;opacity:.75}
+.asym-view input[type=range]{width:100%;margin-top:14px;accent-color:#12506B}
+.asym-cap{margin-top:6px;font-size:15px;font-weight:700;color:var(--ink)}
+.asym-note{font-size:13px;color:var(--muted);margin-top:2px}
+</style>
 </head>
 <body>
 <div id="pbar" aria-hidden="true"></div>
@@ -468,7 +478,8 @@ section.refs{border-top:1px solid var(--line)}
         성인에서도 디스크가 더 많이 밀려난 쪽으로 턱끝이 치우치는 경향이 있었습니다.<sup class="cite">2</sup></p>
       </div>
       <div class="figbox reveal">
-        <img class="picto" src="img/pic-asym.png" alt="얼굴 가운데 세로선과 한쪽으로 치우친 턱끝을 그린 안면비대칭 픽토그램">
+        <img src="img/asym-midline.jpg" alt="바른 턱 위치의 얼굴과 아래턱이 한쪽으로 밀린 얼굴을 나란히 비교한 그림. 밀린 쪽은 얼굴 중심선이 턱끝에서 꺾인다.">
+        <div class="figcap">왼쪽은 바른 턱 위치, 오른쪽은 아래턱이 한쪽으로 밀린 위치입니다.</div>
       </div>
     </div>
   </section>
@@ -523,7 +534,18 @@ section.refs{border-top:1px solid var(--line)}
 
   <!-- 4. 치료 -->
   <section>
-    <div class="inner">
+    <div class="inner split2">
+      <div class="asym-view reveal">
+        <div class="asym-stage" id="asymStage">
+          <img src="img/asym-normal.jpg" alt="바른 턱 위치의 정면 얼굴">
+          <img class="shifted" src="img/asym-shifted.jpg" alt="아래턱이 한쪽으로 밀린 정면 얼굴">
+          <span class="mid" aria-hidden="true"></span>
+        </div>
+        <input type="range" id="asymRange" min="0" max="100" value="0" aria-label="밀린 턱 위치와 바른 턱 위치 사이를 움직여 보기">
+        <p class="asym-cap" id="asymCap">아래턱이 한쪽으로 밀린 위치</p>
+        <p class="asym-note">설명을 위한 그림입니다. 막대를 움직이면 턱의 위치가 바뀝니다.</p>
+      </div>
+      <div>
       <h2 class="sec-title reveal-x">치료의 방향</h2>
       <p class="sec-sub reveal">치료는 원인과 나이에 따라 달라집니다.
       턱관절의 문제가 확인되면 장치(스플린트)로 아래턱의 위치를 잡고, 맞물림은 교정이나 보철로 바로잡습니다.</p>
@@ -538,6 +560,7 @@ section.refs{border-top:1px solid var(--line)}
         <li><span class="ck">✓</span>위아래 치아의 맞물림과 중심선 확인</li>
         <li><span class="ck">✓</span>필요한 경우 CT와 MRI</li>
       </ul>
+      </div>
     </div>
   </section>
 
@@ -606,6 +629,20 @@ addEventListener('scroll', () => {
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))closeAll()});
   addEventListener('scroll',function(){if(Math.abs(scrollY-openY)>80)closeAll()},{passive:true});
+})();
+</script>
+<script id="asym-view-js">
+(function(){
+  var st=document.getElementById('asymStage'),r=document.getElementById('asymRange'),c=document.getElementById('asymCap');
+  if(!st||!r)return;var sh=st.querySelector('.shifted'),auto=true,dir=1,v=0;
+  function set(x){v=x;sh.style.opacity=1-x/100;c.textContent=x<50?'아래턱이 한쪽으로 밀린 위치':'바른 턱 위치';}
+  r.addEventListener('input',function(){auto=false;set(+r.value)});
+  set(0);
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var hold=0;
+  setInterval(function(){if(!auto)return;if(hold>0){hold--;return}
+    v+=dir*2;if(v>=100){v=100;dir=-1;hold=25}if(v<=0){v=0;dir=1;hold=25}
+    r.value=v;set(v)},60);
 })();
 </script>
 </body>
