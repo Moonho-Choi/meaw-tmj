@@ -842,6 +842,24 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .skull3d:active{cursor:grabbing}
 </style>
 <style id="hero-3d-m">@media (max-width:860px){.hero-art{height:48svh;min-height:330px}}</style>
+<style id="palette-navy">
+:root{--green-deep:#12506B;--green:#1C6E8F;--green-soft:#8FB6C7;--bg2:#EEF2F5;--tint:#EEF2F5;--line:#DCE2E7;--accent:#12506B;--accent-deep:#0D3D52;--accent-text:#0D3D52}
+.hero{background:linear-gradient(160deg,#0B2030 0%,#143B54 100%);color:#fff}
+.hero h1,.hero h1 .c,.hero h1 .w{color:#fff}
+.hero p{color:#C9D6DE}
+.hero .crumb,.hero .crumb a{color:#A9BBC6}
+.hero .crumb a:hover{color:#fff}
+.hero .eyebrow{color:#8FC0D4}
+.hero .eyebrow::before{background:#8FC0D4}
+.hero h1 em{color:#A6D8EA}
+.hero h1 em::after{background:rgba(166,216,234,.22)}
+.hero-word{color:rgba(255,255,255,.07);-webkit-text-stroke:0}
+.glow{opacity:.12 !important}
+.hero-art .arc{stroke:rgba(255,255,255,.5)}
+.sym .ph{background:#EEF2F5}
+.cmp thead th{background:#E9EEF2}
+.cmp tbody th{background:#F6F8FA}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -1283,7 +1301,7 @@ var vs='attribute vec3 p;attribute float g;uniform float ry,rx,jaw,sc,asp,dpr,tm
 +'if(g>3.5){gl_PointSize=.2*sc*hpx*k*(1.+.07*sin(tm*2.2));va=.62+.38*f;}else{gl_PointSize=dpr*(1.15+1.6*f);va=.14+.8*f*f;}}';
 var fs='precision mediump float;varying float va;varying float vg;varying float vt;'
 +'void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;'
-+'vec3 c=vec3(.09,.43,.55);if(vg>.5&&vg<1.5)c=vec3(.06,.31,.41);if(vg>1.5&&vg<3.5)c=vec3(.07,.33,.43);'
++'vec3 c=vec3(.66,.83,.90);if(vg>.5&&vg<1.5)c=vec3(.82,.92,.96);if(vg>1.5&&vg<3.5)c=vec3(.95,.98,1.);'
 +'float a=va;if(vg>1.5&&vg<3.5)a*=.5;if(vg>3.5){float d1=sqrt(r)*2.;c=mix(vec3(.84,.18,.18),vec3(.96,.52,.48),smoothstep(0.,.55,d1));a=va*min(1.,.62*pow(1.-d1,1.35)+.5*smoothstep(.42,0.,d1));}'
 +'gl_FragColor=vec4(c,a);}';
 var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);
