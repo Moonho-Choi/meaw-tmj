@@ -415,9 +415,9 @@ section.refs{padding-top:26px;padding-bottom:30px}
 }
 @media (max-width:360px){.nav-item > a{font-size:14px;padding:10px 5px}}
 /* 연구회 소개·회원 치과는 한 단계 작게, 증상·치료가 앞에 보이도록 */
-header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A5A62}
-@media (max-width:860px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:13px}}
-@media (max-width:360px){header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{font-size:12.5px}}
+header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A5A62}
+@media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
+@media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
 </style>
 </head>
 <body>
@@ -427,7 +427,6 @@ header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{fon
   <a class="logo" href="index.html"><img class="mark" src="img/mw-mark.png" alt="MEAW 심벌"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
   <span class="logo-sub">MEAW TMJ Research Society</span>
   <nav aria-label="주 메뉴">
-    <div class="nav-item"><a href="about.html">연구회 소개</a></div>
     <div class="nav-item">
       <a href="index.html#symptoms">턱관절 증상 <span class="car">▼</span></a>
       <div class="drop">
@@ -441,6 +440,7 @@ header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{fon
         <a href="sym-sleep.html">코골이와 수면</a>
       </div>
     </div>
+    <div class="nav-item"><a href="body.html">전신 증상</a></div>
     <div class="nav-item">
       <a href="index.html#approach">치료 안내 <span class="car">▼</span></a>
       <div class="drop">
@@ -454,7 +454,13 @@ header nav > .nav-item:first-child > a,header nav > .nav-item:last-child > a{fon
         <a href="tx-finish.html">치료 기간과 마무리</a>
       </div>
     </div>
-    <div class="nav-item"><a href="index.html#network">회원 치과</a></div>
+    <div class="nav-item">
+      <a href="about.html">연구회 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="about.html">연구회 소개</a>
+        <a href="index.html#network">회원 치과</a>
+      </div>
+    </div>
   </nav>
 </header>
 

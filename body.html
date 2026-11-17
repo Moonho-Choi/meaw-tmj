@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>턱관절 장애와 전신 증상: 두통·이명·목 통증·수면 | MEAW 턱관절 연구회</title>
+<meta name="description" content="턱관절 장애와 함께 나타나는 두통, 이명, 목 통증, 코골이와 수면무호흡, 만성 통증을 연구 근거와 함께 정리했습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/complete/WantedSansVariable.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --hero1:#F1FAFB; --hero2:#D6EDF2; --tint:#E2F1F5;
+  --dark:#0F3240;--dark2:#0F3240;--panel:#0F3240;
+  --green:#2493B8;--green-soft:#79C3DA;--green-deep:#176D8C;
+  --bg:#F7F9FA;--bg2:#EFF3F4;--card:#FFFFFF;
+  --ink:#16262E;--muted:#4F545F;--muted-d:#9FB4BB;
+  --line:#E2E8EA;--line-d:rgba(255,255,255,.12);
+  --sans:"Wanted Sans Variable","Wanted Sans","Pretendard Variable",Pretendard,sans-serif;
+  --latin:'Outfit',sans-serif;--maxw:1180px;--r:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16.5px;line-height:1.8;letter-spacing:-.008em;word-break:keep-all;overflow-x:hidden}
+::selection{background:var(--green);color:#fff}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.032em}
+
+/* 상단 메뉴 (메인과 동일) */
+header{position:fixed;inset:0 0 auto 0;z-index:90;height:72px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 clamp(18px,3.4vw,44px);
+  background:rgba(20,41,49,.97);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-d);color:#fff;transition:height .3s,box-shadow .3s}
+header.scrolled{height:60px;box-shadow:0 12px 34px rgba(15,30,36,.35)}
+.logo{display:flex;align-items:baseline;gap:9px;flex-shrink:0}
+.logo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.logo b i{font-style:normal;color:var(--green)}
+.logo span{font-size:13px;color:var(--muted-d)}
+nav{display:flex;align-items:center;gap:clamp(4px,1vw,10px);font-size:14.5px}
+nav a{display:flex;align-items:center;padding:10px 12px;border-radius:8px;color:#E6EEF0;transition:.2s}
+nav a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{background:var(--green);color:#0E2010;font-weight:700;font-size:14px;
+  border-radius:9px;padding:11px 18px;transition:.2s;flex-shrink:0}
+.nav-cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+#pbar{position:fixed;top:0;left:0;right:0;height:3px;z-index:99;
+  background:linear-gradient(90deg,var(--green),#56E39F);transform-origin:0 50%;transform:scaleX(0)}
+
+/* 공통 */
+section{padding:clamp(72px,10vh,116px) clamp(18px,3.4vw,44px);position:relative}
+.inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--green-deep);margin-bottom:14px}
+.dark .eyebrow,.hero .eyebrow{color:var(--green)}
+.sec-title{font-weight:700;font-size:clamp(24px,3.1vw,38px);line-height:1.38;margin-bottom:16px}
+.sec-sub{max-width:64ch;color:var(--muted);font-size:16.5px}
+.dark{background:var(--dark);color:#EDF3F2}
+.dark .sec-sub{color:var(--muted-d)}
+.alt{background:var(--bg2)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:15px;font-weight:600;transition:.22s}
+.btn-green{background:var(--green);color:#0E2010;font-weight:700}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(122,193,66,.32)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--muted)}
+.dark .check-list li{color:var(--muted-d)}
+.check-list .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;margin-top:3px;
+  border:1.5px solid var(--green);color:var(--green-deep);
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+.dark .check-list .ck{color:var(--green)}
+
+/* 머리글 */
+.hero{background:linear-gradient(180deg,var(--dark) 0%,#122630 100%);color:#fff;
+  padding-top:168px;padding-bottom:76px}
+.hero .crumb{font-size:13.5px;color:var(--muted-d);margin-bottom:18px;display:flex;gap:8px;align-items:center}
+.hero .crumb a:hover{color:var(--green)}
+.hero h1{font-weight:700;font-size:clamp(30px,4vw,48px);line-height:1.3}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.7em);filter:blur(7px);
+  animation:wordIn .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordIn{to{opacity:1;transform:none;filter:none}}
+.hero p{margin-top:18px;max-width:58ch;color:#B9C9CE;opacity:0;animation:rise 1s ease .5s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* 구조 구역 */
+.split2{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.figbox{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.figbox img,.figbox video{width:100%}
+.figcap{font-size:13px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line);background:#fff}
+
+/* 원인 3카드 */
+.locks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.lock{background:rgba(255,255,255,.05);border:1px solid var(--line-d);border-radius:var(--r);padding:30px 26px;transition:.3s}
+.lock:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
+.lock .no{font-family:var(--latin);font-weight:300;font-size:15px;letter-spacing:.14em;color:var(--green);margin-bottom:12px;display:block}
+.lock h3{font-size:18.5px;font-weight:700;margin-bottom:10px}
+.lock p{font-size:14.8px;line-height:1.75;color:var(--muted-d)}
+.now-box{margin-top:26px;background:rgba(122,193,66,.1);border:1px solid rgba(122,193,66,.35);
+  border-radius:var(--r);padding:26px clamp(20px,3vw,34px)}
+.now-box h3{font-size:18px;font-weight:700;margin-bottom:14px;color:var(--green)}
+.now-box p{font-size:15px;color:#D9E4E2;margin-bottom:10px}
+.now-box b{color:#fff}
+
+/* 자가 확인 상자 */
+.try-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px clamp(20px,3vw,34px);margin-top:26px}
+.try-box h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--green-deep)}
+.try-box p{font-size:15px;color:var(--muted)}
+
+/* 그림 구역 */
+.habit-img{border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+
+/* 등장 효과 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-x{opacity:0;transform:translateX(-46px);transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform .9s cubic-bezier(.2,.6,.2,1)}
+.reveal-x.in{opacity:1;transform:none}
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.2,.6,.2,1),transform .75s cubic-bezier(.2,.6,.2,1)}
+.stagger.in > *{opacity:1;transform:none}
+.stagger.in > *:nth-child(2){transition-delay:.09s}
+.stagger.in > *:nth-child(3){transition-delay:.18s}
+
+/* 푸터 */
+footer{background:var(--dark2);color:var(--muted-d);padding:46px clamp(18px,3.4vw,44px) 28px}
+.foot-bar{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#6E838B}
+.foot-bar a:hover{color:var(--green)}
+
+@media (max-width:900px){
+  nav{display:none}
+  .split2{grid-template-columns:1fr}
+  .locks{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.hero p,.reveal,.reveal-x,.stagger>*{opacity:1;transform:none;filter:none}
+}
+
+/* ── 깊은 바다 밝은 테마 재정의 ── */
+header{background:rgba(255,255,255,.94);border-bottom:1px solid var(--line);color:var(--ink)}
+header.scrolled{box-shadow:0 10px 30px rgba(20,41,49,.10)}
+.logo b{color:var(--ink)}
+.logo span{color:var(--muted)}
+nav a{color:var(--ink)}
+nav a:hover{background:var(--bg2)}
+.nav-cta{background:var(--green-deep);color:#fff}
+.btn-green{background:var(--green-deep);color:#fff}
+#pbar{background:linear-gradient(90deg,var(--green),var(--green-soft))}
+.hero{background:linear-gradient(180deg,var(--hero1) 0%,var(--hero2) 100%);color:var(--ink)}
+.hero .crumb{color:var(--muted)}
+.hero .crumb a:hover{color:var(--green-deep)}
+.hero p{color:var(--muted)}
+.hero h1 em{color:var(--green-deep)}
+.hero .eyebrow{color:var(--green-deep)}
+.dark{background:var(--tint);color:var(--ink)}
+.dark .sec-sub{color:var(--muted)}
+.dark .eyebrow{color:var(--green-deep)}
+.dark .check-list li{color:var(--muted)}
+.dark .check-list .ck{color:var(--green-deep)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.dark .btn-line{border-color:rgba(20,41,49,.3);color:var(--ink)}
+.dark .btn-line:hover{border-color:var(--green-deep);color:var(--green-deep)}
+.lock{background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(20,41,49,.05)}
+.lock:hover{background:#fff;transform:translateY(-4px)}
+.lock p{color:var(--muted)}
+.lock .u{color:#9A6A00}
+.now-box p{color:var(--muted)}
+.now-box b{color:var(--ink)}
+
+/* ── 로고 글자꼴 강화(v2): MEAW 원형 유지, 한글을 크고 두껍게 ── */
+.logo{gap:10px}
+.logo span{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+
+/* ── 머리띠 중앙 제목형 + M 심벌 ── */
+header{height:auto;flex-direction:column;justify-content:center;gap:9px;
+  padding:14px clamp(18px,3.4vw,44px) 11px}
+header.scrolled{height:auto}
+.logo{gap:24px;align-items:center}
+.logo img.mark{height:58px;width:auto;display:block}
+.logo b{font-size:41px}
+.logo span{font-size:37px;font-weight:800;letter-spacing:-.02em;margin-left:-16px}
+.nav-cta{position:absolute;right:clamp(18px,3.4vw,44px);top:50%;transform:translateY(-50%)}
+.hero{padding-top:230px}
+@media (max-width:860px){
+  .logo{gap:14px}
+  .logo img.mark{height:42px}
+  .logo b{font-size:29px}
+  .logo span{font-size:26px;margin-left:-11px}
+  .nav-cta{font-size:12.5px;padding:8px 11px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  nav a{padding:7px 9px}
+  .hero{padding-top:205px}
+}
+@media (max-width:620px){
+  .nav-cta{display:none}
+}
+
+/* ── 단추만 세이지그린(링크·포인트는 물색 유지) ── */
+.nav-cta{background:#2F6B5A;color:#fff}
+.btn-green{background:#2F6B5A;color:#fff}
+
+/* ── 픽토그램 그림 크기 ── */
+.figbox img.picto{width:auto;max-width:86%;max-height:170px;display:block;margin:0 auto;background:#fff;padding:16px 0}
+.figbox:has(img.picto){background:#fff}
+.picto-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.picto-row .figbox{display:flex;flex-direction:column}
+.picto-row img.picto{flex:1;min-height:0;max-height:170px}
+
+/* ── 색 변주 v1: 따뜻한 악센트 (증상 편 공통) ── */
+:root{--accent:#D97757;--accent-deep:#BC5B3C}
+.eyebrow{color:var(--accent-deep)}
+.dark .eyebrow{color:#E9A184}
+.check-list .ck{border-color:var(--accent);color:var(--accent-deep)}
+.dark .check-list .ck{border-color:#E9A184;color:#E9A184}
+.lock .no{color:var(--accent)}
+.dark .lock .no{color:#E9A184}
+.alt{background:#F8F4EB}
+
+/* ── 공통 머리띠 v3 + 검수 반영 v1 (2026-11-09) ── */
+html{scroll-padding-top:96px}
+.logo b i.mm{font-style:normal;color:var(--green-deep)}
+.logo-sub{display:block;text-align:center;font-family:var(--latin);font-size:12.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
+header nav{width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px;margin-top:3px}
+.nav-item{position:relative}
+.nav-item > a{display:flex;align-items:center;gap:5px;padding:10px 12px;border-radius:8px;color:var(--ink);transition:.2s}
+.nav-item > a:hover{background:var(--bg2)}
+.nav-item .car{font-size:10px;color:var(--muted);transition:transform .25s}
+.nav-item:hover .car{transform:rotate(180deg)}
+.drop{position:absolute;top:100%;left:0;min-width:270px;padding:10px;background:#fff;color:var(--ink);border-radius:14px;
+  box-shadow:0 18px 50px rgba(15,30,36,.22);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .22s,transform .22s,visibility .22s;z-index:5}
+.nav-item:hover .drop,.nav-item:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:9px 13px;border-radius:9px;font-size:14px;color:#2A3942;transition:.15s}
+.drop a:hover{background:var(--bg2);color:var(--green-deep)}
+
+/* 대비 보정: 산호 글자색 통일 */
+:root{--accent-text:#A14E2F}
+.eyebrow,.dark .eyebrow{color:var(--accent-text)}
+.check-list .ck,.dark .check-list .ck{border-color:var(--accent);color:var(--accent-text)}
+.lock .no,.dark .lock .no{color:var(--accent-text)}
+
+/* 글자 크기 단계 정리 */
+.hero .crumb{font-size:13px}
+.hero .crumb a{display:inline-block;padding:6px 4px;margin:-6px -4px}
+.pair .cell p,.lock p{font-size:14.5px}
+.pair .cell h3,.lock h3{font-size:18px}
+.figcap{font-size:13px}
+
+/* 내리면 머리띠가 한 줄로 줄어듦 */
+header{transition:padding .25s,box-shadow .3s}
+.logo img.mark,.logo b,.logo span{transition:height .25s,font-size .25s}
+header.scrolled{flex-direction:row;justify-content:space-between;gap:12px;padding:7px clamp(18px,3.4vw,44px)}
+header.scrolled .logo{gap:10px}
+header.scrolled .logo img.mark{height:30px}
+header.scrolled .logo b{font-size:21px}
+header.scrolled .logo span{font-size:19px;margin-left:-6px}
+header.scrolled .logo-sub{display:none}
+header.scrolled nav{width:auto;border-top:none;padding-top:0;margin-top:0}
+header.scrolled .nav-cta{position:static;transform:none}
+@media (max-width:900px){
+  nav{display:flex;flex-wrap:wrap;justify-content:center;font-size:13px;gap:0}
+  .nav-item > a{padding:10px 11px}
+}
+@media (max-width:860px){
+  header.scrolled{flex-direction:column;gap:0;padding:4px clamp(18px,3.4vw,44px)}
+  header.scrolled .logo{display:none}
+  header.scrolled nav{padding-top:2px}
+  html{scroll-padding-top:70px}
+}
+
+/* 등장 연출이 늦어도 3초 뒤에는 글이 보이게 */
+.anim-done .hero h1 .w,.anim-done .hero p{opacity:1;transform:none;filter:none;animation:none}
+
+/* ── 검수 반영 v2 (2026-11-09): 상급 의료 사이트 비교 — 본문 키움·제목 굵기 ── */
+body{font-size:17px}
+.sec-sub{font-size:17.5px}
+.hero h1{font-weight:600}
+.sec-title{font-weight:600}
+.pair .cell p,.lock p{font-size:15.5px}
+.pair .cell h3,.lock h3{font-size:18.5px}
+.check-list li{font-size:16px}
+.now-box p{font-size:16px}
+.drop a{font-size:14.5px}
+.foot p,.foot ul{font-size:14.5px}
+
+/* ── 하단 로고: 메인과 같은 색 꾸밈 ── */
+.foot-bar{flex-direction:column;align-items:flex-start;gap:12px}
+.flogo{display:inline-flex;align-items:center;gap:10px}
+.flogo b{font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.02em;color:#fff}
+.flogo b i{font-style:normal;color:var(--green-soft)}
+.flogo b i.mm{color:var(--green)}
+.flogo span{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-left:-4px}
+</style>
+<style id="mobile-menu-fix">
+/* 휴대폰: 가로 넘침 방지 + 눌러서 여는 펼침 메뉴 (2026-11-12) */
+@supports (overflow:clip){html{overflow-x:clip}}
+.nav-item.open .drop{opacity:1;visibility:visible;transform:none}
+.nav-item.open .car{transform:rotate(180deg)}
+@media (max-width:860px),(hover:none){
+  .nav-item:hover .drop,.nav-item:focus-within .drop{opacity:0;visibility:hidden}
+  .nav-item:hover .car{transform:none}
+  .nav-item.open .drop{opacity:1;visibility:visible;transform:none}
+  .nav-item.open .car{transform:rotate(180deg)}
+}
+@media (max-width:860px){
+  header nav,.nav-item{position:static}
+  .drop{left:12px;right:12px;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 6px}
+  .drop a{padding:11px 10px;font-size:14px}
+}
+</style>
+<style id="footer-line">
+/* 하단: 저작권 줄 위에 옅은 선 (메인과 같게) */
+.foot-bar > span{align-self:stretch;margin-top:12px;padding-top:20px;border-top:1px solid var(--line-d)}
+</style>
+<style id="nav-size">
+/* 주 메뉴 글자 시인성: 더 크고 굵게 (2026-11-12) */
+.nav-item > a{font-size:16.5px;font-weight:600;color:#16262E;letter-spacing:-.01em}
+.nav-item .car{font-size:10.5px}
+@media (max-width:860px){
+  .nav-item > a{font-size:15px;padding:10px 7px}
+  .nav-item .car{font-size:9px}
+}
+@media (max-width:360px){.nav-item > a{font-size:14px;padding:10px 5px}}
+/* 연구회 소개·회원 치과는 한 단계 작게, 증상·치료가 앞에 보이도록 */
+header nav > .nav-item:last-child > a{font-size:14.5px;font-weight:500;color:#4A5A62}
+@media (max-width:860px){header nav > .nav-item:last-child > a{font-size:13px}}
+@media (max-width:360px){header nav > .nav-item:last-child > a{font-size:12.5px}}
+</style>
+<style id="body-hub">
+/* 전신 증상 (중심 페이지 전용) */
+.map-wrap{display:grid;grid-template-columns:minmax(260px,.82fr) 1.18fr;gap:clamp(28px,5vw,60px);margin-top:40px;align-items:start}
+.map{position:sticky;top:110px}
+.map-fig{position:relative;max-width:380px;margin:0 auto}
+.map-fig img{width:100%;display:block}
+.dot{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;
+  background:var(--green-deep);color:#fff;font-family:var(--latin);font-size:12.5px;font-weight:600;line-height:1;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.92)}
+.dot.origin{width:16px;height:16px;background:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,.22)}
+.dot.origin::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--accent);opacity:0;animation:hubPulse 2.6s ease-out infinite}
+@keyframes hubPulse{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.4);opacity:0}}
+.map-cap{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;color:var(--muted);margin-top:10px}
+.dot.small{position:relative;transform:none;width:12px;height:12px;box-shadow:none}
+.dot.small::after{display:none}
+.conns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.conn{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:flex;flex-direction:column}
+.conn-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.conn .num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--green-deep);color:#fff;
+  font-family:var(--latin);font-size:12.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.conn h3{font-size:17.5px;font-weight:700;flex:1;line-height:1.4}
+.conn p{font-size:15px;color:var(--muted);line-height:1.75}
+.conn .src{font-size:12.5px;margin-top:10px;opacity:.85}
+.conn-link{margin-top:auto;padding-top:12px;font-size:14px;font-weight:600;color:var(--green-deep)}
+.conn-link:hover{text-decoration:underline}
+.locks.two{grid-template-columns:repeat(2,1fr)}
+section.refs{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(48px,7vh,80px)}
+.ref-list{font-size:13px;color:var(--muted);padding-left:20px;display:flex;flex-direction:column;gap:6px;line-height:1.6;overflow-wrap:anywhere}
+@media (max-width:900px){
+  .map-wrap{grid-template-columns:1fr}
+  .map{position:static}
+  .map-fig{max-width:320px}
+  .conns{grid-template-columns:1fr}
+  .locks.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="pbar" aria-hidden="true"></div>
+
+<header>
+  <a class="logo" href="index.html"><img class="mark" src="img/mw-mark.png" alt="MEAW 심벌"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
+  <span class="logo-sub">MEAW TMJ Research Society</span>
+  <nav aria-label="주 메뉴">
+    <div class="nav-item">
+      <a href="index.html#symptoms">턱관절 증상 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="sym-pain.html">턱 통증</a>
+        <a href="sym-lock.html">관절음과 개구장애</a>
+        <a href="sym-chronic.html">만성 통증</a>
+        <a href="sym-head.html">두통</a>
+        <a href="sym-grind.html">이갈이와 이 악물기</a>
+        <a href="sym-face.html">안면 통증</a>
+        <a href="sym-ear.html">귀 증상</a>
+        <a href="sym-sleep.html">코골이와 수면</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="body.html">전신 증상</a></div>
+    <div class="nav-item">
+      <a href="index.html#approach">치료 안내 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="tx-overview.html">치료는 어떻게 진행되나</a>
+        <a href="tx-splint.html">교합안정장치(스플린트)</a>
+        <a href="tx-meaw.html">교합 교정치료(MEAW)</a>
+        <a href="tx-physio.html">물리치료와 운동요법</a>
+        <a href="tx-habit.html">습관 교정과 약물</a>
+        <a href="tx-injection.html">주사치료</a>
+        <a href="tx-mpuncture.html">M-Puncture</a>
+        <a href="tx-finish.html">치료 기간과 마무리</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="about.html">연구회 <span class="car">▼</span></a>
+      <div class="drop">
+        <a href="about.html">연구회 소개</a>
+        <a href="index.html#network">회원 치과</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 머리글 -->
+  <section class="hero">
+    <div class="inner">
+      <div class="crumb"><a href="index.html">홈</a> › <span>전신 증상</span></div>
+      <h1 aria-label="턱관절과 전신 증상"><span class="w" style="--i:0">턱관절과</span> <span class="w" style="--i:1">전신</span> <span class="w" style="--i:2">증상</span></h1>
+      <p>턱관절 장애가 있으면 턱 통증 말고도 두통, 이명, 목 통증, 코골이가 함께 나타나는 경우가 많습니다.
+      턱관절과 이어진 전신 증상 아홉 가지를 연구 근거와 함께 정리했습니다.</p>
+    </div>
+  </section>
+
+  <!-- 1. 연결 지도 -->
+  <section>
+    <div class="inner">
+      <span class="eyebrow reveal">WHOLE-BODY MAP</span>
+      <h2 class="sec-title reveal-x">턱관절 장애와 함께 나타나는 증상</h2>
+      <p class="sec-sub reveal">미국 국립 학술원은 2020년 보고서에서 턱관절 장애를 다른 전신 질환과 함께 올 수 있는 질환으로 정의했습니다. 그림의 번호는 아래 설명의 번호와 같습니다.</p>
+      <div class="map-wrap">
+        <div class="map reveal">
+          <div class="map-fig">
+            <img src="img/body-line.png" alt="상반신 윤곽 위에 턱관절과 두통, 목, 귀, 수면, 만성 통증 등 연결된 자리를 번호로 표시한 그림">
+            <span class="dot origin" style="left:39%;top:15.5%" aria-hidden="true"></span>
+            <span class="dot" style="left:45%;top:6.5%" aria-hidden="true">1</span>
+            <span class="dot" style="left:67%;top:29%" aria-hidden="true">2</span>
+            <span class="dot" style="left:42%;top:73%" aria-hidden="true">3</span>
+            <span class="dot" style="left:50%;top:26%" aria-hidden="true">4</span>
+            <span class="dot" style="left:42%;top:41%" aria-hidden="true">5</span>
+            <span class="dot" style="left:62.5%;top:13.5%" aria-hidden="true">6</span>
+            <span class="dot" style="left:50.5%;top:20%" aria-hidden="true">7</span>
+            <span class="dot" style="left:58%;top:58%" aria-hidden="true">8</span>
+            <span class="dot" style="left:50%;top:50%" aria-hidden="true">9</span>
+          </div>
+          <p class="map-cap"><span class="dot origin small" aria-hidden="true"></span>턱관절</p>
+        </div>
+
+        <div class="conns stagger">
+          <article class="conn">
+            <div class="conn-top"><span class="num">1</span><h3>턱관절과 두통</h3></div>
+            <p>턱관절 장애는 두통의 원인이 될 수 있습니다. 국제두통학회의 두통 분류에도 "턱관절 장애로 인한 두통"이 따로 있습니다. 관자놀이가 조이듯 아프고, 씹거나 입을 크게 벌릴 때 심해지는 두통이 대표적입니다.</p>
+            <p class="src">근거: 국제두통학회 두통 분류 3판(2018)</p>
+            <a class="conn-link" href="sym-head.html">두통과 경부 통증 →</a>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">2</span><h3>턱관절과 목·어깨 통증</h3></div>
+            <p>턱관절 장애가 있으면 목이 함께 불편한 경우가 많습니다. 연구에서는 목을 움직이는 범위가 줄어 있었고, 목의 불편이 클수록 턱의 불편도 컸습니다.</p>
+            <p class="src">근거: 관찰 연구 종합 분석(Cuenca-Martínez 외, 2020)</p>
+            <a class="conn-link" href="sym-head.html">두통과 경부 통증 →</a>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">3</span><h3>턱관절과 만성 통증</h3></div>
+            <p>턱관절 장애는 다른 부위의 만성 통증과 자주 겹칩니다. 미국의 대규모 턱관절 연구(OPPERA)에서 두통, 허리 통증, 섬유근육통, 과민대장 증후군이 함께 나타나는 경우가 많았습니다. 섬유근육통이 있는 사람은 대부분 다른 만성 통증을 하나 이상 함께 갖고 있었습니다.</p>
+            <p class="src">근거: 미국 OPPERA 연구(Slade 외, 2020)</p>
+            <a class="conn-link" href="sym-chronic.html">만성 통증 →</a>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">4</span><h3>턱관절과 코골이·수면무호흡</h3></div>
+            <p>코골이가 심하거나 자다가 숨이 멈추는 사람은 턱관절 장애가 생길 위험이 높습니다. 이런 증상이 있는 사람은 턱관절 장애가 새로 생길 위험이 약 1.7배였습니다.</p>
+            <p class="src">근거: 미국 OPPERA 연구(Sanders 외, 2013)</p>
+            <a class="conn-link" href="sym-sleep.html">코골이와 수면 →</a>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">5</span><h3>턱관절과 스트레스</h3></div>
+            <p>스트레스가 크면 턱관절 통증이 생기기 쉽습니다. 평소 스트레스와 정서적 긴장이 큰 사람에게서 턱관절 장애가 새로 생기는 경우가 더 많았습니다. 턱의 통증이 다시 마음의 긴장을 키우기도 해서, 턱 치료에서 스트레스 관리를 함께 다룹니다.</p>
+            <p class="src">근거: 미국 OPPERA 연구(Fillingim 외, 2013)</p>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">6</span><h3>턱관절과 이명</h3></div>
+            <p>이명은 턱관절 장애와 함께 나타나는 경우가 많습니다. 턱관절 장애가 있는 사람은 이명을 겪을 가능성이 약 4배 높다는 분석이 있습니다. 이비인후과 검사에서 이상이 없는데 이명이 계속된다면 턱관절을 함께 확인해 볼 수 있습니다.</p>
+            <p class="src">근거: 체계적 문헌고찰과 메타분석(Mottaghi 외, 2019)</p>
+            <a class="conn-link" href="sym-ear.html">귀 증상 →</a>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">7</span><h3>턱관절과 안면비대칭</h3></div>
+            <p>턱관절의 변화는 안면비대칭과 이어질 수 있습니다. 아래턱이 한쪽으로 짧아진 사람 가운데 그쪽 턱관절에서 디스크가 밀려나 있거나 관절이 닳아 있는 경우가 보고되었습니다.</p>
+            <p class="src">근거: 영상 검사 연구(Westesson 외, 1994)</p>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">8</span><h3>턱관절과 소화 불편·얕은 잠</h3></div>
+            <p>턱관절 통증이 오래된 분 가운데 소화가 잘 안 되고 잠이 얕다는 분을 저희는 자주 봅니다. 식은땀을 함께 말하는 분도 있습니다. 예민해진 통증 신경이 자율신경의 긴장을 높여 이런 증상이 함께 나타날 수 있다고 봅니다.</p>
+            <p class="src">근거: 연구회 세미나와 임상 관찰</p>
+          </article>
+          <article class="conn">
+            <div class="conn-top"><span class="num">9</span><h3>턱관절과 자세·척추</h3></div>
+            <p>치아 맞물림과 턱의 위치가 머리와 목의 자세, 몸의 균형과 관련 있다는 연구들이 있습니다. 턱관절과 자세의 관계는 지금도 활발히 연구되는 분야입니다.</p>
+            <p class="src">근거: 교합과 자세 문헌 검토(Manfredini 외, 2012)</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 경계 문장 -->
+  <section class="alt">
+    <div class="inner">
+      <div class="try-box reveal" style="max-width:760px">
+            <h3>함께 살피는 이유</h3>
+            <p>여기 정리한 연결은 두 문제가 한 사람에게 함께 나타나는 경우가 많다는 뜻입니다. 그래서 저희는 턱관절을 진료할 때 목과 수면까지 함께 살핍니다.</p>
+            <p style="margin-top:10px">소화나 배뇨처럼 다른 장기의 증상은 해당 진료과와 함께 확인합니다.</p>
+          </div>
+    </div>
+  </section>
+
+  <!-- 3. 이어지는 이유 -->
+  <section class="dark">
+    <div class="inner">
+      <span class="eyebrow reveal">MECHANISM</span>
+      <h2 class="sec-title reveal-x">턱관절 통증이 다른 부위로 퍼지는 이유</h2>
+      <p class="sec-sub reveal">연결의 원리로 가장 많이 연구된 설명은 두 가지입니다.</p>
+      <div class="locks two stagger">
+        <div class="lock"><span class="no">PATH 01</span><h3>신경이 만나는 자리</h3><p>턱과 얼굴의 감각 신호는 뇌간의 한 구역으로 들어갑니다. 이 구역은 목 위쪽의 감각이 들어오는 자리와 이어져 있어 두 곳의 신호가 함께 처리됩니다. 목의 긴장이 턱 통증으로, 턱의 문제가 두통이나 목 통증으로 느껴지는 이유로 설명됩니다.</p></div>
+        <div class="lock"><span class="no">PATH 02</span><h3>예민해진 통증 신경</h3><p>통증이 오래 이어지면 통증을 전하는 신경이 예민한 상태로 굳기도 합니다. 그러면 약한 자극도 아프게 느끼고, 아픈 범위가 처음 자리보다 넓어집니다. 여러 부위의 만성 통증이 한 사람에게 겹치는 이유 가운데 하나로 꼽힙니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 참고문헌 -->
+  <section class="refs">
+    <div class="inner">
+      <span class="eyebrow reveal">REFERENCES</span>
+      <ol class="ref-list reveal">
+        <li>National Academies of Sciences, Engineering, and Medicine. Temporomandibular Disorders: Priorities for Research and Care. The National Academies Press; 2020.</li>
+        <li>Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018;38(1):1–211.</li>
+        <li>Cuenca-Martínez F, Herranz-Gómez A, Madroñero-Miguel B, et al. Craniocervical and cervical spine features of patients with temporomandibular disorders: a systematic review and meta-analysis of observational studies. J Clin Med. 2020;9(9):2806.</li>
+        <li>Slade GD, Greenspan JD, Fillingim RB, Maixner W, Sharma S, Ohrbach R. Overlap of five chronic pain conditions: temporomandibular disorders, headache, back pain, irritable bowel syndrome, and fibromyalgia. J Oral Facial Pain Headache. 2020;34(Suppl):s15–s28.</li>
+        <li>Sanders AE, Essick GK, Fillingim R, et al. Sleep apnea symptoms and risk of temporomandibular disorder: OPPERA cohort. J Dent Res. 2013;92(7 Suppl):70S–77S.</li>
+        <li>Fillingim RB, Ohrbach R, Greenspan JD, et al. Psychological factors associated with development of TMD: the OPPERA prospective cohort study. J Pain. 2013;14(12 Suppl):T75–T90.</li>
+        <li>Mottaghi A, Menéndez-Díaz I, Cobo JL, González-Serrano J, Cobo T. Is there a higher prevalence of tinnitus in patients with temporomandibular disorders? A systematic review and meta-analysis. J Oral Rehabil. 2019;46(1):76–86.</li>
+        <li>Westesson PL, Tallents RH, Katzberg RW, Guay JA. Radiographic assessment of asymmetry of the mandible. AJNR Am J Neuroradiol. 1994;15(5):991–999.</li>
+        <li>Manfredini D, Castroflorio T, Perinetti G, Guarda-Nardini L. Dental occlusion, body posture and temporomandibular disorders: where we are now and where we are heading for. J Oral Rehabil. 2012;39(6):463–471.</li>
+        <li>Bartsch T, Goadsby PJ. The trigeminocervical complex and migraine: current concepts and synthesis. Curr Pain Headache Rep. 2003;7(5):371–376.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-bar">
+    <a class="flogo" href="index.html" aria-label="MEAW 턱관절 연구회 홈"><b><i class="mm">M</i>EA<i>W</i></b><span>턱관절 연구회</span></a>
+    <span>© 2026 MEAW TMJ Research Society</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.14});
+document.querySelectorAll('.reveal,.reveal-x,.stagger').forEach(el => io.observe(el));
+const pbar = document.getElementById('pbar');
+const hdr = document.querySelector('header');
+let ticking = false;
+addEventListener('scroll', () => {
+  if (!ticking){ requestAnimationFrame(() => {
+    const y = scrollY, h = innerHeight;
+    pbar.style.transform = 'scaleX(' + Math.min(1, y / (document.documentElement.scrollHeight - h)) + ')';
+    hdr.classList.toggle('scrolled', y > 40);
+    ticking = false; }); ticking = true; }
+}, {passive:true});
+</script>
+<script>setTimeout(()=>document.documentElement.classList.add("anim-done"),3000)</script>
+<script id="mobile-menu-js">
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.nav-item')).filter(function(n){return n.querySelector('.drop')});
+  var openY=0;
+  function touchLike(){return matchMedia('(hover:none)').matches||innerWidth<=860}
+  function closeAll(except){items.forEach(function(n){if(n!==except)n.classList.remove('open')})}
+  items.forEach(function(n){
+    var a=n.querySelector(':scope > a');
+    a.setAttribute('aria-haspopup','true');a.setAttribute('aria-expanded','false');
+    a.addEventListener('click',function(e){
+      if(!touchLike())return;
+      e.preventDefault();
+      closeAll(n);
+      var on=n.classList.toggle('open');
+      openY=scrollY;
+      a.setAttribute('aria-expanded',on?'true':'false');
+      if(!on)a.blur();
+    });
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))closeAll()});
+  addEventListener('scroll',function(){if(Math.abs(scrollY-openY)>80)closeAll()},{passive:true});
+})();
+</script>
+</body>
+</html>
