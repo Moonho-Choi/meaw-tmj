@@ -861,6 +861,23 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .sym-grid{margin-bottom:0}
 .sym-more{margin-top:18px;font-size:15px;font-weight:600}
 .sym-more a{color:var(--green-deep);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}</style>
+<style id="symptom-map">
+.smap{display:grid;grid-template-columns:minmax(260px,.85fr) 1.15fr;gap:clamp(24px,4vw,56px);align-items:start;margin-top:26px}
+.smap-fig{position:relative;max-width:440px;width:100%;margin:0 auto}
+.smap-fig img{width:100%;display:block}
+.sdot{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(255,255,255,.92)}
+.smap-list{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.smap-item{border-top:1px solid #C5D3D8;padding:16px 0 18px}
+.smap-item h3{display:flex;align-items:center;gap:10px;font-size:17.5px;margin-bottom:8px}
+.smap-item h3 a{color:var(--ink)}
+.smap-item h3 a:hover{color:var(--green-deep);text-decoration:underline;text-underline-offset:4px}
+.smap-item .sn{flex:none;width:22px;height:22px;border-radius:50%;background:#12506B;color:#fff;font-family:var(--latin);font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+.smap-item ul{list-style:none;padding:0;margin:0;font-size:15px;color:var(--muted);line-height:1.8}
+.smap-item li{padding-left:14px;position:relative}
+.smap-item li::before{content:"";position:absolute;left:2px;top:.82em;width:4px;height:4px;border-radius:50%;background:#8FB6C7}
+@media (max-width:860px){.smap{grid-template-columns:1fr}.smap-fig{max-width:330px}}
+@media (max-width:480px){.smap-list{grid-template-columns:1fr 1fr;gap:0 18px}.smap-item ul{font-size:14px}}
+</style>
 </head>
 <body>
 <div id="wash" aria-hidden="true"></div>
@@ -947,7 +964,45 @@ section.refs{padding-top:28px;padding-bottom:36px}
 
   <section id="symptoms">
     <div class="inner">
-            <h2 class="sec-title reveal-x">턱관절 증상</h2>
+                  <h2 class="sec-title reveal-x">부위별 증상</h2>
+      <div class="smap">
+        <div class="smap-fig reveal">
+          <img src="img/face-map.jpg" alt="옆얼굴과 목 그림 위에 머리, 눈, 귀, 턱, 입과 치아, 목의 증상 자리를 번호로 표시한 그림">
+            <span class="sdot" style="left:42%;top:26%" aria-hidden="true">1</span>
+            <span class="sdot" style="left:25%;top:32%" aria-hidden="true">2</span>
+            <span class="sdot" style="left:61%;top:35%" aria-hidden="true">3</span>
+            <span class="sdot" style="left:51%;top:41%" aria-hidden="true">4</span>
+            <span class="sdot" style="left:22%;top:49%" aria-hidden="true">5</span>
+            <span class="sdot" style="left:55%;top:63%" aria-hidden="true">6</span>
+        </div>
+        <div class="smap-list stagger">
+          <div class="smap-item">
+            <h3><span class="sn">1</span><a href="sym-head.html">머리</a></h3>
+            <ul><li>두통</li><li>편두통</li><li>관자놀이가 조이는 통증</li></ul>
+          </div>
+          <div class="smap-item">
+            <h3><span class="sn">2</span><a href="sym-asym.html">눈과 얼굴의 좌우</a></h3>
+            <ul><li>좌우 눈 크기의 차이</li><li>눈썹 높이의 차이</li><li>한쪽으로 틀어진 코</li><li>귀 높이의 차이</li></ul>
+          </div>
+          <div class="smap-item">
+            <h3><span class="sn">3</span><a href="sym-ear.html">귀</a></h3>
+            <ul><li>이명</li><li>귀 먹먹함</li><li>귀 통증</li><li>어지럼</li><li>잘 안 들리는 느낌</li></ul>
+          </div>
+          <div class="smap-item">
+            <h3><span class="sn">4</span><a href="sym-pain.html">턱</a></h3>
+            <ul><li>턱에서 나는 소리</li><li>볼과 귀 앞의 통증</li><li>턱의 뻣뻣함</li><li>움직일 때의 통증</li></ul>
+          </div>
+          <div class="smap-item">
+            <h3><span class="sn">5</span><a href="sym-lock.html">입과 치아</a></h3>
+            <ul><li>입이 덜 벌어짐</li><li>벌릴 때 한쪽으로 틀어지는 턱</li><li>턱 걸림</li><li>이 악물기와 이갈이</li><li>씹기 어려움</li></ul>
+          </div>
+          <div class="smap-item">
+            <h3><span class="sn">6</span><a href="sym-neck.html">목</a></h3>
+            <ul><li>목 통증과 뻣뻣함</li><li>줄어든 목 움직임</li><li>어깨 결림</li></ul>
+          </div>
+        </div>
+      </div>
+      <h2 class="sec-title reveal-x" style="margin-top:clamp(40px,6vw,64px)">턱관절 증상</h2>
       
       <div class="sym-grid stagger">
         <a class="sym" href="sym-pain.html">
