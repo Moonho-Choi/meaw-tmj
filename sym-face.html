@@ -407,6 +407,13 @@ section.refs{padding-top:28px;padding-bottom:36px}
 .ref-title{font-size:19px;margin-bottom:16px}
 .ref-list{font-size:13px;color:var(--muted);padding-left:20px;display:flex;flex-direction:column;gap:6px;line-height:1.6;overflow-wrap:anywhere}
 section.refs{border-top:1px solid var(--line);padding-top:28px;padding-bottom:36px}
+.reflex-fig{grid-column:1/-1;max-width:640px;width:100%;margin:40px auto 0}
+.fig-legend{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+.fig-legend li{display:flex;gap:10px;align-items:baseline;font-size:15px;color:var(--muted);line-height:1.5}
+.fig-legend b{color:var(--ink);font-weight:700;margin-right:4px}
+.fig-legend .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;
+  font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-1px)}
+@media (max-width:560px){.fig-legend{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -546,6 +553,19 @@ section.refs{border-top:1px solid var(--line);padding-top:28px;padding-bottom:36
       <div class="figbox reveal">
         <img src="img/muscles.jpg" alt="관자놀이의 측두근과 뺨의 교근을 보여 주는 옆얼굴 그림">
         <div class="figcap">관자놀이를 덮는 측두근(부채꼴)과 뺨의 교근. 얼굴 옆면을 덮는 씹는 근육입니다.</div>
+      </div>
+      <div class="figbox reflex-fig reveal">
+        <img src="img/muscle-reflex.jpg" alt="옆얼굴 속 교근과 뇌간을 잇는 신경 세 줄을 그린 그림. 교근 속 근방추는 오른쪽 원에 크게 확대되어 있고, 부위마다 번호가 붙어 있습니다." loading="lazy">
+        <ol class="fig-legend">
+          <li><span class="n">1</span><span><b>교근</b>어금니를 꽉 무는 근육</span></li>
+          <li><span class="n">2</span><span><b>근방추</b>근육 길이를 재는 센서 (오른쪽 원은 확대 모습)</span></li>
+          <li><span class="n">3</span><span><b>감각신경</b>근육 길이 정보를 뇌간으로 보냄</span></li>
+          <li><span class="n">4</span><span><b>알파 운동신경</b>근육에 힘을 쓰라는 명령</span></li>
+          <li><span class="n">5</span><span><b>감마 운동신경</b>센서를 얼마나 예민하게 둘지 정함</span></li>
+          <li><span class="n">6</span><span><b>억제 회로</b>지나친 긴장을 멈추게 함</span></li>
+          <li><span class="n">7</span><span><b>뇌간</b>감각과 명령이 이어지는 곳</span></li>
+        </ol>
+        <div class="figcap">씹는 근육 속 센서가 근육 길이를 재고, 뇌간을 거쳐 근육의 긴장을 조절합니다.</div>
       </div>
     </div>
   </section>
